@@ -1,0 +1,15 @@
+{
+    "_comment": "L_infantum TRANSLATION",
+    "genomeDecoding": "Genome decoding",
+    "aboutUs": "About us",
+        "mission" : "Mission",
+        "team" : "Team",
+    "species": "Species",
+    "downloads": "Downloads",
+        "reports" : "Reports",
+        "datasets" : "Datasets",
+        "software" : "Software",
+    "descriptionTab" : "Description",
+    "browserTab" : "Browser",
+    "descriptionText" : "<p>Protozoan parasite responsible for the disease leishmaniasis, primarily affecting both humans and animals. This parasite is transmitted through the bites of infected female phlebotomine sandflies. The disease manifests in various forms, with the most severe being visceral leishmaniasis, also known as kala-azar, which can be fatal if left untreated. In humans, <i>L. infantum</i> infection leads to symptoms such as fever, weight loss, hepatosplenomegaly (enlarged liver and spleen), anemia, and a significant drop in white blood cell counts. The parasite predominantly affects internal organs, including the liver, spleen, and bone marrow. In dogs, which are the primary reservoir hosts, the infection can result in skin lesions, lymphadenopathy, and general systemic illness, contributing to the spread of the disease to humans.</p><p><i>L. infantum</i> has a complex life cycle involving two main stages: the promastigote form found in the sandfly vector and the amastigote form that multiplies within the host's macrophages. Control and prevention of leishmaniasis caused by <i>L. infantum</i> involve integrated approaches, including vector control, early diagnosis, and treatment of infected individuals, as well as management of reservoir hosts. Current treatments for visceral leishmaniasis include antimonial compounds, amphotericin B, and miltefosine, although drug resistance and adverse effects pose significant challenges. Advances in molecular biology and genomics have facilitated a deeper understanding of the parasite's biology and pathogenic mechanisms, paving the way for potential new therapies and vaccines. However, leishmaniasis remains a major public health concern, particularly in regions where vector control and access to healthcare are limited.</p>"
+}

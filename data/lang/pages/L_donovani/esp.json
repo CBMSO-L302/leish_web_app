@@ -1,0 +1,15 @@
+{
+    "_comment": "L_donovani TRANSLATION",
+    "genomeDecoding": "Decodificación genómica",
+    "aboutUs": "Nosotros",
+        "mission" : "Misión",
+        "team" : "Equipo",
+    "species": "Especies",
+    "downloads": "Descargas",
+        "reports" : "Informes",
+        "datasets" : "Datos",
+        "software" : "Programas",
+    "descriptionTab" : "Descripción",
+    "browserTab" : "Buscador",
+    "descriptionText": "<p>Parásito protozoario que es el principal agente causante de la leishmaniasis visceral, también conocida como kala-azar. Esta forma grave de leishmaniasis afecta a los órganos internos, particularmente el hígado, el bazo y la médula ósea, y puede ser fatal si no se trata. El parásito se transmite a los humanos y otros mamíferos a través de las picaduras de las hembras infectadas de flebótomos. En los humanos, la infección por <i>L. donovani</i> se manifiesta con síntomas como fiebre prolongada, pérdida significativa de peso, hepatomegalia (hígado y bazo agrandados), anemia y una reducción marcada en el recuento de glóbulos blancos.</p>\n        <p>El ciclo de vida de <i>L. donovani</i> involucra dos etapas principales: la forma promastigote, que reside en el vector flebótomo, y la forma amastigote, que se multiplica dentro de los macrófagos del huésped. En el flebótomo, <i>L. donovani</i> existe como promastigotes móviles. Al ser transmitidos al huésped humano, los promastigotes son fagocitados por macrófagos y se transforman en amastigotes no móviles. Estos amastigotes se proliferan dentro de los macrófagos, causando la ruptura de las células y la diseminación a otros macrófagos, lo que lleva a una infección generalizada del sistema reticuloendotelial.</p>\n        <p>El control y la prevención de la leishmaniasis visceral causada por <i>L. donovani</i> requieren un enfoque multifacético, que incluya el control del vector flebótomo, el diagnóstico temprano, el tratamiento oportuno de los individuos infectados y la gestión de los reservorios huéspedes. Los tratamientos actuales para la leishmaniasis visceral incluyen compuestos antimoniales, anfotericina B, miltefosina y paromomicina. Sin embargo, desafíos como la resistencia a los medicamentos, la toxicidad y la necesidad de regímenes de tratamiento prolongados complican la gestión efectiva. Los avances en biología molecular y genómica han mejorado en gran medida la comprensión de la biología y los mecanismos patogénicos de <i>L. donovani</i>, facilitando el desarrollo de nuevas estrategias terapéuticas y posibles vacunas. A pesar de estos avances, la leishmaniasis visceral sigue siendo una preocupación importante de salud pública, particularmente en regiones con recursos limitados donde el acceso a la atención médica y las medidas efectivas de control de vectores son insuficientes.</p>"
+}

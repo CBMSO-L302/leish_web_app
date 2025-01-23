@@ -1,0 +1,16 @@
+{
+    "_comment": "team TRANSLATION",
+    "genomeDecoding": "Genome decoding",
+    "aboutUs": "About us",
+        "mission" : "Mission",
+        "team" : "Team",
+        "publications": "Publications",
+    "species": "Species",
+    "downloads": "Downloads",
+        "reports" : "Reports",
+        "datasets" : "Datasets",
+        "software" : "Software",
+    "teamText": "<p>Based on CBM (Centro de Biología Molecular Severo Ochoa - CSIC), our team focuses on the molecular genetics of Leishmania parasites, the causative agents of leishmaniasis. Using state-of-the-art technology both in vitro and in silico, we study the gene expression and genomic plasticity in these parasites.</p>",
+    "members" : "Members",
+    "formerMembers" : "Former Members"
+}

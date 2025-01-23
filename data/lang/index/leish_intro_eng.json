@@ -1,0 +1,17 @@
+[
+  {
+    "title": "What is Leishmaniasis?",
+    "description": "Leishmaniasis is a disease that affects a large population in tropical and subtropical areas worldwide. According to recent data from the World Health Organization, it is estimated that there are between 700,000 to 1,000,000 new cases annually, affecting 90 countries across all continents (World Health Organization, 2023). Currently, around 350 million people are at risk of infection, with 15 million already affected, making it one of the most infectious diseases globally, causing approximately 70,000 deaths each year (Saini et al., 2022).",
+    "img": "./img/leish_intro/leish_img_intro.jpg"
+  },
+  {
+    "title": "Leishmania Parasite",
+    "description": "The disease is transmitted by a protozoan parasite from the trypanosomatid family. This family is also responsible for Chagas disease (Trypanosoma cruzi), sleeping sickness (T. brucei), and leishmaniasis (Leishmania spp.) (Bringaud et al., 2007). ",
+    "img": "./img/leish_intro/trypanosomatids_img_intro.jpeg"
+  },
+  {
+    "title": "Leishmania Vector",
+    "description": "Leishmaniasis is specifically transmitted through the bite of a sandfly (subfamily Phlebotominae), leading to the parasite's invasion of the host's internal organs (Herwaldt, 1999).",
+    "img": "./img/leish_intro/sandfly_img_intro.png"
+  }
+]

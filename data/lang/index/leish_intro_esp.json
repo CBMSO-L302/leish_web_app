@@ -1,0 +1,17 @@
+[
+  {
+    "title": "¿Qué es la Leishmaniasis?",
+    "description": "La leishmaniasis es una enfermedad que afecta a una gran población en áreas tropicales y subtropicales en todo el mundo. Según datos recientes de la Organización Mundial de la Salud, se estima que hay entre 700,000 y 1,000,000 de nuevos casos anuales, afectando a 90 países en todos los continentes (Organización Mundial de la Salud, 2023). Actualmente, alrededor de 350 millones de personas están en riesgo de infección, con 15 millones ya afectadas, convirtiéndola en una de las enfermedades más infecciosas a nivel mundial, causando aproximadamente 70,000 muertes cada año (Saini et al., 2022).",
+    "img": "./img/leish_intro/leish_img_intro.jpg"
+  },
+  {
+    "title": "Parásito Leishmania",
+    "description": "La enfermedad es transmitida por un parásito protozoario de la familia de los tripanosomátidos. Esta familia también es responsable de la enfermedad de Chagas (Trypanosoma cruzi), la enfermedad del sueño (T. brucei) y la leishmaniasis (Leishmania spp.) (Bringaud et al., 2007).",
+    "img": "./img/leish_intro/trypanosomatids_img_intro.jpeg"
+  },
+  {
+    "title": "Vector de Leishmania",
+    "description": "La leishmaniasis se transmite específicamente a través de la picadura de un flebótomo (subfamilia Phlebotominae), lo que lleva a la invasión del parásito en los órganos internos del huésped (Herwaldt, 1999).",
+    "img": "./img/leish_intro/sandfly_img_intro.png"
+  }
+]

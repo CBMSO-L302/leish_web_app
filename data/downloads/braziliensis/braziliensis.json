@@ -1,0 +1,52 @@
+[
+    {
+        "type": "genomic",
+        "format": "fasta",
+        "version": "v1",
+        "year": "2018",
+        "path_file": "../data/downloads/braziliensis/files/LbrM_cbm_v1.fasta",
+        "url": "<a href='http://www.scielo.br/scielo.php?script=sci_arttext&pid=S0074-02762019000100400&lng=en&nrm=iso&tlng=en' target='_blank'>González-de la Fuente <em>et al.</em> 2019 (CBMSO)</a>",
+        "raw_data": "<a href='https://www.ebi.ac.uk/ena/data/view/PRJEB25922'>PRJEB25922</a>",
+        "description": "Updated L. braziliensis genome sequence. <em><font color='red'><b>NEW!</b> (29/11/2018)</font></em>"
+    },
+    {
+        "type": "genomic",
+        "format": "gff",
+        "version": "v1",
+        "year": "2018",
+        "path_file": "../data/downloads/braziliensis/files/LbrM_cbm_v1_CDS.gff",
+        "url": "<a href='http://www.scielo.br/scielo.php?script=sci_arttext&pid=S0074-02762019000100400&lng=en&nrm=iso&tlng=en' target='_blank'>González-de la Fuente <em>et al.</em> 2019 (CBMSO)</a>",
+        "raw_data": "<a href='https://www.ebi.ac.uk/ena/data/view/PRJEB25922'>PRJEB25922</a>",
+        "description": "L. braziliensis CDS annotation. <em><font color='red'><b>NEW!</b> (29/11/2018)</font></em>"
+    },
+    {
+        "type": "mitochondrial",
+        "format": "fasta",
+        "version": "-",
+        "year": "-",
+        "path_file": "../data/downloads/braziliensis/files/LbrM_cbm_maxicircle.fasta",
+        "url": "<a href='https://www.mdpi.com/2073-4425/10/10/758/htm' target='_blank'>Camacho <em>et al.</em>, 2019</a>",
+        "raw_data": "<a href='https://www.ebi.ac.uk/ena/data/view/PRJEB33887'>LR697134</a>",
+        "description": "L. braziliensis maxicircle sequence."
+    },
+    {
+        "type": "mitochondrial",
+        "format": "gff",
+        "version": "-",
+        "year": "-",
+        "path_file": "../data/downloads/braziliensis/files/LbrM_cbm_maxicircle.gff",
+        "url": "<a href='https://www.mdpi.com/2073-4425/10/10/758/htm' target='_blank'>Camacho <em>et al.</em>, 2019</a>",
+        "raw_data": "<a href='https://www.ebi.ac.uk/ena/data/view/PRJEB33887'>LR697134</a>",
+        "description": "L. braziliensis maxicircle annotation."
+    },
+    {
+        "type": "mitochondrial",
+        "format": "fasta",
+        "version": "-",
+        "year": "-",
+        "path_file": "../data/downloads/braziliensis/files/LbrM_cbm_circular_minicircles.fasta",
+        "url": "<a href='https://www.mdpi.com/2073-4425/10/10/758/htm' target='_blank'>Camacho <em>et al.</em>, 2019</a>",
+        "raw_data": "<a href='https://www.ebi.ac.uk/ena/data/view/PRJEB33887'>PRJEB33887</a>",
+        "description": "L. braziliensis minicircle sequences."
+    }
+]

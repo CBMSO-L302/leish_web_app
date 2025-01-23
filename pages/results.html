@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../styles/index.css"> <!-- TO-DO: Change to a new one-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Leishmania Search Reults</title>
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="../index.html"><h1>LEISH-NEW</h1></a></li>
+            <li><h2>Leishmania genome decoding</h2></li>
+        </ul>
+    </header>
+
+    <div class="top-menu">
+        <div class="search-bar">
+            <input type="text" id="live-search-bar" placeholder="Search..">
+        </div>
+        <nav>
+            <div class="dropdown">
+                <a href="./our_team.html">About Us</a>
+            </div>
+            <div class="dropdown">
+                <a href="#">Species</a>
+                <div class="dropdown-content">
+                    <a href="./L_major.html"><i>L. major</i></a>    
+                    <a href="./L_infantum.html"><i>L. infantum</i></a>
+                    <a href="./L_donovani.html"><i>L. donovani</i></a>
+                    <a href="./L_braziliensis.html"><i>L. braziliensis</i></a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a class="strikethrough" href="#">Downloads</a>
+                <div class="dropdown-content">
+                    <a class="strikethrough" href="#">Reports</a>
+                    <a class="strikethrough" href="#">Datasets</a>
+                    <a class="strikethrough" href="#">Software</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a class="strikethrough" href="#">Extra</a>
+                <div class="dropdown-content">
+                    <a class="strikethrough" href="#">Blog</a>
+                    <a class="strikethrough" href="#">News</a>
+                    <a class="strikethrough" href="#">Events</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="reddit-like">
+        <aside class="left-column">
+            <h2>Filters</h2>
+            <div class="filters">
+                <ul>
+                    <li>
+                        <input type="checkbox" id="filter-major" class="opt-in" value="major">
+                        <label for="filter-major"><i class="strikethrough">L. major</i><span style="color:red; text-transform:uppercase;"> no table</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="filter-infantum" class="opt-in" value="infantum">
+                        <label for="filter-infantum"><i>L. infantum</i></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="filter-donovani" class="opt-in" value="donovani">
+                        <label for="filter-donovani"><i>L. donovani</i></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="filter-braziliensis" class="opt-in" value="braziliensis">
+                        <label for="filter-braziliensis"><i>L. braziliensis</i></label>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        
+        <main class="center-column sql-column" id="posts-container">
+            <table id="results-table" border="1">
+                <thead>
+                    <tr>
+                        <!-- Headers will be inserted dynamically by JavaScript -->
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </main>
+        
+        <aside class="right-column">
+            <div id="calendar-container">
+                <h3>Calendar</h3>
+                <div id="calendar"></div>
+            </div>
+            
+            <!-- Twitter Widget -->
+            <div id="twitter-widget-container">
+                <a class="twitter-timeline" data-height="600" href="https://twitter.com/who?ref_src=twsrc%5Etfw">Tweets by WHO</a>
+            </div>
+        </aside>
+    </div>
+    
+    <footer>
+        <div class="contact-info">
+            <a href="https://maps.app.goo.gl/Jsv6mqWxq4KYtYbq8" target="_blank">
+                <img src="../img/icons/map.png" alt="Location" class="icon"> Nicolás Cabrera, 1, Fuencarral-El Pardo, 28049 Madrid
+            </a>
+            <span>
+                <img src="../img/icons/phone-call.png" alt= "Phone" class="icon">(+00) 000 000 000
+            </span>
+            <span>
+                <img src="../img/icons/email.png" alt="Mail" class="icon"><a href="mailto:example@example.com">example@example.com</a>
+            </span>
+        </div>
+        <div class="social-media">
+            <a href="https://x.com/WHO" target="_blank"><img src="../img/icons/twitter.png" alt="Twitter"></a>
+            <a href="https://www.youtube.com/@who" target="_blank"><img src="../img/icons/youtube.png" alt="YouTube"></a>
+            <a href="https://www.instagram.com/who" target="_blank"><img src="../img/icons/instagram.png" alt="Instagram"></a>
+            <a href="https://www.linkedin.com/company/world-health-organization" target="_blank"><img src="../img/icons/linkedin.png" alt="LinkedIn"></a>
+        </div>
+        <img id="bottom-banner" src="../img/logos/logos.png" alt="logos">
+        
+    </footer>
+    
+    <!-- JavaScript section -->
+    <!-- ===================================================================================================== -->
+    <!-- Call javascript on the web-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- ===================================================================================================== -->
+    <!-- Call fullcalendar widget javascript requirements-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+    <script src="../scripts/calendar.js"></script>  <!-- Call our custom calendar script -->
+    <!-- ===================================================================================================== -->
+    <!-- Call twitter widget javascript-->
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script src="../scripts/twitter_updater.js"></script> <!-- Call out twitter updater -->
+    
+    <script src="../scripts/results_script.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Focus the search bar on page load
+            $('#live-search-bar').focus();
+        });
+    </script>
+    
+    
+</body>
+</html>

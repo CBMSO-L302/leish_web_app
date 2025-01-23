@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../styles/reset.css" rel="stylesheet" type="text/css">
+  <link href="../styles/species_browser.css " rel="stylesheet" type="text/css">
+  <link href="../styles/header_footer.css" rel="stylesheet" type="text/css">
+  <title>Leish-CBM</title>
+</head>
+
+<body>
+    <!-- ================================================================================================ -->
+  <!-- Header -->
+  <!-- ================================================================================================ -->
+  <header>
+    <!--Logo and title-->
+    <div class="logo">
+      <a href="../index.html"><img src="../img/logos/leish_lab_logo.png" alt="Leish-Lab Logo"></a>
+      <div>
+        <h1>Leish-CBM</h1>
+        <h4><i id="lang_genome_decoding">Genome decoding</i></h4>
+      </div>
+    </div>
+    <!--Dropdown menu-->
+    <nav>
+      <div class="dropdown">
+        <a href="#" id="lang_about_us">About Us</a>
+        <div class="dropdown-content">
+          <a href="./mission.html" id="lang_mission">Mission</a>
+          <a href="./team.html" id="lang_team">Team</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#" id="lang_species">Species</a>
+        <div class="dropdown-content">
+          <a href="#" id="lang_L_infantum"><i>L. infantum</i></a>
+          <a href="./L_major.html" id="lang_L_major"><i>L. major</i></a>
+          <a href="./L_donovani.html" id="lang_L_donovani"><i>L. donovani</i></a>
+          <a href="./L_braziliensis.html" id="lang_L_braziliensis"><i>L. braziliensis</i></a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#" id="lang_downloads">Downloads</a>
+        <div class="dropdown-content">
+          <a href="#" id="lang_reports">Reports</a>
+          <a href="#" id="lang_datasets">Datasets</a>
+          <a href="#" id="lang_software">Software</a>
+        </div>
+      </div>
+    </nav>
+    <!--Language selector-->
+    <div id="language-selector" class="language-selector">
+      <label for="language-dropdown"></label><select id="language-dropdown" onchange="changeLanguage(this.value)">
+        <option value="eng" data-flag="../img/flags/english.png">ENG</option>
+        <option value="esp" data-flag="../img/flags/spanish.png">ESP</option>
+      </select>
+      <img id="selected-flag" src="../img/flags/english.png" alt="Selected Language">
+    </div>
+  </header>
+  <!-- ================================================================================================ -->
+  <!-- Main section -->
+  <!-- ================================================================================================ -->
+  <main>
+    <section id="desc-genome-selector">
+      <a href="./L_infantum.html" id="selector-1"><span id="lang_species_desc">Description</span></a>
+      <a href="#" id="selector-2"><span id="lang_species_brow">Browser</span></a>
+    </section>
+
+    <section id="browser-section">
+      <div id="search bar">
+        <label for="search-input"></label><input type="text" id="search-input" placeholder="Search for genes, names, or orthologs...">
+        <button id="search-button">Search</button>
+      </div>
+
+      <div class="pagination-controls">
+        <button class="prev-page">Previous</button>
+        <button class="next-page">Next</button>
+      </div>
+
+      <!-- Top Scrollbar -->
+      <div id="top-scroll-container">
+        <div id="top-scroll"></div>
+      </div>
+
+      <div id="results-container">
+          <table id="results-table">
+              <thead>
+                  <tr>
+                      <th>Gene ID</th>
+                      <th>Name</th>
+                      <th>Other Names</th>
+                      <th>Wikidata</th>
+                      <th>Mendeley</th>
+                      <th>UniProt</th>
+                      <th>LmjF Ortholog</th>
+                      <th>LmjFC Ortholog</th>
+                      <th>LdHU3 Ortholog</th>
+                      <th>LBRM2904 Ortholog</th>
+                  </tr>
+              </thead>
+              <tbody id="results-body">
+                  <!-- Results will be populated here -->
+              </tbody>
+          </table>
+      </div>
+
+      <div class="pagination-controls">
+        <button class="prev-page">Previous</button>
+        <button class="next-page">Next</button>
+      </div>
+    </section>
+
+  </main>
+  <!-- ================================================================================================ -->
+  <!-- Footer -->
+  <!-- ================================================================================================ -->
+  <footer>
+    <div id="phone-mail">
+      <span>
+        <img src="../img/icons/phone-call.png" alt="Phone" class="icon">(+00) 000 000 000
+      </span>
+
+      <span>
+        <img src="../img/icons/email.png" alt="Mail" class="icon">
+        <a href="mailto:example@example.com">example@example.com</a>
+      </span>
+    </div>
+
+    <span id="map">
+      <img src="../img/icons/map.png" alt="Location" class="icon">
+      <a href="https://maps.app.goo.gl/Jsv6mqWxq4KYtYbq8" target="_blank">Nicolás Cabrera, 1, Fuencarral-El
+        Pardo, 28049 Madrid</a>
+    </span>
+
+    <div id="social-media">
+      <a href="https://x.com/WHO" target="_blank"><img src="../img/icons/twitter.png" alt="Twitter"></a>
+      <a href="https://www.youtube.com/@who" target="_blank"><img src="../img/icons/youtube.png" alt="YouTube"></a>
+      <a href="https://www.instagram.com/who" target="_blank"><img src="../img/icons/instagram.png"
+          alt="Instagram"></a>
+      <a href="https://www.linkedin.com/company/world-health-organization" target="_blank"><img
+          src="../img/icons/linkedin.png" alt="LinkedIn"></a>
+    </div>
+
+    <div id="government-logos">
+      <img src="../img/logos/1-CSIC-Logotipo--Web-Gob-Min-CSIC--COLOR--PNG-RGB-300ppp.png"
+        alt="Spanish Government, Science Minisry and CSIC logos">
+      <img src="../img/logos/Combo-CBMExcelencia.png " alt="CBM and Excellency logos">
+    </div>
+  </footer>
+  <!-- ================================================================================================ -->
+  <!-- JavaScript -->
+  <!-- ================================================================================================ -->
+  <script src="../scripts/pages/translate_L_infantum.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const topScrollContainer = document.getElementById('top-scroll-container');
+        const resultsContainer = document.getElementById('results-container');
+        const topScroll = document.getElementById('top-scroll');
+
+        // Set the width of the top-scroll to match the content of the results table
+        function updateScrollWidths() {
+          topScroll.style.width = `${resultsContainer.scrollWidth}px`;
+        }
+
+        // Ensure the width is set initially and after each data fetch
+        updateScrollWidths();
+        resultsContainer.addEventListener('scroll', function () {
+          topScrollContainer.scrollLeft = resultsContainer.scrollLeft;
+        });
+
+        topScrollContainer.addEventListener('scroll', function () {
+          resultsContainer.scrollLeft = topScrollContainer.scrollLeft;
+        });
+
+        // Recalculate the width if the window is resized
+        window.addEventListener('resize', updateScrollWidths);
+
+        // Fetch and populate data (for demonstration)
+        function fetchData(page) {
+          const query = document.getElementById('search-input').value;
+          fetch(`/search?q=${encodeURIComponent(query)}&page=${page}&limit=${limit}`)
+                  .then(response => response.json())
+                  .then(data => {
+                    populateTable(data);
+                    updateScrollWidths(); // Update scroll width after table is populated
+                  });
+        }
+
+        function populateTable(data) {
+          const resultsBody = document.getElementById('results-body');
+          resultsBody.innerHTML = '';
+
+          data.forEach(row => {
+            const tr = document.createElement('tr');
+
+            Object.keys(row).forEach(key => {
+              const td = document.createElement('td');
+
+              if (key === "Wikidata" || key === "Mendeley" || key === "UniProt") {
+                td.innerHTML = `<a href="${row[key]}" target="_blank">${key}</a>`;
+              } else {
+                td.textContent = row[key];
+              }
+
+              tr.appendChild(td);
+            });
+
+            resultsBody.appendChild(tr);
+          });
+        }
+
+        // Initialize the first data load
+        let currentPage = 1;
+        const limit = 50;
+        fetchData(currentPage);
+
+        document.getElementById('search-button').addEventListener('click', function () {
+          currentPage = 1;
+          fetchData(currentPage);
+        });
+
+        // Attach event listeners to both sets of pagination buttons
+        const paginationButtons = document.querySelectorAll('.pagination-controls button');
+
+        paginationButtons.forEach(button => {
+          button.addEventListener('click', function (event) {
+            if (event.target.classList.contains('next-page')) {
+              currentPage++;
+              fetchData(currentPage);
+            } else if (event.target.classList.contains('prev-page')) {
+              if (currentPage > 1) {
+                currentPage--;
+                fetchData(currentPage);
+              }
+            }
+          });
+        });
+      });
+    </script>
+</body>
+</html>

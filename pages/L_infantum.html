@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../styles/reset.css" rel="stylesheet" type="text/css">
+  <link href="../styles/header_footer.css" rel="stylesheet" type="text/css">
+  <link href="../styles/species.css" rel="stylesheet" type="text/css">
+  <title>Leish-CBM</title>
+</head>
+
+<body>
+<!-- ================================================================================================ -->
+<!-- Header -->
+<!-- ================================================================================================ -->
+<header>
+  <!--Logo and title-->
+  <div class="logo">
+    <a href="../index.html"><img src="../img/logos/leish_lab_logo.png" alt="Leish-Lab Logo"></a>
+    <div>
+      <h1>Leish-CBM</h1>
+      <h4><i id="lang_genome_decoding">Genome decoding</i></h4>
+    </div>
+  </div>
+  <!--Dropdown menu-->
+  <nav>
+    <div class="dropdown">
+      <a href="#" id="lang_about_us">About Us</a>
+      <div class="dropdown-content">
+        <a href="./mission.html" id="lang_mission">Mission</a>
+        <a href="./team.html" id="lang_team">Team</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="#" id="lang_species">Species</a>
+      <div class="dropdown-content">
+        <a href="#" id="lang_L_infantum"><i>L. infantum</i></a>
+        <a href="./L_major.html" id="lang_L_major"><i>L. major</i></a>
+        <a href="./L_donovani.html" id="lang_L_donovani"><i>L. donovani</i></a>
+        <a href="./L_braziliensis.html" id="lang_L_braziliensis"><i>L. braziliensis</i></a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="#" id="lang_downloads">Downloads</a>
+      <div class="dropdown-content">
+        <a href="#" id="lang_reports">Reports</a>
+        <a href="#" id="lang_datasets">Datasets</a>
+        <a href="#" id="lang_software">Software</a>
+      </div>
+    </div>
+  </nav>
+  <!--Language selector-->
+  <div id="language-selector" class="language-selector">
+    <label for="language-dropdown"></label><select id="language-dropdown" onchange="changeLanguage(this.value)">
+    <option value="eng" data-flag="../img/flags/english.png">ENG</option>
+    <option value="esp" data-flag="../img/flags/spanish.png">ESP</option>
+  </select>
+    <img id="selected-flag" src="../img/flags/english.png" alt="Selected Language">
+  </div>
+</header>
+<!-- ================================================================================================ -->
+<!-- Main section -->
+<!-- ================================================================================================ -->
+<main>
+  <section id="desc-genome-selector">
+    <a href="#" id="selector-1"><span id="lang_species_desc">Description</span></a>
+    <a href="./L_infantum_browser.html" id="selector-2"><span id="lang_species_brow">Browser</span></a>
+  </section>
+
+  <section class="img-title">
+    <img src="../img/species/infantum.png" alt="L. infantum image">
+    <article>
+      <div class="text-header"><h1><i>Leishmania infantum</i></h1></div>
+      <span id="lang_species_desc_text">
+          <p>Protozoan parasite responsible for the disease leishmaniasis, primarily affecting both humans and
+            animals. This parasite is transmitted through the bites of infected female phlebotomine sandflies.
+            The disease manifests in various forms, with the most severe being visceral leishmaniasis, also
+            known as kala-azar, which can be fatal if left untreated. In humans, <i>L. infantum</i> infection
+            leads to symptoms such as fever, weight loss, hepatosplenomegaly (enlarged liver and spleen),
+            anemia, and a significant drop in white blood cell counts. The parasite predominantly affects
+            internal organs, including the liver, spleen, and bone marrow. In dogs, which are the primary
+            reservoir hosts, the infection can result in skin lesions, lymphadenopathy, and general systemic
+            illness, contributing to the spread of the disease to humans.</p>
+            <p><i>L. infantum</i> has a complex life cycle involving two main stages: the promastigote form found in
+            the sandfly vector and the amastigote form that multiplies within the host's macrophages. Control
+            and prevention of leishmaniasis caused by <i>L. infantum</i> involve integrated approaches,
+            including vector control, early diagnosis, and treatment of infected individuals, as well as
+            management of reservoir hosts. Current treatments for visceral leishmaniasis include antimonial
+            compounds, amphotericin B, and miltefosine, although drug resistance and adverse effects pose
+            significant challenges. Advances in molecular biology and genomics have facilitated a deeper
+            understanding of the parasite's biology and pathogenic mechanisms, paving the way for potential new
+            therapies and vaccines. However, leishmaniasis remains a major public health concern, particularly
+            in regions where vector control and access to healthcare are limited.</p>
+        </span>
+    </article>
+  </section>
+
+  <section id="downloads-table">
+    <!-- table like structure for downloading files-->
+  </section>
+  <section class="jbrowser">
+    <!-- jbrowser here -->
+  </section>
+
+</main>
+<!-- ================================================================================================ -->
+<!-- Footer -->
+<!-- ================================================================================================ -->
+<footer>
+  <div id="phone-mail">
+      <span>
+          <img src="../img/icons/phone-call.png" alt="Phone" class="icon">(+00) 000 000 000
+      </span>
+
+    <span>
+          <img src="../img/icons/email.png" alt="Mail" class="icon">
+          <a href="mailto:example@example.com">example@example.com</a>
+      </span>
+  </div>
+
+  <span id="map">
+      <img src="../img/icons/map.png" alt="Location" class="icon">
+      <a href="https://maps.app.goo.gl/Jsv6mqWxq4KYtYbq8" target="_blank">Nicolás Cabrera, 1, Fuencarral-El Pardo, 28049 Madrid</a>
+    </span>
+
+  <div id="social-media">
+    <a href="https://x.com/WHO" target="_blank"><img src="../img/icons/twitter.png" alt="Twitter"></a>
+    <a href="https://www.youtube.com/@who" target="_blank"><img src="../img/icons/youtube.png" alt="YouTube"></a>
+    <a href="https://www.instagram.com/who" target="_blank"><img src="../img/icons/instagram.png" alt="Instagram"></a>
+    <a href="https://www.linkedin.com/company/world-health-organization" target="_blank"><img
+            src="../img/icons/linkedin.png" alt="LinkedIn"></a>
+  </div>
+
+  <div id="government-logos">
+    <img src="../img/logos/1-CSIC-Logotipo--Web-Gob-Min-CSIC--COLOR--PNG-RGB-300ppp.png"
+         alt="Spanish Government, Science Minisry and CSIC logos">
+    <img src="../img/logos/Combo-CBMExcelencia.png " alt="CBM and Excellency logos">
+  </div>
+</footer>
+<!-- ================================================================================================ -->
+<!-- Script section -->
+<!-- ================================================================================================ -->
+<script src="../scripts/pages/translate_L_infantum.js"></script>  <!-- Translation script-->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        fetch('../data/downloads/infantum/infantum.json')
+            .then(response => response.json())
+            .then(data => {
+                const tableContainer = document.getElementById('downloads-table');
+
+                const table = document.createElement('table');
+                table.innerHTML = `
+                      <thead>
+                          <tr>
+                              <th>File</th>
+                              <th>Reference Genome</th>
+                              <th>Version/Year</th>
+                              <th>Downloads</th>
+                              <th>Raw Data</th>
+                              <th>Notes</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                      ${data.map(item => `
+                          <tr>
+                              <td><strong>${item.type.toUpperCase()} (${item.format.toUpperCase()} file)</strong></td>
+                              <td>${item.url}</td>
+                              <td>${item.version}/${item.year}</td>
+                              <td><a href="${item.path_file}" class="download-button">DOWNLOAD</a></td>
+                              <td>${item.raw_data}</td>
+                              <td>${item.description}</td>
+                          </tr>`).join('')}
+                      </tbody>
+                  `;
+
+                tableContainer.appendChild(table);
+            })
+            .catch(error => console.error('Error fetching the JSON data:', error));
+    });
+</script>
+</body>
+</html>

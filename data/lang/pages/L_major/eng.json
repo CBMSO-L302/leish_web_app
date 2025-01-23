@@ -1,0 +1,15 @@
+{
+    "_comment": "L_major TRANSLATION",
+    "genomeDecoding": "Genome decoding",
+    "aboutUs": "About us",
+        "mission" : "Mission",
+        "team" : "Team",
+    "species": "Species",
+    "downloads": "Downloads",
+        "reports" : "Reports",
+        "datasets" : "Datasets",
+        "software" : "Software",
+    "descriptionTab" : "Description",
+    "browserTab" : "Browser",
+    "descriptionText" : "<p>Protozoan parasite that causes cutaneous leishmaniasis, primarily affecting humans and some animals. The parasite is transmitted to hosts through the bites of infected female phlebotomine sandflies. Cutaneous leishmaniasis, the most common form of the disease, typically results in skin lesions that can lead to significant scarring and disability. Symptoms in humans include the development of one or more sores at the site of the sandfly bite, which may progress to ulcers with a raised edge. These sores often heal spontaneously over months to years, but they can leave disfiguring scars and may be prone to secondary infections.</p><p>The life cycle of <i>L. major</i> involves two main stages: the promastigote form, which is found in the sandfly vector, and the amastigote form, which multiplies within the host's macrophages. In the sandfly, the parasite exists as motile promastigotes. Once transmitted to the human host, the promastigotes are phagocytosed by macrophages and transform into non-motile amastigotes. These amastigotes then multiply within the macrophages, leading to cell rupture and further spread of the infection to new macrophages.</p><p>Control and prevention of leishmaniasis caused by <i>L. major</i> involve integrated approaches, including sandfly vector control through insecticide use and environmental management, early diagnosis, and treatment of infected individuals. Current treatments for cutaneous leishmaniasis include topical and systemic therapies such as antimonial compounds, miltefosine, and amphotericin B. However, the effectiveness of treatments can vary, and issues such as drug resistance and adverse effects continue to pose significant challenges. Advances in molecular biology and genomics have enhanced the understanding of <i>L. major</i>'s biology and pathogenic mechanisms, offering hope for new therapeutic approaches and potential vaccines. Despite these advances, cutaneous leishmaniasis remains a significant public health issue, particularly in endemic regions where access to healthcare and effective vector control measures are limited.</p>"
+}

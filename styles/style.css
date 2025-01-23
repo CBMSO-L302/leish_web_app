@@ -1,0 +1,485 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(
+    -45deg,
+    rgb(137, 58, 150),
+    rgba(0, 119, 255, 0.7),
+    rgb(137, 58, 150)
+  );
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* ================================================================== */
+/* Main content GRID SYSTEM*/
+/* ================================================================== */
+main {
+  padding: 0;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 2fr 3fr;
+  gap: 0.5rem;
+  justify-items: center;
+  flex: 1 0 auto;
+  margin-top: 70px;  /* IMPORTANT for the fixed header */
+}
+
+/* ================================================================== */
+/* Team-frontshow */
+/* ================================================================== */
+#team-frontshow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 70%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+#team-frontshow-text,
+.news-post-text,
+.leish-post-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1rem;
+  width: 50%;
+}
+
+#team-frontshow-text-header,
+#team-frontshow-button,
+.news-post-title,
+.leish-post-title,
+.map-post-title {
+  display: flex;
+}
+
+#team-frontshow-text-header {
+  justify-content: flex-start; /* Align to the left */
+}
+
+#team-frontshow-text-header h3,
+.news-post-title h3,
+.leish-post-title h3,
+.map-post-title h3 {
+  color: rgb(255, 255, 255);
+  background-color: rgb(137, 58, 150);
+  padding: 0.5rem;
+}
+
+#team-frontshow-text p ,
+.news-post-text p,
+.leish-post-text p,
+.map-post-text p {
+  text-align: justify;
+  font-size: 0.9rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+
+#team-frontshow-button {
+  justify-content: flex-end; /* Align to the right */
+  align-self: flex-end; /* Ensure button is at the right edge */
+  color: rgb(255, 255, 255);
+  background-color: rgb(154, 113, 38);
+  padding: 0.4rem;
+  border-radius: 10px;
+  font-size: 0.5rem;
+  box-shadow: none;
+  border: none;
+}
+
+#team-frontshow-button:hover {
+  background-color: rgb(191, 12, 204);
+  cursor: pointer;
+}
+
+/* ================================================================== */
+/* Team img Carousel */
+/* ================================================================== */
+
+#carousel-container {
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+}
+
+#carousel-slide {
+  display:flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-slide-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-slide-img img {
+  width: 30vw;  
+  overflow: hidden;
+  border-radius: 10%;
+}
+
+
+.carousel-button {
+  position: absolute;
+  /* top: 50%; */
+  /* transform: translateY(-50%); */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 1; 
+}
+
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+.carousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* ================================================================== */
+/* Team News */
+/* ================================================================== */
+.middle-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    rgb(137, 58, 150),
+    rgb(159, 158, 159)
+  );
+}
+
+#team-news,
+#post-carousel-container,
+#leish-frontshow,
+#leish-carousel-container,
+#map-frontshow,
+#map-carousel-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#real-news-container,
+#real-leish-container,
+#real-map-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 70%;
+}
+
+
+.news-post,
+.leish-post,
+.map-post {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  /* No padding because middle-box has the padding */
+}
+
+.news-post-img,
+.leish-post-img{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.news-post-img img,
+.leish-post-img img {
+  height: 20vw;  /* 20% of the viewport width IMPORTANT*/
+  overflow: hidden;
+  border-radius: 10%;
+  /* flex-shrink: 0; */
+  /* object-fit: cover; */
+}
+
+/* Defined above
+.news-post-title {}  */
+
+.news-post-title {
+  justify-content: flex-end;
+}
+
+.flex-carousel-button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* ================================================================== */
+/* Leish intro carousel */
+/* ================================================================== */
+/* Defined above  */
+/* #leish-frontshow, */
+/* #leish-carousel-container {} */
+/* #real-leish-container {} */
+.leish-post {
+  flex-direction: row-reverse;
+  /* some part defined above */
+}
+
+.leish-post-title {
+  justify-content: flex-start;
+}
+
+/* ================================================================== */
+/* Map intro carousel */
+/* ================================================================== */
+.map-post {
+  flex-direction: column;
+}
+
+.map-post-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map-post-img img {
+  height: 35vw;  /* 40% of the viewport width IMPORTANT*/
+  overflow: hidden;
+  border-radius: 10%;
+}
+
+.map-post-text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* ================================================================== */
+/* Twiiter feed */
+/* ================================================================== */
+#twitter-zone{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  width: 70%;
+}
+
+
+.tab {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  color: white;
+  background-color: rgb(137, 58, 150);
+  border-radius: 10%;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  border-color: transparent;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: rgb(191, 12, 204);
+  padding: 20px;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: rgb(0, 117, 255);
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  width: 70%;
+  overflow-y: auto;
+}
+
+/* Specific heights for each tab content */
+#WHO.tabcontent .twitter-timeline,
+#CBM.tabcontent .twitter-timeline,
+#CSIC.tabcontent .twitter-timeline,
+#UAM.tabcontent .twitter-timeline {
+  height: 800px !important;
+}
+
+#WHO.tabcontent,
+#CBM.tabcontent,
+#CSIC.tabcontent,
+#UAM.tabcontent {
+  width: 100%;
+  border: transparent;
+}
+/* Ensure Twitter widgets are responsive */
+.tabcontent .twitter-timeline {
+  width: 100% !important;
+}
+
+
+/* ================================================================== */
+/* Media queries */
+/* ================================================================== */
+
+/* Desktop WIDE */
+/* ================================================================== */
+@media only screen and (min-width: 1025px) {
+  #team-frontshow,
+  #real-news-container,
+  #real-leish-container,
+  #twitter-zone {
+    width: 50%;
+  }
+}
+
+/* Tablet portrait mode*/
+/* ================================================================== */
+@media only screen and (min-width: 481px) and (max-width: 775px) {
+  /* MAIN */
+  /* ---------------------------------- */
+  main {
+    grid-template-rows: 1fr 1fr 1fr 1fr 2fr;
+  }
+
+  #team-frontshow,
+  .news-post,
+  .leish-post {
+    flex-direction: column;
+  }
+
+  #team-frontshow-text,
+  .news-post-text,
+  .leish-post-text {
+    width: 100%;
+  }
+
+  #carousel-container,
+  #carousel-slide {
+    width: 100%;
+  }
+
+  .news-post-img {
+    width: 100%;
+    order: 1;
+  }
+
+  .corousel-slide-img,
+  .leish-post-img {
+    width: 100%;
+  }
+
+  .carousel-slide-img img,
+  .news-post-img img,
+  .leish-post-img img {
+    width: 90%;
+    height: auto;
+  }
+
+  .news-post-text {
+    width: 100%;
+  }
+}
+
+/* Smartphones */
+/* ================================================================== */
+@media only screen and (max-width: 480px) {
+  /* MAIN */
+  /* ---------------------------------- */
+  main {
+    grid-template-rows: 1fr 1fr 1fr 1fr 2fr;
+    margin-top: 140px;  /* IMPORTANT for the fixed header */
+  }
+
+  #team-frontshow {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  #team-frontshow-text,
+  #carousel-slide,
+  .news-post-text,
+  .leish-post-text {
+    width: 100%;
+  }
+
+  .carousel-slide-img,
+  #real-news-container,
+  #real-leish-container {
+    width: 90%;
+  }
+
+  .news-post,
+  .leish-post {
+    flex-direction: column;
+  }
+
+  .carousel-slide-img,
+  .news-post-img, 
+  .leish-post-img {
+    width: 100%;
+    order: 1;
+  }
+
+  .carousel-slide-img img,
+  .news-post-img img,
+  .leish-post-img img {
+    width: 90%;
+    height: auto;
+  }
+}
+

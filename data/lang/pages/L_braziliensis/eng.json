@@ -1,0 +1,15 @@
+{
+    "_comment": "L_braziliensis TRANSLATION",
+    "genomeDecoding": "Genome decoding",
+    "aboutUs": "About us",
+        "mission" : "Mission",
+        "team" : "Team",
+    "species": "Species",
+    "downloads": "Downloads",
+        "reports" : "Reports",
+        "datasets" : "Datasets",
+        "software" : "Software",
+    "descriptionTab" : "Description",
+    "browserTab" : "Browser",
+    "descriptionText" : "<p>Protozoan parasite that causes mucocutaneous leishmaniasis, primarily affecting humans. This parasite is transmitted through the bites of infected female phlebotomine sandflies. Mucocutaneous leishmaniasis, also known as espundia, typically starts with skin lesions that can metastasize to mucous membranes, particularly those of the nose, mouth, and throat. Symptoms in humans initially include sores at the site of the sandfly bite, which can progress to destructive lesions of the mucous membranes, leading to severe disfigurement and functional impairment if left untreated.</p>\n        <p>The life cycle of <i>L. braziliensis</i> involves two main stages: the promastigote form, found in the sandfly vector, and the amastigote form, which multiplies within the host's macrophages. In the sandfly, the parasite exists as motile promastigotes. Upon transmission to the human host, the promastigotes are phagocytosed by macrophages and transform into non-motile amastigotes. These amastigotes then multiply within the macrophages, causing cell rupture and infection of new macrophages, leading to the dissemination of the parasite.</p>\n        <p>Control and prevention of leishmaniasis caused by <i>L. braziliensis</i> involve integrated approaches, including vector control through insecticides and environmental management, early diagnosis, and appropriate treatment of infected individuals. Current treatments for mucocutaneous leishmaniasis include antimonial compounds, amphotericin B, pentamidine, and miltefosine. The management of the disease is challenging due to issues such as drug resistance, adverse effects, and the need for prolonged treatment courses. Advances in molecular biology and genomics have deepened the understanding of <i>L. braziliensis</i>'s biology and pathogenic mechanisms, paving the way for potential new therapies and vaccines. Despite these scientific advances, mucocutaneous leishmaniasis remains a significant public health issue, particularly in endemic regions with limited access to healthcare and effective vector control measures.</p>"
+}
