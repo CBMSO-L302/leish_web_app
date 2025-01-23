@@ -20,7 +20,7 @@ function changeMapIntroSlide(n) {
 }
 
 function loadMapIntro(lang) {
-    fetch(`./data/lang/index/map_intro_${lang}.json`)
+    fetch(`../data/lang/index/map_intro_${lang}.json`)
         .then(response => response.json())
         .then(data => {
             const mapIntroPostsContainer = document.getElementById('real-map-container');

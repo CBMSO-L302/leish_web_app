@@ -20,7 +20,7 @@ function changeNewsSlide(n) {
 }
 
 function loadNews(lang) {
-    fetch(`./data/lang/index/news_${lang}.json`)
+    fetch(`../data/lang/index/news_${lang}.json`)
         .then(response => response.json())
         .then(data => {
             const newsPostsContainer = document.getElementById('real-news-container');
