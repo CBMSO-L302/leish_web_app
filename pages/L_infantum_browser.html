@@ -7,58 +7,16 @@
   <link href="../styles/reset.css" rel="stylesheet" type="text/css">
   <link href="../styles/species_browser.css " rel="stylesheet" type="text/css">
   <link href="../styles/header_footer.css" rel="stylesheet" type="text/css">
-  <title>Leish-CBM</title>
+  <script src="./components/header.js" type="text/javascript" defer></script>
+  <script src="./components/footer.js" type="text/javascript" defer></script>
+  <title>Leish-ESP</title>
 </head>
 
 <body>
     <!-- ================================================================================================ -->
   <!-- Header -->
   <!-- ================================================================================================ -->
-  <header>
-    <!--Logo and title-->
-    <div class="logo">
-      <a href="../index.html"><img src="../img/logos/leish_lab_logo.png" alt="Leish-Lab Logo"></a>
-      <div>
-        <h1>Leish-CBM</h1>
-        <h4><i id="lang_genome_decoding">Genome decoding</i></h4>
-      </div>
-    </div>
-    <!--Dropdown menu-->
-    <nav>
-      <div class="dropdown">
-        <a href="#" id="lang_about_us">About Us</a>
-        <div class="dropdown-content">
-          <a href="./mission.html" id="lang_mission">Mission</a>
-          <a href="./team.html" id="lang_team">Team</a>
-        </div>
-      </div>
-      <div class="dropdown">
-        <a href="#" id="lang_species">Species</a>
-        <div class="dropdown-content">
-          <a href="#" id="lang_L_infantum"><i>L. infantum</i></a>
-          <a href="./L_major.html" id="lang_L_major"><i>L. major</i></a>
-          <a href="./L_donovani.html" id="lang_L_donovani"><i>L. donovani</i></a>
-          <a href="./L_braziliensis.html" id="lang_L_braziliensis"><i>L. braziliensis</i></a>
-        </div>
-      </div>
-      <div class="dropdown">
-        <a href="#" id="lang_downloads">Downloads</a>
-        <div class="dropdown-content">
-          <a href="#" id="lang_reports">Reports</a>
-          <a href="#" id="lang_datasets">Datasets</a>
-          <a href="#" id="lang_software">Software</a>
-        </div>
-      </div>
-    </nav>
-    <!--Language selector-->
-    <div id="language-selector" class="language-selector">
-      <label for="language-dropdown"></label><select id="language-dropdown" onchange="changeLanguage(this.value)">
-        <option value="eng" data-flag="../img/flags/english.png">ENG</option>
-        <option value="esp" data-flag="../img/flags/spanish.png">ESP</option>
-      </select>
-      <img id="selected-flag" src="../img/flags/english.png" alt="Selected Language">
-    </div>
-  </header>
+  <header-component></header-component>
   <!-- ================================================================================================ -->
   <!-- Main section -->
   <!-- ================================================================================================ -->
@@ -116,39 +74,7 @@
   <!-- ================================================================================================ -->
   <!-- Footer -->
   <!-- ================================================================================================ -->
-  <footer>
-    <div id="phone-mail">
-      <span>
-        <img src="../img/icons/phone-call.png" alt="Phone" class="icon">(+00) 000 000 000
-      </span>
-
-      <span>
-        <img src="../img/icons/email.png" alt="Mail" class="icon">
-        <a href="mailto:example@example.com">example@example.com</a>
-      </span>
-    </div>
-
-    <span id="map">
-      <img src="../img/icons/map.png" alt="Location" class="icon">
-      <a href="https://maps.app.goo.gl/Jsv6mqWxq4KYtYbq8" target="_blank">Nicolás Cabrera, 1, Fuencarral-El
-        Pardo, 28049 Madrid</a>
-    </span>
-
-    <div id="social-media">
-      <a href="https://x.com/WHO" target="_blank"><img src="../img/icons/twitter.png" alt="Twitter"></a>
-      <a href="https://www.youtube.com/@who" target="_blank"><img src="../img/icons/youtube.png" alt="YouTube"></a>
-      <a href="https://www.instagram.com/who" target="_blank"><img src="../img/icons/instagram.png"
-          alt="Instagram"></a>
-      <a href="https://www.linkedin.com/company/world-health-organization" target="_blank"><img
-          src="../img/icons/linkedin.png" alt="LinkedIn"></a>
-    </div>
-
-    <div id="government-logos">
-      <img src="../img/logos/1-CSIC-Logotipo--Web-Gob-Min-CSIC--COLOR--PNG-RGB-300ppp.png"
-        alt="Spanish Government, Science Minisry and CSIC logos">
-      <img src="../img/logos/Combo-CBMExcelencia.png " alt="CBM and Excellency logos">
-    </div>
-  </footer>
+  <footer-component></footer-component>
   <!-- ================================================================================================ -->
   <!-- JavaScript -->
   <!-- ================================================================================================ -->

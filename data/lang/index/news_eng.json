@@ -3,24 +3,24 @@
     "title": "Leishmania Test 1",
     "description": "Evaluation of Leishmania major in vitro growth",
     "date": "2024-08-01",
-    "img": "./img/posts/2024_08_01-Leishmania_Test_1.webp"
+    "img": "../img/posts/2024_08_01-Leishmania_Test_1.webp"
   },
   {
     "title": "Leishmania Test 2",
     "description": "Analysis of Leishmania donovani resistance mechanisms",
     "date": "2024-07-15",
-    "img": "./img/posts/2024_07_15-Leishmania_Test_2.webp"
+    "img": "../img/posts/2024_07_15-Leishmania_Test_2.webp"
   },
   {
     "title": "Leishmania Test 3",
     "description": "Genetic diversity study of Leishmania infantum",
     "date": "2024-06-30",
-    "img": "./img/posts/2024_06_30-Leishmania_Test_3.webp"
+    "img": "../img/posts/2024_06_30-Leishmania_Test_3.webp"
   },
   {
     "title": "Leishmania Test 4",
     "description": "Using top of the line technology to study Leishmania infantum genetic diversity",
     "date": "2024-08-05",
-    "img": "./img/posts/2024_08_05-Leishmania_Test_4.webp"
+    "img": "../img/posts/2024_08_05-Leishmania_Test_4.webp"
   }
 ]

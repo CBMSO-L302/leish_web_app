@@ -20,7 +20,7 @@ function changeLeishIntroSlide(n) {
 }
 
 function loadLeishIntro(lang) {
-    fetch(`./data/lang/index/leish_intro_${lang}.json`)
+    fetch(`../data/lang/index/leish_intro_${lang}.json`)
         .then(response => response.json())
         .then(data => {
             const leishIntroPostsContainer = document.getElementById('real-leish-container');

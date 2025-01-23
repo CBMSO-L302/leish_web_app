@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to load language
     const loadLanguage = (lang) => {
-        fetch(`./data/lang/index/${lang}.json`)
+        fetch(`../data/lang/index/${lang}.json`)
             .then(response => response.json())
             .then(data => {
                 // Header content

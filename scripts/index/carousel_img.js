@@ -29,7 +29,7 @@ function changeTeamIntroSlide(n) {
 
 function loadTeamIntro() {
   console.log('Fetching JSON data...');
-  fetch('./img/lab_team/carousel/team_carousel.json')
+  fetch('../img/lab_team/carousel/team_carousel.json')
     .then(response => {
       console.log('Response received:', response);
       return response.json();

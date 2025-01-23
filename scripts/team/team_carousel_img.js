@@ -48,7 +48,7 @@ function loadTeamIntro() {
             if (index !== 0) imgDiv.style.display = 'none'; // Hide all slides except the first one
 
             const img = document.createElement('img');
-            img.src = `.${post.img}`;  // The dot is needed to construct the relative path to the image file.
+            img.src = `${post.img}`;  // The dot is needed to construct the relative path to the image file.
             img.alt = post.title;
             imgDiv.appendChild(img);
 
