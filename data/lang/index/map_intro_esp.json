@@ -1,0 +1,12 @@
+[
+  {
+    "title" : "Mapa de Leishmaniasis Visceral",
+    "description" : "También conocida como kala-azar, es fatal si no se trata en más del 95% de los casos. Se caracteriza por episodios irregulares de fiebre, pérdida de peso, agrandamiento del bazo y el hígado, y anemia. La mayoría de los casos ocurren en Brasil, África oriental e India. Se estima que entre 50 000 y 90 000 nuevos casos de LV ocurren en todo el mundo anualmente, de los cuales solo el 25-45% son reportados a la OMS. Tiene potencial de brote y mortalidad.",
+    "img" : "./img/maps/leishmaniasis_vl_2022.png"
+  },
+  {
+    "title" : "Mapa de Leishmaniasis Cutánea",
+    "description" : "Es la forma más común y causa lesiones en la piel, principalmente úlceras, en partes expuestas del cuerpo. Estas pueden dejar cicatrices de por vida y causar discapacidades graves o estigma. Alrededor del 95% de los casos de LC ocurren en las Américas, la cuenca del Mediterráneo, el Medio Oriente y Asia Central. Se estima que entre 600 000 y 1 millón de nuevos casos ocurren en todo el mundo anualmente, pero solo alrededor de 200 000 son reportados a la OMS.",
+    "img" : "./img/maps/leishmaniasis_cl_2022.png"
+  }
+]

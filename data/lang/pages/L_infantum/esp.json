@@ -1,0 +1,15 @@
+{
+    "_comment": "L_infantum TRANSLATION",
+    "genomeDecoding": "Decodificación genómica",
+    "aboutUs": "Nosotros",
+        "mission" : "Misión",
+        "team" : "Equipo",
+    "species": "Especies",
+    "downloads": "Descargas",
+        "reports" : "Informes",
+        "datasets" : "Datos",
+        "software" : "Programas",
+    "descriptionTab" : "Descripción",
+    "browserTab" : "Buscador",
+    "descriptionText" : "<p>Parásito protozoario responsable de la enfermedad leishmaniasis, que afecta principalmente a humanos y animales. Este parásito se transmite a través de las picaduras de flebótomos hembras infectadas. La enfermedad se manifiesta en diversas formas, siendo la más grave la leishmaniasis visceral, también conocida como kala-azar, que puede ser fatal si no se trata. En humanos, la infección por <i>L. infantum</i> conduce a síntomas como fiebre, pérdida de peso, hepatomegalia y esplenomegalia (agrandamiento del hígado y el bazo), anemia y una disminución significativa en el recuento de glóbulos blancos. El parásito afecta predominantemente a órganos internos, incluidos el hígado, el bazo y la médula ósea. En perros, que son los principales reservorios, la infección puede resultar en lesiones cutáneas, linfadenopatía y enfermedad sistémica general, lo que contribuye a la propagación de la enfermedad a humanos.</p><p><i>L. infantum</i> tiene un ciclo de vida complejo que involucra dos etapas principales: la forma promastigote que se encuentra en el vector flebótomo y la forma amastigote que se multiplica dentro de los macrófagos del huésped. El control y la prevención de la leishmaniasis causada por <i>L. infantum</i> implican enfoques integrados, que incluyen el control de vectores, el diagnóstico temprano y el tratamiento de los individuos infectados, así como la gestión de los reservorios. Los tratamientos actuales para la leishmaniasis visceral incluyen compuestos antimoniales, anfotericina B y miltefosina, aunque la resistencia a los medicamentos y los efectos adversos plantean desafíos significativos. Los avances en biología molecular y genómica han facilitado una comprensión más profunda de la biología y los mecanismos patogénicos del parásito, allanando el camino para posibles nuevas terapias y vacunas. Sin embargo, la leishmaniasis sigue siendo una preocupación importante de salud pública, particularmente en regiones donde el control de vectores y el acceso a la atención médica son limitados.</p>"
+}

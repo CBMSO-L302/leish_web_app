@@ -1,0 +1,15 @@
+{
+    "_comment": "L_braziliensis TRANSLATION",
+    "genomeDecoding": "Decodificación genómica",
+    "aboutUs": "Nosotros",
+        "mission" : "Misión",
+        "team" : "Equipo",
+    "species": "Especies",
+    "downloads": "Descargas",
+        "reports" : "Informes",
+        "datasets" : "Datos",
+        "software" : "Programas",
+    "descriptionTab" : "Descripción",
+    "browserTab" : "Buscador",
+    "descriptionText": "<p>Parásito protozoario que causa leishmaniasis mucocutánea, que afecta principalmente a los humanos. Este parásito se transmite a través de las picaduras de flebótomos hembra infectados. La leishmaniasis mucocutánea, también conocida como espundia, generalmente comienza con lesiones en la piel que pueden metastatizar a las membranas mucosas, particularmente las de la nariz, la boca y la garganta. Los síntomas en los humanos inicialmente incluyen llagas en el sitio de la picadura del flebótomo, que pueden progresar a lesiones destructivas de las membranas mucosas, lo que lleva a una desfiguración severa y deterioro funcional si no se trata.</p>\n        <p>El ciclo de vida de <i>L. braziliensis</i> involucra dos etapas principales: la forma de promastigote, que se encuentra en el vector flebótomo, y la forma de amastigote, que se multiplica dentro de los macrófagos del huésped. En el flebótomo, el parásito existe como promastigotes móviles. Al ser transmitido al huésped humano, los promastigotes son fagocitados por los macrófagos y se transforman en amastigotes no móviles. Estos amastigotes luego se multiplican dentro de los macrófagos, causando ruptura celular y la infección de nuevos macrófagos, lo que conduce a la diseminación del parásito.</p>\n        <p>El control y la prevención de la leishmaniasis causada por <i>L. braziliensis</i> implican enfoques integrados, que incluyen el control de vectores a través de insecticidas y la gestión ambiental, el diagnóstico temprano y el tratamiento adecuado de las personas infectadas. Los tratamientos actuales para la leishmaniasis mucocutánea incluyen compuestos antimoniales, anfotericina B, pentamidina y miltefosina. El manejo de la enfermedad es un desafío debido a problemas como la resistencia a los medicamentos, los efectos adversos y la necesidad de tratamientos prolongados. Los avances en biología molecular y genómica han profundizado la comprensión de la biología y los mecanismos patogénicos de <i>L. braziliensis</i>, allanando el camino para nuevas terapias y vacunas potenciales. A pesar de estos avances científicos, la leishmaniasis mucocutánea sigue siendo un problema de salud pública significativo, particularmente en regiones endémicas con acceso limitado a la atención médica y medidas efectivas de control de vectores.</p>"
+}

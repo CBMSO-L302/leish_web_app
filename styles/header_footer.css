@@ -1,0 +1,297 @@
+/* ================================================================== */
+/* Header */
+/* ================================================================== */
+header, footer {
+  background-color: rgb(137, 58, 150);
+  color: rgb(255, 255, 255);
+  padding: 0.5rem;
+  text-align: center;
+}
+
+header {
+  height: 70px; /* IMPORTANT for the fixed header */
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed; /* IMPORTANT for the fixed header */
+  z-index: 5; /* IMPORTANT for the fixed header */
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.logo {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo img {
+  width: 3rem;
+  height: auto;
+}
+
+.logo div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.logo h4 {
+  font-weight: lighter;
+}
+
+/* ================================================================== */
+/* Navigation */
+/* ================================================================== */
+nav {
+  display: flex;
+  background-color: transparent;
+  align-items: center;
+  gap: 2rem;
+}
+
+nav a {
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+}
+
+nav .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+nav .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: unset; /* Remove the fixed min-width */
+  white-space: nowrap; /* Prevent text from wrapping */
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+nav .dropdown-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 0.85rem;
+  color: rgb(255, 255, 255);
+}
+
+nav .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+nav .dropdown:hover a {
+  background-color: rgb(191, 12, 204);
+}
+
+nav .dropdown-content a:hover {
+  background-color: rgb(0, 117, 255);
+  color: rgb(255, 255, 255);
+}
+
+/* ================================================================== */
+/* Language switcher */
+/* ================================================================== */
+.language-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.language-selector select {
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+  direction: rtl;
+}
+
+.language-selector select option {
+  color: rgb(255, 255, 255);
+  background-color: rgb(137, 58, 150);
+  font-weight: bolder;
+}
+
+
+.language-selector img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: block;
+}
+
+/* ================================================================== */
+/* Footer */
+/* ================================================================== */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  width: 100%;
+  background: linear-gradient(
+          180deg,
+          rgb(137, 58, 150),
+          rgb(159, 158, 159)
+  );
+}
+
+footer a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+#phone-mail,
+#social-media,
+#government-logos,
+#map {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#phone-mail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#phone-mail span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+footer span img {
+  width: 1.25rem;
+  height: auto;
+}
+
+#map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#social-media {
+  justify-content: center;
+}
+
+#social-media a img {
+  width: 1.5rem;
+  height: auto;
+  margin: 0.5rem;
+}
+
+#government-logos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#government-logos img {
+  height: 3.5rem;
+  width: auto;
+  margin: 0.5rem 0;
+  flex-shrink: 1;
+}
+
+/* ================================================================== */
+/* Media queries */
+/* ================================================================== */
+
+/* Desktop WIDE */
+/* ================================================================== */
+/*@media only screen and (min-width: 1025px) {*/
+/*  !* Empty rule for the moment *!*/
+/*}*/
+
+/* Tablet portrait mode */
+/* ================================================================== */
+@media only screen and (min-width: 481px) and (max-width: 775px) {
+  /* HEADER */
+  /* ---------------------------------- */
+  .logo div {
+    display: none;
+  }
+
+  nav {
+    gap: 0.5rem;
+  }
+
+  .language-selector {
+    flex-direction: column;
+  }
+
+  .language-selector select {
+    order: 1;
+  }
+}
+
+/* Smartphones */
+/* ================================================================== */
+@media only screen and (max-width: 480px) {
+  /* HEADER */
+  /* ---------------------------------- */
+  header {
+    height: 140px; /* IMPORTANT for the fixed header */
+  }
+
+  .logo div {
+    display: none;
+  }
+
+  .logo img {
+    width: 4rem;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  nav .dropdown-content {
+    left: 100%;
+    top: 0;
+  }
+
+  .language-selector {
+    flex-direction: column;
+  }
+
+  .language-selector select {
+    order: 1;
+  }
+
+  /* FOOTER */
+  /* ---------------------------------- */
+  #phone-mail {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  #map {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  #government-logos {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+  

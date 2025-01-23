@@ -1,0 +1,15 @@
+{
+    "_comment": "L_donovani TRANSLATION",
+    "genomeDecoding": "Genome decoding",
+    "aboutUs": "About us",
+        "mission" : "Mission",
+        "team" : "Team",
+    "species": "Species",
+    "downloads": "Downloads",
+        "reports" : "Reports",
+        "datasets" : "Datasets",
+        "software" : "Software",
+    "descriptionTab" : "Description",
+    "browserTab" : "Browser",
+    "descriptionText" : "<p>Protozoan parasite that is the primary causative agent of visceral leishmaniasis, also known as kala-azar. This severe form of leishmaniasis affects internal organs, particularly the liver, spleen, and bone marrow, and can be fatal if left untreated. The parasite is transmitted to humans and other mammals through the bites of infected female phlebotomine sandflies. In humans, <i>L. donovani</i> infection manifests with symptoms such as prolonged fever, significant weight loss, hepatosplenomegaly (enlarged liver and spleen), anemia, and a marked reduction in white blood cell counts.</p>\n        <p>The life cycle of <i>L. donovani</i> involves two main stages: the promastigote form, which resides in the sandfly vector, and the amastigote form, which multiplies within the host's macrophages. In the sandfly, <i>L. donovani</i> exists as motile promastigotes. Upon transmission to the human host, the promastigotes are phagocytosed by macrophages and transform into non-motile amastigotes. These amastigotes proliferate within the macrophages, causing cell rupture and dissemination to other macrophages, leading to widespread infection of the reticuloendothelial system.</p>\n        <p>Control and prevention of visceral leishmaniasis caused by <i>L. donovani</i> require a multi-faceted approach, including sandfly vector control, early diagnosis, prompt treatment of infected individuals, and management of reservoir hosts. Current treatments for visceral leishmaniasis include antimonial compounds, amphotericin B, miltefosine, and paromomycin. However, challenges such as drug resistance, toxicity, and the need for prolonged treatment regimens complicate effective management. Advances in molecular biology and genomics have greatly enhanced the understanding of <i>L. donovani</i>'s biology and pathogenic mechanisms, facilitating the development of new therapeutic strategies and potential vaccines. Despite these advances, visceral leishmaniasis remains a major public health concern, particularly in resource-limited regions where access to healthcare and effective vector control measures are inadequate.</p>"
+}

@@ -1,0 +1,15 @@
+{
+    "_comment": "L_major TRANSLATION",
+    "genomeDecoding": "Decodificación genómica",
+    "aboutUs": "Nosotros",
+        "mission" : "Misión",
+        "team" : "Equipo",
+    "species": "Especies",
+    "downloads": "Descargas",
+        "reports" : "Informes",
+        "datasets" : "Datos",
+        "software" : "Programas",
+    "descriptionTab" : "Descripción",
+    "browserTab" : "Buscador",
+    "descriptionText" : "<p>Parásito protozoario que causa leishmaniasis cutánea, afectando principalmente a humanos y algunos animales. El parásito se transmite a los huéspedes a través de las picaduras de flebótomos hembra infectados. La leishmaniasis cutánea, la forma más común de la enfermedad, típicamente resulta en lesiones cutáneas que pueden llevar a cicatrices significativas y discapacidad. Los síntomas en humanos incluyen el desarrollo de una o más llagas en el sitio de la picadura del flebótomo, que pueden progresar a úlceras con un borde elevado. Estas llagas a menudo se curan espontáneamente durante meses o años, pero pueden dejar cicatrices desfigurantes y pueden ser propensas a infecciones secundarias.</p><p>El ciclo de vida de <i>L. major</i> involucra dos etapas principales: la forma de promastigote, que se encuentra en el vector del flebótomo, y la forma de amastigote, que se multiplica dentro de los macrófagos del huésped. En el flebótomo, el parásito existe como promastigotes móviles. Una vez transmitido al huésped humano, los promastigotes son fagocitados por macrófagos y se transforman en amastigotes no móviles. Estos amastigotes luego se multiplican dentro de los macrófagos, llevando a la ruptura celular y la propagación adicional de la infección a nuevos macrófagos.</p><p>El control y la prevención de la leishmaniasis causada por <i>L. major</i> implican enfoques integrados, incluyendo el control del vector flebótomo mediante el uso de insecticidas y la gestión ambiental, diagnóstico temprano y tratamiento de individuos infectados. Los tratamientos actuales para la leishmaniasis cutánea incluyen terapias tópicas y sistémicas como compuestos antimoniales, miltefosina y anfotericina B. Sin embargo, la efectividad de los tratamientos puede variar, y problemas como la resistencia a los medicamentos y los efectos adversos siguen planteando desafíos significativos. Los avances en biología molecular y genómica han mejorado la comprensión de la biología y los mecanismos patogénicos de <i>L. major</i>, ofreciendo esperanza para nuevos enfoques terapéuticos y posibles vacunas. A pesar de estos avances, la leishmaniasis cutánea sigue siendo un importante problema de salud pública, particularmente en regiones endémicas donde el acceso a la atención médica y las medidas eficaces de control de vectores son limitadas.</p>"
+}

@@ -1,0 +1,62 @@
+[
+    {
+        "type": "genomic",
+        "format": "fasta",
+        "version": "v1",
+        "year": "2021",
+        "path_file": "../data/downloads/major/files/LmjFc_cbm_v1.fasta",
+        "url": "<a href='https://www.mdpi.com/2073-4425/12/9/1359' target='_blank'>Camacho <em>et al.</em> 2021 (CBMSO)</a>",
+        "raw_data": "<a href='https://www.ebi.ac.uk/ena/data/view/PRJEB25921'>PRJEB25921</a>",
+        "description": "L.major genome assembly. <span style='color:red'>NEW version (05/09/2021)</span>."
+    },
+    {
+        "type": "genomic",
+        "format": "gff",
+        "version": "v1",
+        "year": "2021",
+        "path_file": "../data/downloads/major/files/LmjFc_cbm_v1_CDS.gff",
+        "url": "<a href='https://www.mdpi.com/2073-4425/12/9/1359' target='_blank'>Camacho <em>et al.</em> 2021 (CBMSO)</a>",
+        "raw_data": "<a href='https://www.ebi.ac.uk/ena/data/view/PRJEB25921'>PRJEB25921</a>",
+        "description": "L.major CDS annotation. <span style='color:red'>NEW version (05/09/2021)</span>."
+    },
+    {
+        "type": "transcriptomic",
+        "format": "gtf",
+        "version": "v1",
+        "year": "2021",
+        "path_file": "../data/downloads/major/files/LmjFc_cbm_v1_MT.gtf",
+        "url": "<a href='https://www.mdpi.com/2073-4425/12/9/1359' target='_blank'>Camacho <em>et al.</em> 2021 (CBMSO)</a>",
+        "raw_data": "<a href='https://www.ebi.ac.uk/ena/data/view/PRJEB25921'>PRJEB25921</a>",
+        "description": "Complete transcriptome of L.major. <span style='color:red'>NEW version (05/09/2021)</span>."
+    },
+    {
+        "type": "mitochondrial",
+        "format": "fasta",
+        "version": "-",
+        "year": "-",
+        "path_file": "../data/downloads/major/files/LmjF_cbm_maxicircle.fasta",
+        "url": "<a href='https://www.mdpi.com/2073-4425/10/10/758/htm' target='_blank'>Camacho <em>et al.</em>, 2019</a>",
+        "raw_data": "<a href='https://www.ebi.ac.uk/ena/data/view/PRJEB33887'>LR697138</a>",
+        "description": "L.major maxicircle sequence."
+    },
+    {
+        "type": "mitochondrial",
+        "format": "gff",
+        "version": "-",
+        "year": "-",
+        "path_file": "../data/downloads/major/files/LmjF_cbm_maxicircle.gff",
+        "url": "<a href='https://www.mdpi.com/2073-4425/10/10/758/htm' target='_blank'>Camacho <em>et al.</em>, 2019</a>",
+        "raw_data": "<a href='https://www.ebi.ac.uk/ena/data/view/PRJEB33887'>LR697138</a>",
+        "description": "L.major maxicircle annotation."
+    },
+    {
+        "type": "mitochondrial",
+        "format": "fasta",
+        "version": "-",
+        "year": "-",
+        "path_file": "../data/downloads/major/files/LmjF_cbm_circular_minicircles.fasta",
+        "url": "<a href='https://www.mdpi.com/2073-4425/10/10/758/htm' target='_blank'>Camacho <em>et al.</em>, 2019</a>",
+        "raw_data": "<a href='https://www.ebi.ac.uk/ena/data/view/PRJEB33887'>PRJEB33887</a>",
+        "description": "97 L.major minicircle sequences."
+    }
+]

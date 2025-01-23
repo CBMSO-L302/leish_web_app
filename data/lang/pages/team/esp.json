@@ -1,0 +1,16 @@
+{
+    "_comment": "team TRADUCCIÓN",
+    "genomeDecoding": "Decodificación genómica",
+    "aboutUs": "Nosotros",
+        "mission" : "Misión",
+        "team" : "Equipo",
+        "publications": "Publicaciones",
+    "species": "Especies",
+    "downloads": "Descargas",
+        "reports" : "Informes",
+        "datasets" : "Datos",
+        "software" : "Programas",
+    "teamText": "<p>Ubicado en el CBM (Centro de Biología Molecular Severo Ochoa - CSIC), nuestro equipo se centra en la genética molecular de los parásitos Leishmania, los agentes causantes de la leishmaniasis. Usando tecnología de última generación tanto in vitro como in silico, estudiamos la expresión génica y la plasticidad genómica en estos parásitos.</p>",
+    "members" : "Miembros",
+    "formerMembers" : "Antiguos Miembros"
+}

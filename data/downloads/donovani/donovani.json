@@ -1,0 +1,32 @@
+[
+    {
+        "type": "genomic",
+        "format": "fasta",
+        "version": "-",
+        "year": "2019",
+        "path_file": "../data/downloads/donovani/files/LdHU3_cbm_v1.fasta",
+        "url": "<a href='https://www.nature.com/articles/s41598-019-42511-4' target='_blank'>Camacho <em>et al.</em> 2019 (CBMSO)</a>",
+        "raw_data": "<a href='https://www.ebi.ac.uk/ena/data/view/PRJEB23341'>PRJEB23341</a>",
+        "description": "Updated L.donovani genome sequence."
+    },
+    {
+        "type": "genomic",
+        "format": "gff",
+        "version": "-",
+        "year": "2019",
+        "path_file": "../data/downloads/donovani/files/LdHU3_cbm_v1_CDS.gff",
+        "url": "<a href='https://www.nature.com/articles/' target='_blank'>Camacho <em>et al.</em> 2019 (CBMSO)</a>",
+        "raw_data": "<a href='https://www.ebi.ac.uk/ena/data/view/PRJEB23341'>PRJEB23341</a>",
+        "description": "L.donovani CDS annotation."
+    },
+    {
+        "type": "transcriptomic",
+        "format": "gtf",
+        "version": "-",
+        "year": "2019",
+        "path_file": "../data/downloads/donovani/files/LdHU3_cbm_v1_MT_.gtf",
+        "url": "<a href='https://www.nature.com/articles/' target='_blank'>Camacho <em>et al.</em> 2019 (CBMSO)</a>",
+        "raw_data": "<a href='https://www.ebi.ac.uk/ena/data/view/PRJEB23341'>PRJEB23341</a>",
+        "description": "This transcriptome was built from Illumina RNA-seq reads derived from L. donovani (HU3) promastigote mRNAs."
+    }
+]

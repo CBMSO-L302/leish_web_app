@@ -1,0 +1,12 @@
+[
+  {
+    "title" : "Visceral Leishmaniasis map",
+    "description" : "Also known as kala-azar, is fatal if left untreated in over 95% of cases. It is characterized by irregular bouts of fever, weight loss, enlargement of the spleen and liver, and anaemia. Most cases occur in Brazil, east Africa and India. An estimated 50 000 to 90 000 new cases of VL occur worldwide annually, with only 25–45% reported to WHO. It has outbreak and mortality potential.",
+    "img" : "./img/maps/leishmaniasis_vl_2022.png"
+  },
+  {
+    "title" : "Cutaenous Leishmaniasis map",
+    "description" : "Is the most common form and causes skin lesions, mainly ulcers, on exposed parts of the body. These can leave life-long scars and cause serious disability or stigma. About 95% of CL cases occur in the Americas, the Mediterranean basin, the Middle East and central Asia. It is estimated that 600 000 to 1 million new cases occur worldwide annually but only around 200 000 are reported to WHO.",
+    "img" : "./img/maps/leishmaniasis_cl_2022.png"
+  }
+]
