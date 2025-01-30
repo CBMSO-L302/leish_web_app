@@ -70,41 +70,6 @@
 <!-- Script section -->
 <!-- ================================================================================================ -->
 <script src="../scripts/pages/translate_L_infantum.js"></script>  <!-- Translation script-->
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    fetch('../data/downloads/infantum/infantum.json')
-      .then(response => response.json())
-      .then(data => {
-        const tableContainer = document.getElementById('downloads-table');
-        const table = document.createElement('table');
-        table.innerHTML = `
-          <thead>
-            <tr>
-              <th>File</th>
-              <th>Reference Genome</th>
-              <th>Version/Year</th>
-              <th>Downloads</th>
-              <th>Raw Data</th>
-              <th>Notes</th>
-            </tr>
-          </thead>
-          <tbody>
-          ${data.map(item => `
-            <tr>
-              <td><strong>${item.type.toUpperCase()} (${item.format.toUpperCase()} file)</strong></td>
-              <td>${item.url}</td>
-              <td>${item.version}/${item.year}</td>
-              <td><a href="${item.path_file}" class="download-button">DOWNLOAD</a></td>
-              <td>${item.raw_data}</td>
-              <td>${item.description}</td>
-            </tr>`).join('')}
-          </tbody>
-        `;
-
-        tableContainer.appendChild(table);
-      })
-      .catch(error => console.error('Error fetching the JSON data:', error));
-  });
-</script>
+<script src="../scripts/pages/populateDownloadsTable.js" type="text/javascript" defer></script>
 </body>
 </html>
