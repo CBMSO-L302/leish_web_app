@@ -8,8 +8,14 @@ const PORT = process.env.PORT || 3000;
 // Middleware to parse JSON request bodies
 app.use(express.json());
 
-// Serve static files from the current directory
-app.use(express.static(path.join(__dirname, '.')));
+// Static files from specific folders
+app.use('/scripts', express.static(path.join(__dirname, 'scripts')));
+app.use('/styles', express.static(path.join(__dirname, 'styles')));
+app.use('/img', express.static(path.join(__dirname, 'img')));
+app.use('/data', express.static(path.join(__dirname, 'data')));
+
+// HTML files in the "pages" folder
+app.use('/', express.static(path.join(__dirname, 'pages')));
 
 // Open the SQLite database from the correct path
 const db = new sqlite3.Database(path.join(__dirname, 'data/sql/leishmania.db'), (err) => {
@@ -19,7 +25,7 @@ const db = new sqlite3.Database(path.join(__dirname, 'data/sql/leishmania.db'), 
       console.log('Connected to the SQLite database.');
     }
   });
-  
+
 app.get('/search', (req, res) => {
     const query = req.query.q || '';
     const page = parseInt(req.query.page) || 1;
@@ -51,11 +57,6 @@ app.get('/search', (req, res) => {
             res.json(rows);
         }
     });
-});
-
-// Serve the main index.html file
-app.get('/', (req, res) => {
-res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Start the server
