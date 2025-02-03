@@ -26,10 +26,10 @@ class Header extends HTMLElement {
         <div class="dropdown">
           <a href="#" id="lang_species">Species</a>
           <div class="dropdown-content">
-            <a href="./infantum.html" id="lang_L_infantum"><i>L. infantum</i></a>
-            <a href="./major.html" id="lang_L_major"><i>L. major</i></a>
-            <a href="./donovani.html" id="lang_L_donovani"><i>L. donovani</i></a>
-            <a href="./braziliensis.html" id="lang_L_braziliensis"><i>L. braziliensis</i></a>
+            <a href="./infantum.html"><i>L. infantum</i></a>
+            <a href="./major.html"><i>L. major</i></a>
+            <a href="./donovani.html"><i>L. donovani</i></a>
+            <a href="./braziliensis.html"><i>L. braziliensis</i></a>
           </div>
         </div>
         <div class="dropdown">
