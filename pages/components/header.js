@@ -1,3 +1,5 @@
+// noinspection HtmlUnknownTarget, JSUnusedGlobalSymbols
+
 class Header extends HTMLElement {
   constructor() {
     super();
