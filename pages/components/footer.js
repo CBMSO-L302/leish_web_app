@@ -3,6 +3,7 @@ class Footer extends HTMLElement {
     super();
   }
 
+  <!-- connectedCallback() method is automatically called when the browser DOM loads -->
   connectedCallback() {
     this.innerHTML = `
       <footer>
