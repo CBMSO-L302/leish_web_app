@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to load language
     const loadLanguage = (lang) => {
-        fetch(`../data/lang/pages/L_infantum/${lang}.json`)
+        fetch(`../data/lang/pages/donovani/${lang}.json`)
             .then(response => response.json())
             .then(data => {
                 // Header content
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('lang_species_desc_text').innerHTML = data.descriptionText;  // InnerHTML to render HTML tags
             })
             .catch(error => console.error('Error loading language:', error));
-        
+
         // Change flag
         selectedFlag.src = languageDropdown.querySelector(`option[value="${lang}"]`).dataset.flag;
     };
