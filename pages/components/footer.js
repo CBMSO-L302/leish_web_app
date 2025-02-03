@@ -1,3 +1,6 @@
+// noinspection HtmlUnknownTarget, JSUnusedGlobalSymbols
+
+
 class Footer extends HTMLElement {
   constructor() {
     super();
