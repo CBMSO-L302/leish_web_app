@@ -1,14 +1,17 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../styles/reset.css" rel="stylesheet" type="text/css">
-    <link href="../styles/header_footer.css" rel="stylesheet" type="text/css">
-    <link href="../styles/style.css" rel="stylesheet" type="text/css">
-    <script src="components/header.js" type="text/javascript" defer></script>
-    <script src="components/footer.js" type="text/javascript" defer></script>
-    <title>Leish-ESP</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {#    <link href="../styles/reset.css" rel="stylesheet" type="text/css">#}
+  <link href="{% static "reset.css" %}" rel="stylesheet" type="text/css">
+{#  <link href="../styles/header_footer.css" rel="stylesheet" type="text/css">#}
+{#  <link href="../styles/style.css" rel="stylesheet" type="text/css">#}
+{#  <script src="components/header.js" type="text/javascript" defer></script>#}
+{#  <script src="components/footer.js" type="text/javascript" defer></script>#}
+  <title>Leish-ESP</title>
 </head>
 
 <body>
@@ -103,12 +106,12 @@
   <!-- ================================================================================================ -->
   <!-- Script section -->
   <!-- ================================================================================================ -->
-  <script src="../scripts/index/carousel_img.js"></script> <!-- Carousel in team-frontshow-->
-  <script src="../scripts/index/translate.js"></script>  <!-- Translation script-->
-  <script src="../scripts/index/news_carousel.js"></script> <!-- Carousel in team-news-->
-  <script src="../scripts/index/leish_intro_carousel.js"></script> <!-- Carousel in leish-frontshow-->
-  <script src="../scripts/index/map_intro_carousel.js"></script> <!-- Carousel in map-frontshow-->
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> <!-- Twitter feed script-->
-  <script src="../scripts/index/twitter_intro_feed.js"></script> <!-- Twitter feed script-->
+{#  <script src="../scripts/index/carousel_img.js"></script> <!-- Carousel in team-frontshow-->#}
+{#  <script src="../scripts/index/translate.js"></script>  <!-- Translation script-->#}
+{#  <script src="../scripts/index/news_carousel.js"></script> <!-- Carousel in team-news-->#}
+{#  <script src="../scripts/index/leish_intro_carousel.js"></script> <!-- Carousel in leish-frontshow-->#}
+{#  <script src="../scripts/index/map_intro_carousel.js"></script> <!-- Carousel in map-frontshow-->#}
+{#  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> <!-- Twitter feed script-->#}
+{#  <script src="../scripts/index/twitter_intro_feed.js"></script> <!-- Twitter feed script-->#}
 </body>
 </html>
