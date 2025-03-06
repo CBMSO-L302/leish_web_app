@@ -18,10 +18,8 @@ Including another URLconf
 from django.contrib import admin
 from django.shortcuts import redirect
 from django.urls import path, include
-from core import views
-
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", lambda request: redirect("home/")),
-    path("home/", views.index, name="home")  # Route the root ("/") to the index view in core app
+    path("home/", include("core.urls"))  # Route the root ("/") to the index view in core app
 ]
