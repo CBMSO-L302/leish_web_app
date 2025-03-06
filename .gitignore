@@ -1,3 +1,4 @@
-node_modules/
-.idea/
-.ipynb_checkpoints/
+node_modules
+.idea
+*.idea/*
+.ipynb_checkpoints
