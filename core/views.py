@@ -1,4 +1,4 @@
 from django.views.generic import TemplateView
 
 class HomePageView(TemplateView):
-    template_name = "core/index.html"
+    template_name = "core/home.html"
