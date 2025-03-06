@@ -1,117 +1,83 @@
+{% extends "header_footer.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {#    <link href="../styles/reset.css" rel="stylesheet" type="text/css">#}
-  <link href="{% static "reset.css" %}" rel="stylesheet" type="text/css">
-{#  <link href="../styles/header_footer.css" rel="stylesheet" type="text/css">#}
-{#  <link href="../styles/style.css" rel="stylesheet" type="text/css">#}
-{#  <script src="components/header.js" type="text/javascript" defer></script>#}
-{#  <script src="components/footer.js" type="text/javascript" defer></script>#}
-  <title>Leish-ESP</title>
-</head>
+{% block title %}Leish-ESP{% endblock %}
 
-<body>
-  <!-- ================================================================================================ -->
-  <!-- Header -->
-  <header-component></header-component>
-  <!-- ================================================================================================ -->
-  <!-- Main section -->
-  <!-- ================================================================================================ -->
-  <main>
-    <!--Team frontshow -->
-    <section id="team-frontshow">
-      <div id="team-frontshow-text">
-        <div id="team-frontshow-text-header"><h3>The Team</h3></div>
-        <p>Based on CBM (Centro de Biología Molecular Severo Ochoa - CSIC),  our team focuses on the molecular genetics of Leishmania parasites, the causative agents of leishmaniasis. Using state-of-the-art technology both in vitro and in silico, we study the gene expression and genomic plasticity in these parasites.</p>
-        <button id="team-frontshow-button" onclick="window.location.href='team.html'">Learn more</button>
+{% block main_content %}
+  <!--Team frontshow -->
+  <section id="team-frontshow">
+    <div id="team-frontshow-text">
+      <div id="team-frontshow-text-header"><h3>The Team</h3></div>
+      <p>Based on CBM (Centro de Biología Molecular Severo Ochoa - CSIC), our team focuses on the molecular genetics of
+        Leishmania parasites, the causative agents of leishmaniasis. Using state-of-the-art technology both in vitro and
+        in silico, we study the gene expression and genomic plasticity in these parasites.</p>
+      <button id="team-frontshow-button" onclick="window.location.href='team.html'">Learn more</button>
+    </div>
+    <div id="carousel-container">
+      <div id="carousel-slide"></div>
+    </div>
+  </section>
+  <!-- Team news-->
+  <section class="middle-box" id="team-news-container">  <!-- This class is only for the aesthetics-->
+    <div id="team-news">
+      <div id="post-carousel-container">
+        <!-- Arrow buttons for news carousel -->
+        <button class="flex-carousel-button prev" onclick="changeNewsSlide(-1)">&#10094;</button>
+        <div id="real-news-container"></div>
+        <button class="flex-carousel-button next" onclick="changeNewsSlide(1)">&#10095;</button>
       </div>
-      <div id="carousel-container">
-        <div id="carousel-slide"></div>
-      </div>
-    </section>
-    <!-- Team news-->
-    <section class="middle-box" id="team-news-container">  <!-- This class is only for the aesthetics-->
-      <div id="team-news">
-        <div id="post-carousel-container">
-          <!-- Arrow buttons for news carousel -->
-          <button class="flex-carousel-button prev" onclick="changeNewsSlide(-1)">&#10094;</button>
-          <div id="real-news-container"></div>
-          <button class="flex-carousel-button next" onclick="changeNewsSlide(1)">&#10095;</button>
-        </div>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Leishmania frontshow sections-->
-    <section id="leishmania-frontshow">
-      <div id="leish-frontshow">
-        <div id="leish-carousel-container">
-          <button class="flex-carousel-button prev" onclick="changeLeishIntroSlide(-1)">&#10094;</button>
-          <div id="real-leish-container"></div>
-          <button class="flex-carousel-button next" onclick="changeLeishIntroSlide(1)">&#10095;</button>
-        </div>
+  <!-- Leishmania frontshow sections-->
+  <section id="leishmania-frontshow">
+    <div id="leish-frontshow">
+      <div id="leish-carousel-container">
+        <button class="flex-carousel-button prev" onclick="changeLeishIntroSlide(-1)">&#10094;</button>
+        <div id="real-leish-container"></div>
+        <button class="flex-carousel-button next" onclick="changeLeishIntroSlide(1)">&#10095;</button>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Leishmaniasis map section-->
-    <section class="middle-box" id="leishmaniasis-map">
-      <div id="map-frontshow">
-        <div id="map-carousel-container">
-          <button class="flex-carousel-button prev" onclick="changeMapIntroSlide(-1)">&#10094;</button>
-          <div id="real-map-container"></div>
-          <button class="flex-carousel-button next" onclick="changeMapIntroSlide(1)">&#10095;</button>
-        </div>
+  <!-- Leishmaniasis map section-->
+  <section class="middle-box" id="leishmaniasis-map">
+    <div id="map-frontshow">
+      <div id="map-carousel-container">
+        <button class="flex-carousel-button prev" onclick="changeMapIntroSlide(-1)">&#10094;</button>
+        <div id="real-map-container"></div>
+        <button class="flex-carousel-button next" onclick="changeMapIntroSlide(1)">&#10095;</button>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Twitter section-->
-    <!-- <section id="twitter-zone">
-      <div id="twitter-widget-container">
-        <a class="twitter-timeline" data-height="600" href="https://twitter.com/who?ref_src=twsrc%5Etfw">Tweets by WHO</a>
-    </div> -->
-    <section id="twitter-zone">
-      <div class="tab">
-        <button class="tablinks" data-tab="WHO"><h4>WHO</h4></button>
-        <button class="tablinks" data-tab="CBM"><h4>CBM</h4></button>
-        <button class="tablinks" data-tab="CSIC"><h4>CSIC</h4></button>
-        <button class="tablinks" data-tab="UAM"><h4>UAM</h4></button>
-      </div>
+  <!-- Twitter section-->
+  <!-- <section id="twitter-zone">
+    <div id="twitter-widget-container">
+      <a class="twitter-timeline" data-height="600" href="https://twitter.com/who?ref_src=twsrc%5Etfw">Tweets by WHO</a>
+  </div> -->
+  <section id="twitter-zone">
+    <div class="tab">
+      <button class="tablinks" data-tab="WHO"><h4>WHO</h4></button>
+      <button class="tablinks" data-tab="CBM"><h4>CBM</h4></button>
+      <button class="tablinks" data-tab="CSIC"><h4>CSIC</h4></button>
+      <button class="tablinks" data-tab="UAM"><h4>UAM</h4></button>
+    </div>
 
-      <div id="WHO" class="tabcontent">
-        <a class="twitter-timeline" href="https://twitter.com/WHO">WHO Tweets</a>
-      </div>
+    <div id="WHO" class="tabcontent">
+      <a class="twitter-timeline" href="https://twitter.com/WHO">WHO Tweets</a>
+    </div>
 
-      <div id="CBM" class="tabcontent">
-        <a class="twitter-timeline" href="https://twitter.com/CBM_CSIC_UAM">CBM Tweets</a>
-      </div>
+    <div id="CBM" class="tabcontent">
+      <a class="twitter-timeline" href="https://twitter.com/CBM_CSIC_UAM">CBM Tweets</a>
+    </div>
 
-      <div id="CSIC" class="tabcontent">
-        <a class="twitter-timeline" href="https://twitter.com/CSIC">CSIC Tweets</a>
-      </div>
+    <div id="CSIC" class="tabcontent">
+      <a class="twitter-timeline" href="https://twitter.com/CSIC">CSIC Tweets</a>
+    </div>
 
-      <div id="UAM" class="tabcontent">
-        <a class="twitter-timeline" href="https://twitter.com/UAM_Madrid">UAM Tweets</a>
-      </div>
-
-    </section>
-
-  </main>
-  <!-- ================================================================================================ -->
-  <!-- Footer -->
-  <!-- ================================================================================================ -->
-  <footer-component></footer-component>
-  <!-- ================================================================================================ -->
-  <!-- Script section -->
-  <!-- ================================================================================================ -->
-{#  <script src="../scripts/index/carousel_img.js"></script> <!-- Carousel in team-frontshow-->#}
-{#  <script src="../scripts/index/translate.js"></script>  <!-- Translation script-->#}
-{#  <script src="../scripts/index/news_carousel.js"></script> <!-- Carousel in team-news-->#}
-{#  <script src="../scripts/index/leish_intro_carousel.js"></script> <!-- Carousel in leish-frontshow-->#}
-{#  <script src="../scripts/index/map_intro_carousel.js"></script> <!-- Carousel in map-frontshow-->#}
-{#  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> <!-- Twitter feed script-->#}
-{#  <script src="../scripts/index/twitter_intro_feed.js"></script> <!-- Twitter feed script-->#}
-</body>
-</html>
+    <div id="UAM" class="tabcontent">
+      <a class="twitter-timeline" href="https://twitter.com/UAM_Madrid">UAM Tweets</a>
+    </div>
+  </section>
+{% endblock %}
