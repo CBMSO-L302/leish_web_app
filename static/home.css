@@ -1,215 +1,376 @@
-/* ================================================================== */
-/* Header */
-/* ================================================================== */
-header, footer {
-  background-color: rgb(137, 58, 150);
-  color: rgb(255, 255, 255);
-  padding: 0.5rem;
-  text-align: center;
+html {
+  font-size: 16px;
 }
 
-header {
-  height: 70px; /* IMPORTANT for the fixed header */
-  width: 100%;
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(
+    -45deg,
+    rgb(137, 58, 150),
+    rgba(0, 119, 255, 0.7),
+    rgb(137, 58, 150)
+  );
+  background-size: 100% 100%;
   display: flex;
-  flex-direction: row;
-  gap: 10px;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed; /* IMPORTANT for the fixed header */
-  z-index: 5; /* IMPORTANT for the fixed header */
-  border-bottom: 1px solid rgb(255, 255, 255);
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
 }
 
-.logo {
-  width: 30%;
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  align-items: center;
+/* ================================================================== */
+/* Main content GRID SYSTEM*/
+/* ================================================================== */
+main {
+  padding: 0;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 2fr 3fr;
   gap: 0.5rem;
+  justify-items: center;
+  flex: 1 0 auto;
+  margin-top: 70px;  /* IMPORTANT for the fixed header */
 }
 
-.logo img {
-  width: 3rem;
-  height: auto;
+/* ================================================================== */
+/* Team-frontshow */
+/* ================================================================== */
+#team-frontshow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 70%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
-.logo div {
+#team-frontshow-text,
+.news-post-text,
+.leish-post-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch;
+  gap: 1rem;
+  width: 50%;
 }
 
-.logo h4 {
-  font-weight: lighter;
-}
-
-/* ================================================================== */
-/* Navigation */
-/* ================================================================== */
-nav {
+#team-frontshow-text-header,
+#team-frontshow-button,
+.news-post-title,
+.leish-post-title,
+.map-post-title {
   display: flex;
-  background-color: transparent;
-  align-items: center;
-  gap: 2rem;
 }
 
-nav a {
-  color: white;
-  padding: 14px 20px;
-  text-decoration: none;
-  text-align: center;
-  white-space: nowrap;
+#team-frontshow-text-header {
+  justify-content: flex-start; /* Align to the left */
 }
 
-nav .dropdown {
+#team-frontshow-text-header h3,
+.news-post-title h3,
+.leish-post-title h3,
+.map-post-title h3 {
+  color: rgb(255, 255, 255);
+  background-color: rgb(137, 58, 150);
+  padding: 0.5rem;
+}
+
+#team-frontshow-text p ,
+.news-post-text p,
+.leish-post-text p,
+.map-post-text p {
+  text-align: justify;
+  font-size: 0.9rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+
+#team-frontshow-button {
+  justify-content: flex-end; /* Align to the right */
+  align-self: flex-end; /* Ensure button is at the right edge */
+  color: rgb(255, 255, 255);
+  background-color: rgb(154, 113, 38);
+  padding: 0.4rem;
+  border-radius: 10px;
+  font-size: 0.5rem;
+  box-shadow: none;
+  border: none;
+}
+
+#team-frontshow-button:hover {
+  background-color: rgb(191, 12, 204);
+  cursor: pointer;
+}
+
+/* ================================================================== */
+/* Team img Carousel */
+/* ================================================================== */
+
+#carousel-container {
   position: relative;
-  display: inline-block;
+  margin: auto;
+  overflow: hidden;
 }
 
-nav .dropdown-content {
-  display: none;
+#carousel-slide {
+  display:flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-slide-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-slide-img img {
+  width: 30vw;
+  overflow: hidden;
+  border-radius: 10%;
+}
+
+
+.carousel-button {
   position: absolute;
-  background-color: #f9f9f9;
-  min-width: unset; /* Remove the fixed min-width */
-  white-space: nowrap; /* Prevent text from wrapping */
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  /* top: 50%; */
+  /* transform: translateY(-50%); */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
   z-index: 1;
 }
 
-nav .dropdown-content a {
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-  font-size: 0.85rem;
-  color: rgb(255, 255, 255);
+
+.carousel-button.prev {
+  left: 10px;
 }
 
-nav .dropdown:hover .dropdown-content {
-  display: block;
+.carousel-button.next {
+  right: 10px;
 }
 
-nav .dropdown:hover a {
-  background-color: rgb(191, 12, 204);
+.carousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-nav .dropdown-content a:hover {
-  background-color: rgb(0, 117, 255);
-  color: rgb(255, 255, 255);
-}
 
 /* ================================================================== */
-/* Language switcher */
+/* Team News */
 /* ================================================================== */
-.language-selector {
+.middle-box {
   display: flex;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
-  gap: 5px;
-}
-
-.language-selector select {
-  background-color: transparent;
-  color: rgb(255, 255, 255);
-  font-weight: bolder;
-  direction: rtl;
-}
-
-.language-selector select option {
-  color: rgb(255, 255, 255);
-  background-color: rgb(137, 58, 150);
-  font-weight: bolder;
-}
-
-
-.language-selector img {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  display: block;
-}
-
-/* ================================================================== */
-/* Footer */
-/* ================================================================== */
-footer {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 1em;
   width: 100%;
   background: linear-gradient(
-          180deg,
-          rgb(137, 58, 150),
-          rgb(159, 158, 159)
+    180deg,
+    rgb(137, 58, 150),
+    rgb(159, 158, 159)
   );
 }
 
-footer a {
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-}
-
-#phone-mail,
-#social-media,
-#government-logos,
-#map {
+#team-news,
+#post-carousel-container,
+#leish-frontshow,
+#leish-carousel-container,
+#map-frontshow,
+#map-carousel-container {
   width: 100%;
   display: flex;
-  align-items: center;
-}
-
-#phone-mail {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-
-#phone-mail span {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-footer span img {
-  width: 1.25rem;
-  height: auto;
-}
-
-#map {
-  display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
 }
 
-#social-media {
-  justify-content: center;
-}
-
-#social-media a img {
-  width: 1.5rem;
-  height: auto;
-  margin: 0.5rem;
-}
-
-#government-logos {
+#real-news-container,
+#real-leish-container,
+#real-map-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 0.5rem;
+  width: 70%;
 }
 
-#government-logos img {
-  height: 3.5rem;
-  width: auto;
-  margin: 0.5rem 0;
-  flex-shrink: 1;
+
+.news-post,
+.leish-post,
+.map-post {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  /* No padding because middle-box has the padding */
 }
+
+.news-post-img,
+.leish-post-img{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.news-post-img img,
+.leish-post-img img {
+  height: 20vw;  /* 20% of the viewport width IMPORTANT*/
+  overflow: hidden;
+  border-radius: 10%;
+  /* flex-shrink: 0; */
+  /* object-fit: cover; */
+}
+
+/* Defined above
+.news-post-title {}  */
+
+.news-post-title {
+  justify-content: flex-end;
+}
+
+.flex-carousel-button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* ================================================================== */
+/* Leish intro carousel */
+/* ================================================================== */
+/* Defined above  */
+/* #leish-frontshow, */
+/* #leish-carousel-container {} */
+/* #real-leish-container {} */
+.leish-post {
+  flex-direction: row-reverse;
+  /* some part defined above */
+}
+
+.leish-post-title {
+  justify-content: flex-start;
+}
+
+/* ================================================================== */
+/* Map intro carousel */
+/* ================================================================== */
+.map-post {
+  flex-direction: column;
+}
+
+.map-post-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map-post-img img {
+  height: 35vw;  /* 40% of the viewport width IMPORTANT*/
+  overflow: hidden;
+  border-radius: 10%;
+}
+
+.map-post-text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* ================================================================== */
+/* Twiiter feed */
+/* ================================================================== */
+#twitter-zone{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  width: 70%;
+}
+
+
+.tab {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  color: white;
+  background-color: rgb(137, 58, 150);
+  border-radius: 10%;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  border-color: transparent;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: rgb(191, 12, 204);
+  padding: 20px;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: rgb(0, 117, 255);
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  width: 70%;
+  overflow-y: auto;
+}
+
+/* Specific heights for each tab content */
+#WHO.tabcontent .twitter-timeline,
+#CBM.tabcontent .twitter-timeline,
+#CSIC.tabcontent .twitter-timeline,
+#UAM.tabcontent .twitter-timeline {
+  height: 800px !important;
+}
+
+#WHO.tabcontent,
+#CBM.tabcontent,
+#CSIC.tabcontent,
+#UAM.tabcontent {
+  width: 100%;
+  border: transparent;
+}
+/* Ensure Twitter widgets are responsive */
+.tabcontent .twitter-timeline {
+  width: 100% !important;
+}
+
 
 /* ================================================================== */
 /* Media queries */
@@ -217,80 +378,107 @@ footer span img {
 
 /* Desktop WIDE */
 /* ================================================================== */
-/*@media only screen and (min-width: 1025px) {*/
-/*  !* Empty rule for the moment *!*/
-/*}*/
+@media only screen and (min-width: 1025px) {
+  #team-frontshow,
+  #real-news-container,
+  #real-leish-container,
+  #twitter-zone {
+    width: 50%;
+  }
+}
 
-/* Tablet portrait mode */
+/* Tablet portrait mode*/
 /* ================================================================== */
 @media only screen and (min-width: 481px) and (max-width: 775px) {
-  /* HEADER */
+  /* MAIN */
   /* ---------------------------------- */
-  .logo div {
-    display: none;
+  main {
+    grid-template-rows: 1fr 1fr 1fr 1fr 2fr;
   }
 
-  nav {
-    gap: 0.5rem;
-  }
-
-  .language-selector {
+  #team-frontshow,
+  .news-post,
+  .leish-post {
     flex-direction: column;
   }
 
-  .language-selector select {
+  #team-frontshow-text,
+  .news-post-text,
+  .leish-post-text {
+    width: 100%;
+  }
+
+  #carousel-container,
+  #carousel-slide {
+    width: 100%;
+  }
+
+  .news-post-img {
+    width: 100%;
     order: 1;
+  }
+
+  .corousel-slide-img,
+  .leish-post-img {
+    width: 100%;
+  }
+
+  .carousel-slide-img img,
+  .news-post-img img,
+  .leish-post-img img {
+    width: 90%;
+    height: auto;
+  }
+
+  .news-post-text {
+    width: 100%;
   }
 }
 
 /* Smartphones */
 /* ================================================================== */
 @media only screen and (max-width: 480px) {
-  /* HEADER */
+  /* MAIN */
   /* ---------------------------------- */
-  header {
-    height: 140px; /* IMPORTANT for the fixed header */
+  main {
+    grid-template-rows: 1fr 1fr 1fr 1fr 2fr;
+    margin-top: 140px;  /* IMPORTANT for the fixed header */
   }
 
-  .logo div {
-    display: none;
+  #team-frontshow {
+    flex-direction: column;
+    width: 90%;
   }
 
-  .logo img {
-    width: 4rem;
+  #team-frontshow-text,
+  #carousel-slide,
+  .news-post-text,
+  .leish-post-text {
+    width: 100%;
   }
 
-  nav {
+  .carousel-slide-img,
+  #real-news-container,
+  #real-leish-container {
+    width: 90%;
+  }
+
+  .news-post,
+  .leish-post {
     flex-direction: column;
   }
 
-  nav .dropdown-content {
-    left: 100%;
-    top: 0;
-  }
-
-  .language-selector {
-    flex-direction: column;
-  }
-
-  .language-selector select {
+  .carousel-slide-img,
+  .news-post-img,
+  .leish-post-img {
+    width: 100%;
     order: 1;
   }
 
-  /* FOOTER */
-  /* ---------------------------------- */
-  #phone-mail {
-    flex-direction: column;
-    gap: 0.5em;
-  }
-
-  #map {
-    flex-direction: column;
-    gap: 0.5em;
-  }
-
-  #government-logos {
-    flex-direction: column;
-    gap: 0;
+  .carousel-slide-img img,
+  .news-post-img img,
+  .leish-post-img img {
+    width: 90%;
+    height: auto;
   }
 }
