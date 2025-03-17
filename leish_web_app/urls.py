@@ -21,5 +21,5 @@ from django.urls import path, include
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", lambda request: redirect("home/")),
-    path("home/", include("core.urls"))  # Route the root ("/") to the index view in core app
+    path("home/", include("home.urls"))  # Route the root ("/") to the index view in home app
 ]
