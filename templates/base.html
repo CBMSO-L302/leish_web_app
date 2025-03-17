@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="{% static "reset.css" %}" rel="stylesheet" type="text/css">
   <link href="{% static "header_footer.css" %}" rel="stylesheet" type="text/css">
-  <link href="{% static "home.css" %}" rel="stylesheet" type="text/css"> <!-- TODO: may be a 'block' part -->
+  {% block css_files %}{% endblock %}
   <title>{% block page_title %}{% endblock %}</title>
 </head>
 
