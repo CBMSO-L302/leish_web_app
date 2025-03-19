@@ -1,0 +1,27 @@
+[
+    {
+      "title": "Prueba de Leishmania 1",
+      "description": "Evaluación del crecimiento in vitro de Leishmania major",
+      "date": "2024-08-01",
+      "img": "/static/home/images/news/2024_08_01-Leishmania_Test_1.webp"
+    },
+    {
+      "title": "Prueba de Leishmania 2",
+      "description": "Análisis de los mecanismos de resistencia de Leishmania donovani",
+      "date": "2024-07-15",
+      "img": "/static/home/images/news/2024_07_15-Leishmania_Test_2.webp"
+    },
+    {
+      "title": "Prueba de Leishmania 3",
+      "description": "Estudio de la diversidad genética de Leishmania infantum",
+      "date": "2024-06-30",
+      "img": "/static/home/images/news/2024_06_30-Leishmania_Test_3.webp"
+    },
+    {
+      "title": "Prueba de Leishmania 4",
+      "description": "Uso de tecnología de punta para estudiar la diversidad genética de Leishmania infantum",
+      "date": "2024-08-05",
+      "img": "/static/home/images/news/2024_08_05-Leishmania_Test_4.webp"
+    }
+  ]
+  
