@@ -21,10 +21,13 @@ function changeNewsSlide(n) {
     showNewsSlide(currentNewsIndex + n);
 }
 
-function loadNews() {
+function loadNews(lang) {
     console.log('Fetching NEWS JSON data...');
-    fetch('/static/home/json/news_eng.json')
-        .then(response => response.json())
+    fetch(`/static/home/json/news_${lang}.json`)
+        .then(response => {
+            console.log('Response received:', response);
+            return response.json();
+        })
         .then(data => {
             const newsPostsContainer = document.getElementById('real-news-container');
             newsPostsContainer.innerHTML = ''; // Clear existing news
@@ -89,8 +92,10 @@ function loadNews() {
 
 document.addEventListener('DOMContentLoaded', () => {
     // console.log('DOM fully loaded and parsed');
-    changeNewsSlide();
+    // changeNewsSlide();
     // console.log('changeNewsSlide function added to window');
-    loadNews();
+    // loadNews();
     // console.log('loadNews function added to window');
+    window.changeNewsSlide = changeNewsSlide;
+    window.loadNews = loadNews;
 });

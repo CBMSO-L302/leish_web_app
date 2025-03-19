@@ -21,8 +21,8 @@ function changeLeishIntroSlide(n) {
     showLeishIntroSlide(leishIntroIndex + n);
 }
 
-function loadLeishIntro() {
-    fetch('/static/home/json/leish_intro_eng.json')
+function loadLeishIntro(lang) {
+    fetch(`/static/home/json/leish_intro_${lang}.json`)
         .then(response => response.json())
         .then(data => {
             const leishIntroPostsContainer = document.getElementById('real-leish-container');
@@ -87,6 +87,8 @@ function loadLeishIntro() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    changeLeishIntroSlide();
-    loadLeishIntro();
+    window.changeLeishIntroSlide = changeLeishIntroSlide;
+    window.loadLeishIntro = loadLeishIntro;
+    // changeLeishIntroSlide();
+    // loadLeishIntro();
 });
