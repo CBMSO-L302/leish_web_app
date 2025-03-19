@@ -53,7 +53,7 @@
     <!--Language selector-->
     <div id="language-selector" class="language-selector">
       <label for="language-dropdown"></label><select id="language-dropdown" onchange="changeLanguage(this.value)">
-      <option value="eng" data-flag="">ENG</option>
+      <option value="eng" data-flag="{% static 'images/flags/english.png' %}">ENG</option>
       <option value="esp" data-flag="{% static 'images/flags/spanish.png' %}">ESP</option>
     </select>
       <img id="selected-flag" src="{% static 'images/flags/english.png' %}" alt="Selected Language">
