@@ -30,7 +30,7 @@ function changeTeamIntroSlide(n) {
 }
 
 function loadTeamIntro() {
-  console.log('Fetching JSON data...');
+  console.log('Fetching team images JSON data...');
   fetch('/static/home/json/team_carousel.json')
     .then(response => {
       console.log('Response received:', response);
@@ -87,6 +87,6 @@ function loadTeamIntro() {
 
 // Initialize the carousel
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM fully loaded and parsed');
+    // console.log('DOM fully loaded and parsed');
     loadTeamIntro();
 });
