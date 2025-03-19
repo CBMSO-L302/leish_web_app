@@ -32,12 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('team-frontshow-button').textContent = data.theTeam_learnMore;
 
                 // Load news content
-                // loadNews(lang);
+                loadNews(lang);
                 // Load leish intro content
-                // loadLeishIntro(lang);
-
+                loadLeishIntro(lang);
                 // Load map intro content
-                // loadMapIntro(lang);
+                loadMapIntro(lang);
             })
             .catch(error => console.error('Error loading language:', error));
 

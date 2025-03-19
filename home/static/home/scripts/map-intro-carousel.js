@@ -21,8 +21,8 @@ function changeMapIntroSlide(n) {
     showMapIntroSlide(mapIntroIndex + n);
 }
 
-function loadMapIntro() {
-    fetch('/static/home/json/map_intro_eng.json')
+function loadMapIntro(lang) {
+    fetch(`/static/home/json/map_intro_${lang}.json`)
         .then(response => response.json())
         .then(data => {
             const mapIntroPostsContainer = document.getElementById('real-map-container');
@@ -87,6 +87,8 @@ function loadMapIntro() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    changeMapIntroSlide();
-    loadMapIntro();
+    window.changeMapIntroSlide = changeMapIntroSlide;
+    window.loadMapIntro = loadMapIntro;
+    // changeMapIntroSlide();
+    // loadMapIntro();
 });
