@@ -1,0 +1,242 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(
+          -45deg,
+          rgb(137, 58, 150),
+          rgba(0, 119, 255, 0.7),
+          rgb(137, 58, 150)
+  );
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* ================================================================== */
+/* Main content GRID SYSTEM*/
+/* ================================================================== */
+
+main {
+  padding: 0;
+  margin-top: 70px;  /* IMPORTANT for the fixed header */
+  display: grid;
+  grid-template-rows: 3rem 450px 1fr;
+  gap: 0.5rem;
+  justify-items: center;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+
+/* ================================================================== */
+/* Description | Genome view */
+/* ================================================================== */
+#desc-genome-selector {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  border-bottom: 5px solid rgb(191, 12, 204);
+}
+
+#desc-genome-selector a {
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  padding: 4px 4px;
+  transition: 0.3s;
+  text-decoration: none;
+  width: 50%;
+  text-align: center;
+}
+
+#selector-1 {
+  background-color: rgb(137, 58, 150);
+  border-top: 10px solid rgb(137, 58, 150);
+  border-left: 10px solid rgb(137, 58, 150);
+  border-right: 10px solid rgb(137, 58, 150);
+  border-bottom: 10px solid rgb(191, 12, 204);
+}
+
+#selector-2 {
+  background-color: rgb(88, 41, 95);
+  border: 10px solid rgb(88, 41, 95);
+}
+
+#desc-genome-selector a:hover {
+  background-color: rgb(191, 12, 204);
+  border: 10px solid rgb(191, 12, 204);
+}
+
+/* ==================================================================*/
+/* Img title element */
+/* ==================================================================*/
+
+.img-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 90%;
+  height: 100%;
+}
+
+.img-title img {
+  border-radius: 5%;
+  overflow: hidden;
+  object-fit: cover;
+  width: 50%;
+  max-height: 100%;  /* Ensuring the image does not exceed its container's height */
+}
+
+.img-title article {
+  width: 50%;
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.text-header {
+  display: flex;
+}
+
+.text-header h1 {
+  color: rgb(255, 255, 255);
+  background-color: rgb(137, 58, 150);
+  padding: 0.5rem;
+}
+
+.img-title h1 {
+  font-size: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.img-title p {
+  font-size: 15px;
+  line-height: 1.5;
+  padding: 20px;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+
+/* ==================================================================*/
+/* Table structure */
+/* ==================================================================*/
+
+#downloads-table {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#downloads-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px auto;
+  font-size: 14px;
+  text-align: left;
+}
+
+#downloads-table th, #downloads-table td {
+  padding: 12px 15px;
+  border: 1px solid rgb(225, 225, 225);
+  vertical-align: middle;
+}
+
+#downloads-table th {
+  background-color: rgb(137, 58, 150);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-align: center;
+}
+
+#downloads-table tr:nth-child(even) {
+  background-color: rgb(0, 119, 255);
+  color: rgb(225, 225, 225);
+}
+
+#downloads-table tr:nth-child(odd) {
+  background-color: rgb(41, 106, 181);
+  color: rgb(225, 225, 225);
+}
+#downloads-table tr:hover {
+  background-color: rgb(137, 58, 150);
+}
+
+#downloads-table a {
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+#downloads-table a:hover {
+  text-decoration: underline;
+}
+
+.download-button {
+  display: inline-block;
+  padding: 6px 10px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(191, 12, 204);
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.download-button:hover {
+  background-color: rgb(0, 119, 255);
+}
+
+/* ================================================================== */
+/* Media queries */
+/* ================================================================== */
+
+/* Desktop WIDE */
+/* ================================================================== */
+@media only screen and (min-width: 1025px) {
+  /* Empty rule for the moment */
+}
+
+@media only screen and (max-width: 1024px) {
+  #downloads-table {
+    /* Ensure table is scrollable on smaller screens */
+    overflow-x: auto;
+    display: block;
+  }
+}
+/* Tablet portrait mode */
+/* ================================================================== */
+@media only screen and (max-width: 775px) {
+  .img-title {
+    flex-direction: column;
+  }
+
+  .img-title img {
+    display: none;  /* Remove img in smaller displays */
+  }
+
+  .img-title article {
+    width: 100%;
+  }
+}
+
+/* Smartphones */
+/* ================================================================== */
+@media only screen and (max-width: 480px) {
+  main {
+    margin-top: 140px;
+  }
+}
