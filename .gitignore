@@ -1,5 +1,4 @@
 node_modules
-.idea
-*.idea/*
 .ipynb_checkpoints
 staticfiles
+/.idea/
