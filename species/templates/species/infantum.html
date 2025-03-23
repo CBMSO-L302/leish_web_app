@@ -4,13 +4,13 @@
 {% block title %}L. infantum{% endblock %}
 
 {% block css_files %}
- <link rel="stylesheet" href="{% static 'species/species.css' %}">
+ <link rel="stylesheet" href="{% static 'species/styles/species.css' %}">
 {% endblock %}
 
 {% block main_content %}
   <section id="desc-genome-selector">
-    <a href="#" id="selector-1"><span id="lang_species_desc">Description</span></a>
-    <a href="infantum_browser.html" id="selector-2"><span id="lang_species_brow">Browser</span></a>
+    <a href="{% url 'species_infantum' %}" id="selector-1"><span id="lang_species_desc">Description</span></a>
+    <a href="{% url 'species_infantum_browser' %}" id="selector-2"><span id="lang_species_brow">Browser</span></a>
   </section>
 
   <section class="img-title">
