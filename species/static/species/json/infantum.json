@@ -1,0 +1,72 @@
+[
+    {
+        "type": "genomic",
+        "format": "fasta",
+        "version": "v1",
+        "year": "2017",
+        "path_file": "/static/species/downloads/infantum/LinJ_cbm_v1.fasta",
+        "url": "<a href='https://www.nature.com/articles/s41598-017-18374-y' target='_blank'> González-de la Fuente <em>et al. </em>2017 (CBMSO)</a>",
+        "raw_data": "<a href='https://www.ebi.ac.uk/ena/data/view/PRJEB20254'>PRJEB20254</a>",
+        "description": "Updated L.infantum JPCM5 genome sequence."
+    },
+    {
+        "type": "genomic",
+        "format": "gff",
+        "version": "v1",
+        "year": "2017",
+        "path_file": "/static/species/downloads/infantum//LinJ_cbm_v1_CDS.gff",
+        "url": "<a href='https://www.nature.com/articles/s41598-017-18374-y' target='_blank'> González-de la Fuente <em>et al.</em> 2017 (CBMSO)</a>",
+        "raw_data": "<a href='https://www.ebi.ac.uk/ena/data/view/PRJEB20254'>PRJEB20254</a>",
+        "description": "L.infantum CDS annotation. The CDS tag LINF in the nomenclature corresponds to the old tag LinJ."
+    },
+    {
+        "type": "genomic",
+        "format": "fasta",
+        "version": "v2",
+        "year": "2018",
+        "path_file": "/static/species/downloads/infantum/LinJ_cbm_v2.fasta",
+        "url": "<a href='https://www.nature.com/articles/s41598-017-18374-y' target='_blank'> González-de la Fuente <em>et al. </em>2017 (CBMSO)</a>",
+        "raw_data": "<a href='https://www.ebi.ac.uk/ena/data/view/PRJEB20254'>PRJEB20254</a>",
+        "description": "Updated of L.infantum JPCM5 genome sequence. <span style='color:red'>NEW version (13/07/2018)</span>."
+    },
+    {
+        "type": "genomic",
+        "format": "gff",
+        "version": "v2",
+        "year": "2018",
+        "path_file": "/static/species/downloads/infantum//LinJ_cbm_v2_CDS.gff",
+        "url": "<a href='https://www.nature.com/articles/s41598-017-18374-y' target='_blank'> González-de la Fuente <em>et al.</em> 2017 (CBMSO)",
+        "raw_data": "<a href='https://www.ebi.ac.uk/ena/data/view/PRJEB20254'>PRJEB20254</a>",
+        "description": "L.infantum CDS annotation. The CDS tag LINF in the nomenclature corresponds to the old tag LinJ. <span style='color:red'>NEW version (27/07/2018)</span>."
+    },
+    {
+        "type": "mitochondrial",
+        "format": "fasta",
+        "version": "-",
+        "year": "-",
+        "path_file": "/static/species/downloads/infantum/files/",
+        "url": "<a href='https://www.mdpi.com/2073-4425/10/10/758/htm' target='_blank'> (Camacho <em>et al.</em>, 2019)</a>",
+        "raw_data": "<a href='https://www.ebi.ac.uk/ena/data/view/PRJEB33887'>LR697137</a>",
+        "description": "L. infantum maxicircle sequence."
+    },
+    {
+        "type": "mitochondrial",
+        "format": "gff",
+        "version": "-",
+        "year": "-",
+        "path_file": "/static/species/downloads/infantum/files/",
+        "url": "<a href='https://www.mdpi.com/2073-4425/10/10/758/htm' target='_blank'> (Camacho <em>et al.</em>, 2019)</a>",
+        "raw_data": "<a href='https://www.ebi.ac.uk/ena/data/view/PRJEB33887'>LR697137</a>",
+        "description": "L.infantum maxicircle annotation."
+    },
+    {
+        "type": "mitochondrial",
+        "format": "fasta",
+        "version": "-",
+        "year": "-",
+        "path_file": "/static/species/downloads/infantum/files/LinJ_cbm_circular_minicircles.fasta",
+        "url": "<a href='https://www.mdpi.com/2073-4425/10/10/758/htm' target='_blank'> (Camacho <em>et al.</em>, 2019)</a>",
+        "raw_data": "<a href='https://www.ebi.ac.uk/ena/data/view/PRJEB33887'>PRJEB33887</a>",
+        "description": "L.infantum minicircle sequences."
+    }
+]
