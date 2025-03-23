@@ -1,14 +1,15 @@
 from django.urls import path
-from .views import (
-    SpeciesInfantumView,
-    SpeciesMajorView,
-    SpeciesDonovaniView,
-    SpeciesBraziliensisView
-)
+from . import views
+
 
 urlpatterns = [
-    path("infantum", SpeciesInfantumView.as_view(), name="species_infantum"),
-    path("major", SpeciesMajorView.as_view(), name="species_major"),
-    path("donovani", SpeciesDonovaniView.as_view(), name="species_donovani"),
-    path("braziliensis", SpeciesBraziliensisView.as_view(), name="species_braziliensis"),
+    # General pages
+    path("infantum", views.SpeciesInfantumView.as_view(), name="species_infantum"),
+    path("major", views.SpeciesMajorView.as_view(), name="species_major"),
+    path("donovani", views.SpeciesDonovaniView.as_view(), name="species_donovani"),
+    path("braziliensis", views.SpeciesBraziliensisView.as_view(), name="species_braziliensis"),
+
+    # Browser pages
+    path("infantum/browser", views.infantum_browser, name="species_infantum_browser"),
 ]
+

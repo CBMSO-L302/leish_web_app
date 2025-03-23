@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}L. infantum table{% endblock %}
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static 'species/styles/species_browser.css' %}">
+{% endblock %}
+
+{% block main_content %}
+  <section id="desc-genome-selector">
+    <a href="{% url 'species_infantum' %}" id="selector-1"><span id="lang_species_desc">Description</span></a>
+    <a href="{% url 'species_infantum_browser' %}" id="selector-2"><span id="lang_species_brow">Browser</span></a>
+  </section>
+
+  <section id="browser-section">
+    <form method="GET" action="{% url 'species_infantum_browser' %}">
+      <input type="text" name="q" value="{{ query }}" placeholder="Search for genes, names, or orthologs...">
+      <button type="submit">Search</button>
+    </form>
+{#    <div id="search bar">#}
+{#      <label for="search-input"></label><input type="text" id="search-input"#}
+{#                                               placeholder="Search for genes, names, or orthologs...">#}
+{#      <button id="search-button">Search</button>#}
+{#    </div>#}
+
+    <div class="pagination-controls">
+      <button class="prev-page">Previous</button>
+      <button class="next-page">Next</button>
+    </div>
+
+    <!-- Top Scrollbar -->
+    <div id="top-scroll-container">
+      <div id="top-scroll"></div>
+    </div>
+
+    <div id="results-container">
+      <table id="results-table">
+        <thead>
+        <tr>
+          <th>Gene ID</th>
+          <th>Name</th>
+          <th>Other Names</th>
+          <th>Wikidata</th>
+          <th>Mendeley</th>
+          <th>UniProt</th>
+          <th>LmjF Ortholog</th>
+          <th>LmjFC Ortholog</th>
+          <th>LdHU3 Ortholog</th>
+          <th>LBRM2904 Ortholog</th>
+        </tr>
+        </thead>
+        <tbody id="results-body">
+        <!-- Results will be populated here -->
+          {% for row in results %}
+            <tr>
+              <td>{{ row.Gene_ID }}</td>
+              <td>{{ row.Name }}</td>
+              <td>{{ row.Other_names }}</td>
+              <td><a href="{{ row.Wikidata }}" target="_blank">Wikidata</a></td>
+              <td><a href="{{ row.Mendeley }}" target="_blank">Mendeley</a></td>
+              <td><a href="{{ row.UniProt }}" target="_blank">UniProt</a></td>
+              <td>{{ row.LmjF_ortholog }}</td>
+              <td>{{ row.LmjFC_ortholog }}</td>
+              <td>{{ row.LdHU3_ortholog }}</td>
+              <td>{{ row.LBRM2904_ortholog }}</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+      </table>
+    </div>
+
+    <div class="pagination-controls">
+{#      <button class="prev-page">Previous</button>#}
+{#      <button class="next-page">Next</button>#}
+      {% if results.has_previous %}
+        <a href="?q={{ query }}&page={{ results.previous_page_number }}">Previous</a>
+      {% endif %}
+      <span>Page {{ results.number }} of {{ results.paginator.num_pages }}</span>
+      {% if results.has_next %}
+        <a href="?q={{ query }}&page={{ results.next_page_number }}">Next</a>
+        {% endif %}
+    </div>
+  </section>
+{% endblock %}
