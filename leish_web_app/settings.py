@@ -84,7 +84,7 @@ DATABASES = {
     },
     "leishmania": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "data/leishmania.db",
+        "NAME": "/opt/leish-web/databases/leishmania.db",
     }
 }
 
