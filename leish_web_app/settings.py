@@ -27,6 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["leishmania.cbm.uam.es"]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://leishmania.cbm.uam.es"
+]
+
+
 
 # Application definition
 
