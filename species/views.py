@@ -30,17 +30,19 @@ def infantum_browser(request):
 
     # Filter based on query
     results = Infantum.objects.using('leishmania').filter(
-        Q(Gene_ID__icontains=query) |
-        Q(Name__icontains=query) |
-        Q(Other_names__icontains=query) |
-        Q(Wikidata__icontains=query) |
-        Q(Mendeley__icontains=query) |
-        Q(UniProt__icontains=query) |
-        Q(LmjF_ortholog__icontains=query) |
-        Q(LmjFC_ortholog__icontains=query) |
-        Q(LdHU3_ortholog__icontains=query) |
-        Q(LBRM2904_ortholog__icontains=query)
+        Q(gene_id__icontains=query) |
+        Q(name__icontains=query) |
+        Q(other_names__icontains=query) |
+        Q(wikidata__icontains=query) |
+        Q(mendeley__icontains=query) |
+        Q(uniprot__icontains=query) |
+        Q(lmjf_ortholog__icontains=query) |
+        Q(lmjfc_ortholog__icontains=query) |
+        Q(ldhu3_ortholog__icontains=query) |
+        Q(lbrm2904_ortholog__icontains=query)
     )
+    # Order results
+    results = results.order_by("gene_id")
 
     # Paginate results
     paginator = Paginator(results, limit)
@@ -49,5 +51,9 @@ def infantum_browser(request):
     return render(
         request,
         "species/table_browser/infantum_table_browser.html",
-        {"page_obj": page_obj}
+        {
+            "page_results": page_obj,  # Using paginated results
+            "results": results,
+            "query": query
+        }
     )

@@ -20,6 +20,10 @@ class Infantum(models.Model):
     ldhu3_ortholog = models.CharField(db_column='LdHU3_ortholog', max_length=255, blank=True, null=True)  # Field name made lowercase.
     lbrm2904_ortholog = models.CharField(db_column='LBRM2904_ortholog', max_length=255, blank=True, null=True)  # Field name made lowercase.
 
+
+    def __str__(self):
+        return f"{self.gene_id} - {self.name}"
+
     class Meta:
         managed = False
         db_table = 'infantum'

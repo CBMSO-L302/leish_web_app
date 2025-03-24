@@ -18,15 +18,15 @@
       <input type="text" name="q" value="{{ query }}" placeholder="Search for genes, names, or orthologs...">
       <button type="submit">Search</button>
     </form>
-{#    <div id="search bar">#}
-{#      <label for="search-input"></label><input type="text" id="search-input"#}
-{#                                               placeholder="Search for genes, names, or orthologs...">#}
-{#      <button id="search-button">Search</button>#}
-{#    </div>#}
 
     <div class="pagination-controls">
-      <button class="prev-page">Previous</button>
-      <button class="next-page">Next</button>
+      {% if page_results.has_previous %}
+        <a href="?q={{ query }}&page={{ page_results.previous_page_number }}">Previous</a>
+      {% endif %}
+      <span>Page {{ page_results.number }} of {{ page_results.paginator.num_pages }}</span>
+      {% if page_results.has_next %}
+        <a href="?q={{ query }}&page={{ page_results.next_page_number }}">Next</a>
+      {% endif %}
     </div>
 
     <!-- Top Scrollbar -->
@@ -52,18 +52,18 @@
         </thead>
         <tbody id="results-body">
         <!-- Results will be populated here -->
-          {% for row in results %}
+          {% for row in page_results %}  <!-- Using paginated results -->
             <tr>
-              <td>{{ row.Gene_ID }}</td>
-              <td>{{ row.Name }}</td>
-              <td>{{ row.Other_names }}</td>
-              <td><a href="{{ row.Wikidata }}" target="_blank">Wikidata</a></td>
-              <td><a href="{{ row.Mendeley }}" target="_blank">Mendeley</a></td>
-              <td><a href="{{ row.UniProt }}" target="_blank">UniProt</a></td>
-              <td>{{ row.LmjF_ortholog }}</td>
-              <td>{{ row.LmjFC_ortholog }}</td>
-              <td>{{ row.LdHU3_ortholog }}</td>
-              <td>{{ row.LBRM2904_ortholog }}</td>
+              <td>{{ row.gene_id }}</td>
+              <td>{{ row.name }}</td>
+              <td>{{ row.other_names }}</td>
+              <td><a href="{{ row.wikidata }}" target="_blank">Wikidata</a></td>
+              <td><a href="{{ row.mendeley }}" target="_blank">Mendeley</a></td>
+              <td><a href="{{ row.uniprot }}" target="_blank">UniProt</a></td>
+              <td>{{ row.lmjf_ortholog }}</td>
+              <td>{{ row.lmjfc_ortholog }}</td>
+              <td>{{ row.ldhu3_ortholog }}</td>
+              <td>{{ row.lbrm2904_ortholog }}</td>
             </tr>
           {% endfor %}
           </tbody>
@@ -71,15 +71,14 @@
     </div>
 
     <div class="pagination-controls">
-{#      <button class="prev-page">Previous</button>#}
-{#      <button class="next-page">Next</button>#}
-      {% if results.has_previous %}
-        <a href="?q={{ query }}&page={{ results.previous_page_number }}">Previous</a>
+      {% if page_results.has_previous %}
+        <a href="?q={{ query }}&page={{ page_results.previous_page_number }}">Previous</a>
       {% endif %}
-      <span>Page {{ results.number }} of {{ results.paginator.num_pages }}</span>
-      {% if results.has_next %}
-        <a href="?q={{ query }}&page={{ results.next_page_number }}">Next</a>
-        {% endif %}
+      <span>Page {{ page_results.number }} of {{ page_results.paginator.num_pages }}</span>
+      {% if page_results.has_next %}
+        <a href="?q={{ query }}&page={{ page_results.next_page_number }}">Next</a>
+      {% endif %}
     </div>
+
   </section>
 {% endblock %}
