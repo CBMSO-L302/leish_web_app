@@ -48,7 +48,7 @@ function createDots(count) {
 
 // Load team data and build carousel
 function loadCarousel() {
-  fetch('/static/home/json/team-carousel.json')
+  fetch('/static/home/json/team-img-carousel.json')
     .then(response => response.json())
     .then(data => {
       const carouselContainer = document.getElementById('carousel-slide');
