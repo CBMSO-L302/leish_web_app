@@ -92,10 +92,21 @@ function loadLanguage(lang) {
             document.getElementById('team-frontshow-text').querySelector('p').textContent = translations.theTeamDescription;
             document.getElementById('team-frontshow-button').textContent = translations.theTeamLearnMore;
 
+            // WHO map content translations
+            document.querySelector('.who-map-title h2').textContent = translations.whoMapTitle;
+            document.querySelector('.who-map-description p').textContent = translations.whoMapDescription;
+
+            // Latest updates section
+            document.querySelector('.social-header h2').textContent = translations.latestUpdatesTitle;
+            document.querySelector('.social-header p').textContent = translations.latestUpdatesDescription;
+
             // Load Leishmania cards
             loadLeishInfoCards(lang);
         })
         .catch(error => console.error('Error loading translations.json:', error));
+
+    // Change flag
+    selectedFlag.src = languageDropdown.querySelector(`option[value="${lang}"]`).dataset.flag;
 }
 
     // Load language from localStorage if it exists

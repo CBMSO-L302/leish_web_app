@@ -1,74 +1,74 @@
 {
-    "eng": {
-        "_comment": "ENGLISH TRANSLATIONS",
-        "genomeDecoding": "Genome decoding",
-      "aboutUs": "About us",
-      "mission": "Mission",
-      "team": "Team",
-      "species": "Species",
-      "downloads": "Downloads",
-      "reports": "Reports",
-      "datasets": "Datasets",
-      "software": "Software",
-      "theTeam": "The Team",
-      "theTeamDescription": "Based on CBM (Centro de Biología Molecular Severo Ochoa - CSIC), our team focuses on the molecular genetics of Leishmania parasites, the causative agents of leishmaniasis. Using state-of-the-art technology both in vitro and in silico, we study the gene expression and genomic plasticity in these parasites.",
-      "theTeamLearnMore": "Learn more",
-      "leishIntro": [
-        {
-          "title": "What is Leishmaniasis?",
-          "description": "Leishmaniasis is a disease that affects a large population in tropical and subtropical areas worldwide. According to recent data from the World Health Organization, it is estimated that there are between 700,000 to 1,000,000 new cases annually, affecting 90 countries across all continents (World Health Organization, 2023). Currently, around 350 million people are at risk of infection, with 15 million already affected, making it one of the most infectious diseases globally, causing approximately 70,000 deaths each year (Saini et al., 2022).",
-          "img": "/static/home/images/leish_intro/leish_img_intro.jpg"
-        },
-        {
-          "title": "Leishmania Parasite",
-          "description": "The disease is transmitted by a protozoan parasite from the trypanosomatid family. This family is also responsible for Chagas disease (Trypanosoma cruzi), sleeping sickness (T. brucei), and leishmaniasis (Leishmania spp.) (Bringaud et al., 2007).",
-          "img": "/static/home/images/leish_intro/trypanosomatids_img_intro.jpeg"
-        },
-        {
-          "title": "Leishmania Vector",
-          "description": "Leishmaniasis is specifically transmitted through the bite of a sandfly (subfamily Phlebotominae), leading to the parasite's invasion of the host's internal organs (Herwaldt, 1999).",
-          "img": "/static/home/images/leish_intro/sandfly_img_intro.png"
-        }
-      ],
-      "whoMapTitle": "Global Leishmaniasis Distribution",
-      "whoMapDescription": "Explore the global distribution of Leishmaniasis with this interactive map from the World Health Organization.",
-      "latestUpdatesTitle": "Latest Updates",
-      "latestUpdatesDescription": "Stay informed with the latest news and updates from our partners"
-    },
-    "esp": {
-        "_comment": "SPANISH TRANSLATIONS",
-        "genomeDecoding": "Decodificación genómica",
-      "aboutUs": "Nosotros",
-      "mission": "Misión",
-      "team": "Equipo",
-      "species": "Especies",
-      "downloads": "Descargas",
-      "reports": "Informes",
-      "datasets": "Datos",
-      "software": "Programas",
-      "theTeam": "El Equipo",
-      "theTeamDescription": "Ubicado en el CBM (Centro de Biología Molecular Severo Ochoa - CSIC), nuestro equipo se centra en la genética molecular de los parásitos Leishmania, los agentes causantes de la leishmaniasis. Utilizando tecnología de vanguardia tanto in vitro como in silico, estudiamos la expresión génica y la plasticidad genómica en estos parásitos.",
-      "theTeamLearnMore": "Saber más",
-      "leishIntro": [
-        {
-          "title": "¿Qué es la Leishmaniasis?",
-          "description": "La leishmaniasis es una enfermedad que afecta a una gran población en áreas tropicales y subtropicales en todo el mundo. Según datos recientes de la Organización Mundial de la Salud, se estima que hay entre 700,000 y 1,000,000 de nuevos casos anuales, afectando a 90 países en todos los continentes (Organización Mundial de la Salud, 2023). Actualmente, alrededor de 350 millones de personas están en riesgo de infección, con 15 millones ya afectadas, convirtiéndola en una de las enfermedades más infecciosas a nivel mundial, causando aproximadamente 70,000 muertes cada año (Saini et al., 2022).",
-          "img": "/static/home/images/leish_intro/leish_img_intro.jpg"
-        },
-        {
-          "title": "Parásito Leishmania",
-          "description": "La enfermedad es transmitida por un parásito protozoario de la familia de los tripanosomátidos. Esta familia también es responsable de la enfermedad de Chagas (Trypanosoma cruzi), la enfermedad del sueño (T. brucei) y la leishmaniasis (Leishmania spp.) (Bringaud et al., 2007).",
-          "img": "/static/home/images/leish_intro/trypanosomatids_img_intro.jpeg"
-        },
-        {
-          "title": "Vector de Leishmania",
-          "description": "La leishmaniasis se transmite específicamente a través de la picadura de un flebótomo (subfamilia Phlebotominae), lo que lleva a la invasión del parásito en los órganos internos del huésped (Herwaldt, 1999).",
-          "img": "/static/home/images/leish_intro/sandfly_img_intro.png"
-        }
-      ]
-    },
-  "latestUpdatesTitle": "Últimas Actualizaciones",
-  "latestUpdatesDescription": "Mantente informado con las últimas noticias y actualizaciones de nuestros socios",
-  "whoMapTitle": "Distribución Global de la Leishmaniasis",
-  "whoMapDescription": "Explora la distribución global de la Leishmaniasis con este mapa interactivo de la Organización Mundial de la Salud."
+  "eng": {
+    "_comment": "ENGLISH TRANSLATIONS",
+    "genomeDecoding": "Genome decoding",
+    "aboutUs": "About us",
+    "mission": "Mission",
+    "team": "Team",
+    "species": "Species",
+    "downloads": "Downloads",
+    "reports": "Reports",
+    "datasets": "Datasets",
+    "software": "Software",
+    "theTeam": "The Team",
+    "theTeamDescription": "Based on CBM (Centro de Biología Molecular Severo Ochoa - CSIC), our team focuses on the molecular genetics of Leishmania parasites, the causative agents of leishmaniasis. Using state-of-the-art technology both in vitro and in silico, we study the gene expression and genomic plasticity in these parasites.",
+    "theTeamLearnMore": "Learn more",
+    "leishIntro": [
+      {
+        "title": "What is Leishmaniasis?",
+        "description": "Leishmaniasis is a disease that affects a large population in tropical and subtropical areas worldwide. According to recent data from the World Health Organization, it is estimated that there are between 700,000 to 1,000,000 new cases annually, affecting 90 countries across all continents (World Health Organization, 2023). Currently, around 350 million people are at risk of infection, with 15 million already affected, making it one of the most infectious diseases globally, causing approximately 70,000 deaths each year (Saini et al., 2022).",
+        "img": "/static/home/images/leish_intro/leish_img_intro.jpg"
+      },
+      {
+        "title": "Leishmania Parasite",
+        "description": "The disease is transmitted by a protozoan parasite from the trypanosomatid family. This family is also responsible for Chagas disease (Trypanosoma cruzi), sleeping sickness (T. brucei), and leishmaniasis (Leishmania spp.) (Bringaud et al., 2007).",
+        "img": "/static/home/images/leish_intro/trypanosomatids_img_intro.jpeg"
+      },
+      {
+        "title": "Leishmania Vector",
+        "description": "Leishmaniasis is specifically transmitted through the bite of a sandfly (subfamily Phlebotominae), leading to the parasite's invasion of the host's internal organs (Herwaldt, 1999).",
+        "img": "/static/home/images/leish_intro/sandfly_img_intro.png"
+      }
+    ],
+    "whoMapTitle": "Global Leishmaniasis Distribution",
+    "whoMapDescription": "Explore the global distribution of Leishmaniasis with this interactive map from the World Health Organization.",
+    "latestUpdatesTitle": "Latest Updates",
+    "latestUpdatesDescription": "Stay informed with the latest news and updates from our partners"
+  },
+  "esp": {
+    "_comment": "SPANISH TRANSLATIONS",
+    "genomeDecoding": "Decodificación genómica",
+    "aboutUs": "Nosotros",
+    "mission": "Misión",
+    "team": "Equipo",
+    "species": "Especies",
+    "downloads": "Descargas",
+    "reports": "Informes",
+    "datasets": "Datos",
+    "software": "Programas",
+    "theTeam": "El Equipo",
+    "theTeamDescription": "Ubicado en el CBM (Centro de Biología Molecular Severo Ochoa - CSIC), nuestro equipo se centra en la genética molecular de los parásitos Leishmania, los agentes causantes de la leishmaniasis. Utilizando tecnología de vanguardia tanto in vitro como in silico, estudiamos la expresión génica y la plasticidad genómica en estos parásitos.",
+    "theTeamLearnMore": "Saber más",
+    "leishIntro": [
+      {
+        "title": "¿Qué es la Leishmaniasis?",
+        "description": "La leishmaniasis es una enfermedad que afecta a una gran población en áreas tropicales y subtropicales en todo el mundo. Según datos recientes de la Organización Mundial de la Salud, se estima que hay entre 700,000 y 1,000,000 de nuevos casos anuales, afectando a 90 países en todos los continentes (Organización Mundial de la Salud, 2023). Actualmente, alrededor de 350 millones de personas están en riesgo de infección, con 15 millones ya afectadas, convirtiéndola en una de las enfermedades más infecciosas a nivel mundial, causando aproximadamente 70,000 muertes cada año (Saini et al., 2022).",
+        "img": "/static/home/images/leish_intro/leish_img_intro.jpg"
+      },
+      {
+        "title": "Parásito Leishmania",
+        "description": "La enfermedad es transmitida por un parásito protozoario de la familia de los tripanosomátidos. Esta familia también es responsable de la enfermedad de Chagas (Trypanosoma cruzi), la enfermedad del sueño (T. brucei) y la leishmaniasis (Leishmania spp.) (Bringaud et al., 2007).",
+        "img": "/static/home/images/leish_intro/trypanosomatids_img_intro.jpeg"
+      },
+      {
+        "title": "Vector de Leishmania",
+        "description": "La leishmaniasis se transmite específicamente a través de la picadura de un flebótomo (subfamilia Phlebotominae), lo que lleva a la invasión del parásito en los órganos internos del huésped (Herwaldt, 1999).",
+        "img": "/static/home/images/leish_intro/sandfly_img_intro.png"
+      }
+    ],
+      "whoMapTitle": "Distribución Global de la Leishmaniasis",
+      "whoMapDescription": "Explora la distribución global de la Leishmaniasis con este mapa interactivo de la Organización Mundial de la Salud.",
+      "latestUpdatesTitle": "Últimas Actualizaciones",
+      "latestUpdatesDescription": "Mantente informado con las últimas noticias y actualizaciones de nuestros socios"
+  }
 }
