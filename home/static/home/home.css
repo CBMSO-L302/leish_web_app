@@ -361,41 +361,6 @@ main {
   color: rgb(191, 12, 204);
 }
 
-/*!* Responsive design for the map *!*/
-/*@media only screen and (max-width: 1024px) {*/
-/*  .who-map-container {*/
-/*    width: 90%;*/
-/*  }*/
-
-/*  .who-map-iframe iframe {*/
-/*    height: 500px;*/
-/*  }*/
-/*}*/
-
-/*@media only screen and (max-width: 775px) {*/
-/*  .who-map-iframe iframe {*/
-/*    height: 400px;*/
-/*  }*/
-
-/*  .who-map-description p {*/
-/*    font-size: 1rem;*/
-/*  }*/
-/*}*/
-
-/*@media only screen and (max-width: 480px) {*/
-/*  .who-map-container {*/
-/*    width: 95%;*/
-/*  }*/
-
-/*  .who-map-iframe iframe {*/
-/*    height: 350px;*/
-/*  }*/
-
-/*  .who-map-title h2 {*/
-/*    font-size: 1.3rem;*/
-/*  }*/
-/*}*/
-
 /* ================================================================== */
 /* Social Media Updates Section */
 /* ================================================================== */
@@ -704,6 +669,18 @@ main {
   #leish-info-container{
     width: 100%;
   }
+
+  .who-map-container {
+    width: 100%;
+  }
+
+  .who-map-iframe {
+    border-radius: 0;
+  }
+
+  .social-tabs-container {
+    width: 95%;
+  }
 }
 
 /* Smartphones */
@@ -740,14 +717,5 @@ main {
     border-radius: 8px;
   }
 
-  /*.leish-card-img {*/
-  /*  height: 150px;*/
-  /*}*/
-
-  /*.circle-carousel-button {*/
-  /*  width: 35px;*/
-  /*  height: 35px;*/
-  /*  font-size: 1rem;*/
-  /*}*/
 }
 
