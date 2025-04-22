@@ -25,7 +25,7 @@ SECRET_KEY = "***REMOVED***"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["leishmania.cbm.uam.es"]
+ALLOWED_HOSTS = ["leishmania.cbm.uam.es", "127.0.0.1"]
 
 CSRF_TRUSTED_ORIGINS = [
     "https://leishmania.cbm.uam.es"
