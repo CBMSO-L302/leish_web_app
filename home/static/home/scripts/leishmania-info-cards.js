@@ -62,7 +62,6 @@ function setupCardClickNavigation() {
   const cardContainer = document.getElementById("leish-card-container");
 
   cardContainer.addEventListener("click", (event) => {
-    const target = event.target;
     const activeCard = cardContainer.querySelector(".leish-card.active");
 
     if (!activeCard) return;
