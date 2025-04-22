@@ -69,6 +69,8 @@ main {
   width: 100%;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .carousel-slide-img {
@@ -170,89 +172,7 @@ main {
 }
 
 /* ================================================================== */
-/* Team News */
-/* ================================================================== */
-.middle-box {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  background: linear-gradient(
-    180deg,
-    rgb(137, 58, 150),
-    rgb(159, 158, 159)
-  );
-}
-
-#team-news,
-#post-carousel-container,
-#map-frontshow,
-#map-carousel-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#real-news-container,
-#real-map-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  width: 70%;
-}
-
-
-.news-post,
-.map-post {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  width: 100%;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  /* No padding because middle-box has the padding */
-}
-
-.news-post-img {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.news-post-img img {
-  height: 20vw;  /* 20% of the viewport width IMPORTANT*/
-  overflow: hidden;
-  border-radius: 10%;
-  /* flex-shrink: 0; */
-  /* object-fit: cover; */
-}
-
-/* Defined above
-.news-post-title {}  */
-
-.news-post-title {
-  justify-content: flex-end;
-}
-
-.flex-carousel-button {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 50%;
-  z-index: 1;
-}
-
-/* ================================================================== */
-/* Leish intro carousel */
+/* Leish info cards */
 /* ================================================================== */
 #leishmania-info {
   width: 100%;
@@ -389,33 +309,6 @@ main {
   background-color: rgb(137, 58, 150);
   transform: scale(1.2);
 }
-
-/*!* Responsive design *!*/
-/*@media only screen and (max-width: 775px) {*/
-/*  #leish-info-container {*/
-/*    width: 90%;*/
-/*  }*/
-
-/*  #leish-card-container {*/
-/*    width: 100%;*/
-/*  }*/
-
-/*  .leish-card-title {*/
-/*    font-size: 1.3rem;*/
-/*  }*/
-/*}*/
-
-/*@media only screen and (max-width: 480px) {*/
-/*  .leish-card-img {*/
-/*    height: 150px;*/
-/*  }*/
-
-/*  .circle-carousel-button {*/
-/*    width: 35px;*/
-/*    height: 35px;*/
-/*    font-size: 1rem;*/
-/*  }*/
-/*}*/
 
 /* ================================================================== */
 /* WHO Leishmaniasis Map Section */
@@ -696,8 +589,6 @@ main {
   }
 }
 
-
-
 /*!* Responsive adjustments *!*/
 /*@media only screen and (max-width: 775px) {*/
 /*  .social-tabs {*/
@@ -748,105 +639,137 @@ main {
 /* Desktop WIDE */
 /* ================================================================== */
 @media only screen and (min-width: 1025px) {
-  #team-frontshow,
-  #real-news-container,
-  #real-leish-container,
-  #twitter-zone {
-    width: 50%;
+  #team-frontshow {
+    flex-direction: row; /* Default layout for wide screens */
+    justify-content: space-evenly;
+    width: 80%; /* Center and slightly reduce the width */
+    gap: 2rem;
+  }
+
+  #team-frontshow-text {
+    font-size: 1.2rem; /* Slightly larger text for better readability */
+    max-width: 800px;
+  }
+
+  #carousel-container {
+    -webkit-mask-image: -webkit-linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
   }
 }
 
-/* Tablet portrait mode*/
+/* Tablet portrait mode */
 /* ================================================================== */
 @media only screen and (min-width: 481px) and (max-width: 775px) {
-  /* MAIN */
-  /* ---------------------------------- */
-  main {
-    margin-top: 70px;
-  }
 
-
-  #team-frontshow,
-  .news-post,
-  .leish-post {
+  /*For team images*/
+  #team-frontshow {
     flex-direction: column;
-  }
-
-  .news-post-text,
-  .leish-post-text {
+    align-items: center;
+    gap: 1.5rem; /* Increase gap for better spacing on smaller tablets */
     width: 100%;
   }
 
-  #carousel-container,
-  #carousel-slide {
-    width: 100%;
+  #carousel-container {
+    width: 100%; /* Adjust carousel size for tablet screens */
+    margin-bottom: 1rem;
+
   }
 
-  .news-post-img {
-    width: 100%;
-    order: 1;
+  #team-frontshow-text {
+    font-size: 1rem;
+    max-width: 600px;
+    text-align: center; /* Center-align text for better presentation */
   }
 
-  .corousel-slide-img,
-  .leish-post-img {
-    width: 100%;
-  }
-
-  .carousel-slide-img img,
-  .news-post-img img,
-  .leish-post-img img {
+  /*For the leishmania info cards*/
+  #leish-info-container {
     width: 90%;
-    height: auto;
   }
 
-  .news-post-text {
+  #leish-card-container {
     width: 100%;
+    min-height: 600px; /* Increased from 450px */
+  }
+
+  .leish-card-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (max-width: 630px) {
+  #team-frontshow-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 700px;
+  }
+
+  #team-frontshow-text-header h3 {
+    font-size: 1rem;
+  }
+
+  #team-frontshow-text p {
+    font-size: 0.8rem;
+  }
+
+  .leish-card-title {
+    font-size: 1.2rem;
+  }
+
+  .leish-card-description {
+    font-size: 0.8rem;
+  }
+
+  #leish-card-container {
+    min-height: 800px; /* Increased from 450px */
   }
 }
 
 /* Smartphones */
 /* ================================================================== */
 @media only screen and (max-width: 480px) {
-  /* MAIN */
-  /* ---------------------------------- */
-  main {
-    margin-top: 140px;  /* IMPORTANT for the fixed header */
-  }
 
+  main {
+    margin-top: 140px;
+  }
 
   #team-frontshow {
     flex-direction: column;
-    width: 90%;
+    align-items: center;
+    gap: 1rem; /* Reduced gap for compact spacing */
   }
 
-  #carousel-slide,
-  .news-post-text,
-  .leish-post-text {
-    width: 100%;
+  #carousel-container {
+    width: 100%; /* Full width for small mobile screens */
   }
 
-  .carousel-slide-img,
-  #real-news-container,
-  #real-leish-container {
-    width: 90%;
+  #team-frontshow-text {
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    max-width: 100%;
+    bottom: -5px; /* Increased negative value to move text further down */
+    top: 0;
+    background-color: rgba(137, 58, 150, 0.95); /* Increase opacity for better readability */
   }
 
-  .news-post,
-  .leish-post {
-    flex-direction: column;
+  #team-frontshow-button {
+    font-size: 0.7rem; /* Smaller button on mobile */
+    padding: 0.3rem;
+    border-radius: 8px;
   }
 
-  .carousel-slide-img,
-  .news-post-img,
-  .leish-post-img {
-    width: 100%;
-    order: 1;
-  }
+  /*.leish-card-img {*/
+  /*  height: 150px;*/
+  /*}*/
 
-  .carousel-slide-img img,
-  .news-post-img img,
-  .leish-post-img img {
-    width: 90%;
-    height: auto;
-  }
+  /*.circle-carousel-button {*/
+  /*  width: 35px;*/
+  /*  height: 35px;*/
+  /*  font-size: 1rem;*/
+  /*}*/
 }
+
