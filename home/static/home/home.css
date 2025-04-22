@@ -282,6 +282,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 4rem 0;
 }
 
 #leish-info-container {
@@ -290,19 +291,6 @@ main {
   flex-direction: column;
   align-items: center;
   padding: 2rem 0;
-}
-
-.leish-info-title {
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-.leish-info-title h2 {
-  color: white;
-  background-color: rgb(137, 58, 150);
-  padding: 0.75rem 1.5rem;
-  border-radius: 10px;
-  display: inline-block;
 }
 
 .leish-card-carousel {
