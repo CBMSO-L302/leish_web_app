@@ -28,6 +28,7 @@ main {
   width: 100%;
   flex: 1 0 auto;
   margin-top: 70px;  /* IMPORTANT for the fixed header */
+  overflow: hidden;
 }
 
 /* Add these styles to each section to control spacing */
@@ -180,6 +181,7 @@ main {
   justify-content: center;
   align-items: center;
   padding: 4rem 0;
+  overflow: hidden;
 }
 
 #leish-info-container {
@@ -230,13 +232,14 @@ main {
 
 .leish-card.prev {
   opacity: 0.7;
-  transform: translateX(-50%) scale(0.9) rotateY(10deg);
+  /*transform: translateX(-50%) scale(0.9) rotateY(10deg);*/
+  transform: translateX(-45%) scale(0.9) rotateY(10deg); /* 45% avoids pushing too far left */
   z-index: 4;
 }
 
 .leish-card.next {
   opacity: 0.7;
-  transform: translateX(50%) scale(0.9) rotateY(-10deg);
+  transform: translateX(45%) scale(0.9) rotateY(-10deg); /* 45% avoids pushing too far right */
   z-index: 4;
 }
 
@@ -634,6 +637,14 @@ main {
   .leish-card-title {
     font-size: 1.3rem;
   }
+
+  /*.leish-card.prev {*/
+  /*  transform: translateX(calc(-50% + 10rem)) scale(0.9) rotateY(10deg);*/
+  /*}*/
+
+  /*.leish-card.next {*/
+  /*  transform: translateX(calc(50% - 10rem)) scale(0.9) rotateY(-10deg)*/
+  /*}*/
 }
 
 @media only screen and (max-width: 630px) {
@@ -669,6 +680,14 @@ main {
   #leish-info-container{
     width: 100%;
   }
+
+  /*.leish-card.prev {*/
+  /*  transform: translateX(calc(-50% + 11rem)) scale(0.9) rotateY(10deg);*/
+  /*}*/
+
+  /*.leish-card.next {*/
+  /*  transform: translateX(calc(50% - 11rem)) scale(0.9) rotateY(-10deg)*/
+  /*}*/
 
   .who-map-container {
     width: 100%;
