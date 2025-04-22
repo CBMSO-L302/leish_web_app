@@ -22,13 +22,25 @@ body {
 /* ================================================================== */
 main {
   padding: 0;
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr 2fr 3fr;
-  gap: 0;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   flex: 1 0 auto;
   margin-top: 70px;  /* IMPORTANT for the fixed header */
 }
+
+/* Add these styles to each section to control spacing */
+#team-frontshow,
+#leishmania-info,
+#who-leish-map,
+#team-news-container,
+#twitter-zone {
+  width: 100%;
+  padding: 2rem 0;
+}
+
+
 
 /* ================================================================== */
 /* Team-frontshow */
@@ -155,41 +167,6 @@ main {
 
   background-color: rgb(191, 12, 204);
   cursor: pointer;
-}
-
-
-/* ================================================================== */
-/* NEXT */
-/* ================================================================== */
-
-.news-post-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-  gap: 1rem;
-  width: 50%;
-}
-
-.news-post-title,
-.map-post-title {
-  display: flex;
-}
-
-
-.news-post-title h3
-.map-post-title h3 {
-  color: rgb(255, 255, 255);
-  background-color: rgb(137, 58, 150);
-  padding: 0.5rem;
-}
-
-.news-post-text p
-.map-post-text p {
-  text-align: justify;
-  font-size: 0.9rem;
-  padding-right: 1rem;
-  padding-left: 1rem;
 }
 
 /* ================================================================== */
@@ -444,6 +421,114 @@ main {
 /* ================================================================== */
 /* Map intro carousel */
 /* ================================================================== */
+/* ================================================================== */
+/* WHO Leishmaniasis Map Section */
+/* ================================================================== */
+#who-leish-map {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+  background: linear-gradient(
+    180deg,
+    rgb(159, 158, 159),
+    rgb(137, 58, 150)
+  );
+}
+
+.who-map-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.who-map-title {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.who-map-title h2 {
+  color: white;
+  background-color: rgb(137, 58, 150);
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.who-map-description {
+  text-align: center;
+  margin-bottom: 2rem;
+  max-width: 800px;
+}
+
+.who-map-description p {
+  color: white;
+  font-size: 1.1rem;
+}
+
+.who-map-iframe {
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.who-map-source {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: white;
+  text-align: right;
+  width: 100%;
+}
+
+.who-map-source a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.who-map-source a:hover {
+  color: rgb(191, 12, 204);
+}
+
+/* Responsive design for the map */
+@media only screen and (max-width: 1024px) {
+  .who-map-container {
+    width: 90%;
+  }
+
+  .who-map-iframe iframe {
+    height: 500px;
+  }
+}
+
+@media only screen and (max-width: 775px) {
+  .who-map-iframe iframe {
+    height: 400px;
+  }
+
+  .who-map-description p {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .who-map-container {
+    width: 95%;
+  }
+
+  .who-map-iframe iframe {
+    height: 350px;
+  }
+
+  .who-map-title h2 {
+    font-size: 1.3rem;
+  }
+}
+
+
+
 .map-post {
   flex-direction: column;
 }
@@ -567,8 +652,9 @@ main {
   /* MAIN */
   /* ---------------------------------- */
   main {
-    grid-template-rows: 1fr 1fr 1fr 1fr 2fr;
+    margin-top: 70px;
   }
+
 
   #team-frontshow,
   .news-post,
@@ -614,9 +700,9 @@ main {
   /* MAIN */
   /* ---------------------------------- */
   main {
-    grid-template-rows: 1fr 1fr 1fr 1fr 2fr;
     margin-top: 140px;  /* IMPORTANT for the fixed header */
   }
+
 
   #team-frontshow {
     flex-direction: column;
