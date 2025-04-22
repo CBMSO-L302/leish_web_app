@@ -15,14 +15,14 @@ function showLeishInfoCard(index) {
 
   // Update card classes for 3D circular effect
   leishInfoCards.forEach((card, i) => {
-    card.classList.remove('active', 'prev', 'next');
+    card.classList.remove("active", "prev", "next");
 
     if (i === index) {
-      card.classList.add('active');
+      card.classList.add("active");
     } else if (i === (index - 1 + leishInfoCards.length) % leishInfoCards.length) {
-      card.classList.add('prev');
+      card.classList.add("prev");
     } else if (i === (index + 1) % leishInfoCards.length) {
-      card.classList.add('next');
+      card.classList.add("next");
     }
   });
 
@@ -37,84 +37,47 @@ function changeLeishInfoCard(direction) {
 
 // Update the active dot
 function updateLeishInfoDots() {
-  const dots = document.querySelectorAll('.card-dot');
+  const dots = document.querySelectorAll(".card-dot");
   dots.forEach((dot, i) => {
-    dot.classList.toggle('active', i === leishInfoIndex);
+    dot.classList.toggle("active", i === leishInfoIndex);
   });
 }
 
 // Create dots for navigation
 function createLeishInfoDots(count) {
-  const dotsContainer = document.getElementById('leish-card-dots');
-  dotsContainer.innerHTML = '';
+  const dotsContainer = document.getElementById("leish-card-dots");
+  dotsContainer.innerHTML = "";
 
   for (let i = 0; i < count; i++) {
-    const dot = document.createElement('div');
-    dot.classList.add('card-dot');
-    if (i === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => showLeishInfoCard(i));
+    const dot = document.createElement("div");
+    dot.classList.add("card-dot");
+    if (i === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => showLeishInfoCard(i));
     dotsContainer.appendChild(dot);
   }
 }
 
-// Load Leishmania info cards
-function loadLeishInfoCards(lang) {
-  fetch(`/static/home/json/leish_intro_${lang}.json`)
-    .then(response => response.json())
-    .then(data => {
-      const cardContainer = document.getElementById('leish-card-container');
+// Set up the Leishmania info cards when they are loaded
+function setupLeishInfoCards() {
+  const cardContainer = document.getElementById("leish-card-container");
 
-      // Clear existing content
-      cardContainer.innerHTML = '';
+  // Store references to all cards
+  leishInfoCards = Array.from(cardContainer.querySelectorAll(".leish-card"));
 
-      // Create cards
-      data.forEach((info, index) => {
-        const card = document.createElement('div');
-        card.classList.add('leish-card');
+  // Create navigation dots
+  createLeishInfoDots(leishInfoCards.length);
 
-        // Add title
-        const title = document.createElement('h3');
-        title.classList.add('leish-card-title');
-        title.textContent = info.title;
-        card.appendChild(title);
-
-        // Add image
-        const imgDiv = document.createElement('div');
-        imgDiv.classList.add('leish-card-img');
-        const img = document.createElement('img');
-        img.src = info.img;
-        img.alt = info.title;
-        imgDiv.appendChild(img);
-        card.appendChild(imgDiv);
-
-        // Add description
-        const desc = document.createElement('p');
-        desc.classList.add('leish-card-description');
-        desc.textContent = info.description;
-        card.appendChild(desc);
-
-        // Add to container
-        cardContainer.appendChild(card);
-      });
-
-      // Store cards for reference
-      leishInfoCards = Array.from(document.querySelectorAll('.leish-card'));
-
-      // Create navigation dots
-      createLeishInfoDots(data.length);
-
-      // Initialize the carousel
-      leishInfoIndex = 0;
-      showLeishInfoCard(leishInfoIndex);
-    })
-    .catch(error => console.error('Error loading Leishmania info cards:', error));
+  // Initialize the carousel
+  leishInfoIndex = 0;
+  showLeishInfoCard(leishInfoIndex);
 }
 
 // Initialize when the page loads
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
+  // Attach carousel controls to global namespace (for debugging or additional logic)
   window.changeLeishInfoCard = changeLeishInfoCard;
-  window.loadLeishInfoCards = loadLeishInfoCards;
+  window.setupLeishInfoCards = setupLeishInfoCards;
 
-  // This will be called from the translate.js file with appropriate language
-  // loadLeishInfoCards('eng');
+  // We expect cards to be dynamically loaded by `translate.js`
+  // so we only need to set up the carousel when this happens.
 });
