@@ -1,83 +1,77 @@
-let teamIntroIndex = 0;
+// Current position in the carousel
+let currentSlideIndex = 0;
 
-function changeSlide(index) {
-  console.log('changeSlide called with index:', index);
+// Show the slide at the specified index
+function showSlide(index) {
+  // Find all slides in the carousel
   const slides = document.querySelectorAll('#carousel-slide .carousel-slide-img');
-
-  console.log('Slides found:', slides.length);
-
+  
+  // Handle out-of-bounds indices
   if (index >= slides.length) {
-    teamIntroIndex = 0;
+    currentSlideIndex = 0;
   } else if (index < 0) {
-    teamIntroIndex = slides.length - 1;
+    currentSlideIndex = slides.length - 1;
   } else {
-    teamIntroIndex = index;
+    currentSlideIndex = index;
   }
-
-  console.log('New teamIntroIndex:', teamIntroIndex);
-
+  
+  // Show the current slide, hide all others
   slides.forEach((slide, i) => {
-    slide.style.display = i === teamIntroIndex ? 'flex' : 'none';
+    slide.style.display = i === currentSlideIndex ? 'flex' : 'none';
   });
 }
 
-function changeTeamIntroSlide(n) {
-    console.log('changeTeamIntroSlide called with:', n);
-    changeSlide(teamIntroIndex + n);
+// Navigate forward or backward in the carousel
+function navigateSlide(step) {
+  showSlide(currentSlideIndex + step);
 }
 
-function loadTeamIntro() {
-  console.log('Fetching team images JSON data...');
+// Create a navigation button
+function createNavButton(direction, symbol) {
+  const button = document.createElement('button');
+  button.classList.add('carousel-button', direction);
+  button.innerHTML = symbol;
+  button.onclick = () => navigateSlide(direction === 'prev' ? -1 : 1);
+  return button;
+}
+
+// Load team data and build carousel
+function loadCarousel() {
   fetch('/static/home/json/team_carousel.json')
-    .then(response => {
-      console.log('Response received:', response);
-      return response.json();
-    })
+    .then(response => response.json())
     .then(data => {
-        console.log('Data loaded:', data);
-        const teamIntroContainer = document.getElementById('carousel-slide');
-
-        console.log('teamIntroContainer found:', !!teamIntroContainer);
-
-        teamIntroContainer.innerHTML = ''; // Clear the existing carousel
-
-        data.forEach((post, index) => {
-            const imgDiv = document.createElement('div');
-            imgDiv.classList.add('carousel-slide-img');
-            if (index !== 0) imgDiv.style.display = 'none'; // Hide all slides except the first one
-
-            const img = document.createElement('img');
-            // noinspection JSUnresolvedReference
-            img.src = post.img;
-            img.alt = post.title;
-            imgDiv.appendChild(img);
-
-            // Create and add the left button
-            const leftButton = document.createElement('button');
-            leftButton.classList.add('carousel-button', 'prev');
-            leftButton.innerHTML = '&#10094;'; // Left arrow symbol
-            leftButton.onclick = () => changeTeamIntroSlide(-1);
-            imgDiv.appendChild(leftButton);
-
-            // Create and add the right button
-            const rightButton = document.createElement('button');
-            rightButton.classList.add('carousel-button', 'next');
-            rightButton.innerHTML = '&#10095;'; // Right arrow symbol
-            rightButton.onclick = () => changeTeamIntroSlide(1);
-            imgDiv.appendChild(rightButton);
-
-            console.log(`Slide ${index + 1} created with image src: ${img.src}`);
-            teamIntroContainer.appendChild(imgDiv);
-        });
-
-        teamIntroIndex = 0;
-        changeSlide(teamIntroIndex);
+      const carouselContainer = document.getElementById('carousel-slide');
+      
+      // Clear existing content
+      carouselContainer.innerHTML = '';
+      
+      // Create slides for each team member
+      data.forEach((member, index) => {
+        // Create the slide container
+        const slide = document.createElement('div');
+        slide.classList.add('carousel-slide-img');
+        slide.style.display = 'none';
+        
+        // Add member image
+        const img = document.createElement('img');
+        img.src = member.img;
+        img.alt = member.title;
+        slide.appendChild(img);
+        
+        // Add navigation buttons
+        slide.appendChild(createNavButton('prev', '&#10094;'));
+        slide.appendChild(createNavButton('next', '&#10095;'));
+        
+        // Add slide to carousel
+        carouselContainer.appendChild(slide);
+      });
+      
+      // Show the first slide
+      currentSlideIndex = 0;
+      showSlide(currentSlideIndex);
     })
     .catch(error => console.error('Error loading carousel:', error));
 }
 
-// Initialize the carousel
-document.addEventListener('DOMContentLoaded', () => {
-    // console.log('DOM fully loaded and parsed');
-    loadTeamIntro();
-});
+// Initialize the carousel when the page loads
+document.addEventListener('DOMContentLoaded', loadCarousel);
