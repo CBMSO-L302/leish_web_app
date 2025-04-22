@@ -57,7 +57,50 @@ function createLeishInfoDots(count) {
   }
 }
 
-// Set up the Leishmania info cards when they are loaded
+// Detect clicks on the cards and navigate accordingly
+function setupCardClickNavigation() {
+  const cardContainer = document.getElementById("leish-card-container");
+
+  cardContainer.addEventListener("click", (event) => {
+    const target = event.target;
+    const activeCard = cardContainer.querySelector(".leish-card.active");
+
+    if (!activeCard) return;
+
+    const isLeftSide = event.offsetX < activeCard.offsetWidth / 2;
+
+    if (isLeftSide) {
+      changeLeishInfoCard(-1); // Move to the previous card
+    } else {
+      changeLeishInfoCard(1); // Move to the next card
+    }
+  });
+}
+
+// Add swipe detection for mobile/touch screens
+function setupSwipeNavigation() {
+  const cardContainer = document.getElementById("leish-card-container");
+  let startX;
+
+  cardContainer.addEventListener("touchstart", (event) => {
+    startX = event.touches[0].clientX;
+  });
+
+  cardContainer.addEventListener("touchend", (event) => {
+    const endX = event.changedTouches[0].clientX;
+    const diffX = startX - endX;
+
+    if (diffX > 30) {
+      // Swipe left
+      changeLeishInfoCard(1);
+    } else if (diffX < -30) {
+      // Swipe right
+      changeLeishInfoCard(-1);
+    }
+  });
+}
+
+// Combine all setup functions
 function setupLeishInfoCards() {
   const cardContainer = document.getElementById("leish-card-container");
 
@@ -70,14 +113,16 @@ function setupLeishInfoCards() {
   // Initialize the carousel
   leishInfoIndex = 0;
   showLeishInfoCard(leishInfoIndex);
+
+  // Set up click and swipe navigation
+  setupCardClickNavigation();
+  setupSwipeNavigation();
 }
 
 // Initialize when the page loads
 document.addEventListener("DOMContentLoaded", () => {
-  // Attach carousel controls to global namespace (for debugging or additional logic)
-  window.changeLeishInfoCard = changeLeishInfoCard;
+  window.changeLeishInfoCard = changeLeishInfoCard; // Attach carousel control
   window.setupLeishInfoCards = setupLeishInfoCards;
 
-  // We expect cards to be dynamically loaded by `translate.js`
-  // so we only need to set up the carousel when this happens.
+  // Dynamically set up the carousel
 });

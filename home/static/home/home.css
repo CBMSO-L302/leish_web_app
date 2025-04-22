@@ -721,10 +721,9 @@ main {
 
   .leish-card-description {
     font-size: 0.8rem;
-  }
-
-  #leish-card-container {
-    min-height: 800px; /* Increased from 450px */
+    overflow-y: auto;
+    max-height: 200px;
+    padding-right: 10px;
   }
 }
 
