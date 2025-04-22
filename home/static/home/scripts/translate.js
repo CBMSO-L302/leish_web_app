@@ -31,13 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('team-frontshow-text').querySelector('p').textContent = data.theTeamDescription;
                 document.getElementById('team-frontshow-button').textContent = data.theTeamLearnMore;
 
-                // Load news content
-                loadNews(lang);
                 // Load leish intro content
                 loadLeishInfoCards(lang);
 
-                // Load map intro content
-                loadMapIntro(lang);
             })
             .catch(error => console.error('Error loading language:', error));
 

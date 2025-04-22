@@ -49,8 +49,6 @@
                 title="WHO Leishmaniasis Map"
                 width="100%"
                 height="100%"
-                frameborder="0"
-                scrolling="yes"
                 allowfullscreen>
         </iframe>
       </div>
@@ -61,38 +59,57 @@
     </div>
   </section>
 
-
-  <!-- Twitter section-->
-  <section id="twitter-zone">
-    <div class="tab">
-      <button class="tablinks" data-tab="WHO"><h4>WHO</h4></button>
-      <button class="tablinks" data-tab="CBM"><h4>CBM</h4></button>
-      <button class="tablinks" data-tab="CSIC"><h4>CSIC</h4></button>
-      <button class="tablinks" data-tab="UAM"><h4>UAM</h4></button>
+  <!-- Social Media Updates Section -->
+  <section id="social-updates">
+    <div class="social-header">
+      <h2>Latest Updates</h2>
+      <p>Stay informed with the latest news and updates from our partners</p>
     </div>
 
-    <div id="WHO" class="tabcontent">
-      <a class="twitter-timeline" href="https://twitter.com/WHO">WHO Tweets</a>
+    <div class="social-tabs-container">
+      <div class="social-tabs">
+        <button class="social-tab-btn active" data-tab="WHO">
+          <img src="{% static 'images/logos/WHO_mini_logo.png' %}" alt="WHO Logo">
+        </button>
+        <button class="social-tab-btn" data-tab="CBM">
+          <img src="{% static 'images/logos/CBM_mini_logo.png' %}" alt="CBM Logo">
+
+        </button>
+        <button class="social-tab-btn" data-tab="CSIC">
+          <img src="{% static 'images/logos/CSIC_mini_logo.png' %}" alt="CSIC Logo">
+        </button>
+        <button class="social-tab-btn" data-tab="UAM">
+          <img src="{% static 'images/logos/UAM_mini_logo.jpg' %}" alt="UAM Logo">
+        </button>
+      </div>
+
+      <div class="social-content">
+        <div id="WHO" class="social-panel active">
+          <div class="loading-spinner"></div> <!-- Spinner -->
+          <a class="twitter-timeline" href="https://x.com/WHO" data-height="600">WHO Tweets</a>
+        </div>
+        <div id="CBM" class="social-panel">
+          <div class="loading-spinner"></div> <!-- Spinner -->
+          <a class="twitter-timeline" href="https://x.com/CBM_CSIC_UAM" data-height="600">CBM Tweets</a>
+        </div>
+        <div id="CSIC" class="social-panel">
+          <div class="loading-spinner"></div> <!-- Spinner -->
+          <a class="twitter-timeline" href="https://x.com/CSIC" data-height="600">CSIC Tweets</a>
+        </div>
+        <div id="UAM" class="social-panel">
+          <div class="loading-spinner"></div> <!-- Spinner -->
+          <a class="twitter-timeline" href="https://x.com/UAM_Madrid" data-height="600">UAM Tweets</a>
+        </div>
+      </div>
     </div>
 
-    <div id="CBM" class="tabcontent">
-      <a class="twitter-timeline" href="https://twitter.com/CBM_CSIC_UAM">CBM Tweets</a>
-    </div>
-
-    <div id="CSIC" class="tabcontent">
-      <a class="twitter-timeline" href="https://twitter.com/CSIC">CSIC Tweets</a>
-    </div>
-
-    <div id="UAM" class="tabcontent">
-      <a class="twitter-timeline" href="https://twitter.com/UAM_Madrid">UAM Tweets</a>
-    </div>
   </section>
+
 {% endblock %}
 
 {% block js_content %}
   <script src="{% static 'home/scripts/translate.js' %}"></script>
   <script src="{% static 'home/scripts/team-carousel-img.js' %}"></script>
-  <script src="{% static 'home/scripts/news-carousel.js' %}"></script>
   <script src="{% static 'home/scripts/leish-intro-carousel.js' %}"></script>
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   <script src="{% static 'home/scripts/twitter-intro-feed.js' %}"></script>

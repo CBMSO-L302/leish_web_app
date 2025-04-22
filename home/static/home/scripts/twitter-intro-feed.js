@@ -1,56 +1,53 @@
-/**
- * @typedef {Object} TwttrWidgets
- * @property {Function} load - A function to load Twitter widgets.
- */
+document.addEventListener("DOMContentLoaded", function () {
+  const tabs = ["WHO", "CBM", "CSIC", "UAM"];
 
-/**
- * @type {{widgets: TwttrWidgets}}
- */
-let twttr;
+  function openSocialTab(evt, tabName) {
+    // Hide all content panels
+    const panels = document.querySelectorAll(".social-panel");
+    panels.forEach(panel => {
+      panel.classList.remove("active");
+      const spinner = panel.querySelector(".loading-spinner");
+      spinner && (spinner.classList.remove("active")); // Hide spinner
+    });
 
-document.addEventListener("DOMContentLoaded",
-  function() {
-    function openTwitter(evt, twitterName) {
-      // Hide all tab content
-      const tabcontent = document.querySelectorAll(".tabcontent");
-      tabcontent.forEach((content) => {content.style.display = "none";});
+    // Deactivate all buttons
+    const buttons = document.querySelectorAll(".social-tab-btn");
+    buttons.forEach(button => button.classList.remove("active"));
 
-      // Remove the "active" class from all tab buttons
-      const tablinks = document.querySelectorAll(".tablinks");
-      tablinks.forEach(
-        (link) => {
-          link.classList.remove("active");
-        }
-      );
+    // Activate the selected tab and show its spinner
+    const activePanel = document.getElementById(tabName);
+    activePanel.classList.add("active");
 
-      // Show the current tab and add "active" class to the clicked tab button
-      document.getElementById(twitterName).style.display = "block";
+    const spinner = activePanel.querySelector(".loading-spinner");
+    if (spinner) spinner.classList.add("active"); // Show spinner
+
+    if (evt?.currentTarget) {
       evt.currentTarget.classList.add("active");
-
-      // Load Twitter widgets
-      if (typeof twttr !== "undefined" && twttr.widgets) {
-        twttr.widgets.load();
-      }
+    } else {
+      document.querySelector(`.social-tab-btn[data-tab="${tabName}"]`).classList.add("active");
     }
 
-    // Attach event listeners to all tab buttons dynamically
-    const tablinks = document.querySelectorAll(".tablinks");
-    tablinks.forEach(
-      (button) => {
-        button.addEventListener(
-          "click", function(event) {
-            const twitterName = this.getAttribute("data-tab");
-            openTwitter(event, twitterName);
-          }
-        );
-      }
-    );
+    // Load Twitter widget and remove spinner once loaded
+    if (typeof twttr !== "undefined" && twttr.widgets) {
+      twttr.widgets.load(activePanel);
 
-    // Default open tab: trigger the first button
-    const defaultTab = document.querySelector(".tablinks");
-    if (defaultTab) {
-      defaultTab.click();
+      // Simulate loading time (replace with actual "load" detection if supported)
+      setTimeout(() => {
+        if (spinner) spinner.classList.remove("active"); // Hide spinner once loaded
+      }, 2000); // Adjust time as needed
+    } else if (spinner) {
+      spinner.classList.remove("active"); // Ensure spinner hides if widgets fail to load
     }
-
   }
-);
+
+  // Add button click event listeners
+  const tabButtons = document.querySelectorAll(".social-tab-btn");
+  tabButtons.forEach((button, index) => {
+    button.addEventListener("click", function (e) {
+      openSocialTab(e, tabs[index]);
+    });
+  });
+
+  // Load the default tab
+  openSocialTab(null, tabs[0]);
+});
