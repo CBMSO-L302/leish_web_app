@@ -536,49 +536,6 @@ main {
   }
 }
 
-/*!* Responsive adjustments *!*/
-/*@media only screen and (max-width: 775px) {*/
-/*  .social-tabs {*/
-/*    flex-wrap: wrap;*/
-/*  }*/
-
-/*  .social-tab-btn {*/
-/*    flex: 1 1 50%;*/
-/*    padding: 1rem 0.5rem;*/
-/*  }*/
-
-/*  .social-tab-btn span {*/
-/*    font-size: 0.8rem;*/
-/*  }*/
-
-/*  .social-tabs-container {*/
-/*    width: 95%;*/
-/*  }*/
-/*}*/
-
-/*@media only screen and (max-width: 480px) {*/
-/*  .social-tab-btn {*/
-/*    flex: 1 1 100%;*/
-/*    padding: 0.8rem 0.4rem;*/
-/*  }*/
-
-/*  .social-tab-btn span {*/
-/*    font-size: 0.8rem;*/
-/*  }*/
-
-/*  .social-header h2 {*/
-/*    font-size: 1.8rem;*/
-/*  }*/
-
-/*  .social-header p {*/
-/*    font-size: 0.9rem;*/
-/*  }*/
-
-/*  .social-panel {*/
-/*    padding: 0.8rem;*/
-/*  }*/
-/*}*/
-
 /* ================================================================== */
 /* Media queries */
 /* ================================================================== */
