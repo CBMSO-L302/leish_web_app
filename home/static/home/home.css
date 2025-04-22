@@ -268,27 +268,6 @@ main {
   color: #444;
 }
 
-.circle-carousel-button {
-  background-color: rgb(137, 58, 150);
-  color: white;
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.circle-carousel-button:hover {
-  background-color: rgb(191, 12, 204);
-  transform: scale(1.1);
-}
-
 .card-dots {
   margin-top: 1rem;
   display: flex;
@@ -686,10 +665,6 @@ main {
     width: 90%;
   }
 
-  #leish-card-container {
-    width: 100%;
-    min-height: 600px; /* Increased from 450px */
-  }
 
   .leish-card-title {
     font-size: 1.3rem;
@@ -724,6 +699,10 @@ main {
     overflow-y: auto;
     max-height: 200px;
     padding-right: 10px;
+  }
+
+  #leish-info-container{
+    width: 100%;
   }
 }
 
