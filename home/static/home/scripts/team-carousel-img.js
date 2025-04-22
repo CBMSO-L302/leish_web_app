@@ -1,7 +1,4 @@
-// noinspection DuplicatedCode
-
 let teamIntroIndex = 0;
-let teamIntroInterval;
 
 function changeSlide(index) {
   console.log('changeSlide called with index:', index);
@@ -42,7 +39,7 @@ function loadTeamIntro() {
 
         console.log('teamIntroContainer found:', !!teamIntroContainer);
 
-        teamIntroContainer.innerHTML = ''; // Clear existing carousel
+        teamIntroContainer.innerHTML = ''; // Clear the existing carousel
 
         data.forEach((post, index) => {
             const imgDiv = document.createElement('div');
@@ -50,18 +47,19 @@ function loadTeamIntro() {
             if (index !== 0) imgDiv.style.display = 'none'; // Hide all slides except the first one
 
             const img = document.createElement('img');
+            // noinspection JSUnresolvedReference
             img.src = post.img;
             img.alt = post.title;
             imgDiv.appendChild(img);
 
-            // Create and add left button
+            // Create and add the left button
             const leftButton = document.createElement('button');
             leftButton.classList.add('carousel-button', 'prev');
             leftButton.innerHTML = '&#10094;'; // Left arrow symbol
             leftButton.onclick = () => changeTeamIntroSlide(-1);
             imgDiv.appendChild(leftButton);
 
-            // Create and add right button
+            // Create and add the right button
             const rightButton = document.createElement('button');
             rightButton.classList.add('carousel-button', 'next');
             rightButton.innerHTML = '&#10095;'; // Right arrow symbol
@@ -74,13 +72,6 @@ function loadTeamIntro() {
 
         teamIntroIndex = 0;
         changeSlide(teamIntroIndex);
-
-        if (teamIntroInterval) {
-            clearInterval(teamIntroInterval);
-            console.log('Previous interval cleared');
-        }
-        teamIntroInterval = setInterval(() => changeTeamIntroSlide(1), 5000);
-        console.log('New interval set');
     })
     .catch(error => console.error('Error loading carousel:', error));
 }
