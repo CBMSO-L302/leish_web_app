@@ -390,37 +390,33 @@ main {
   transform: scale(1.2);
 }
 
-/* Responsive design */
-@media only screen and (max-width: 775px) {
-  #leish-info-container {
-    width: 90%;
-  }
+/*!* Responsive design *!*/
+/*@media only screen and (max-width: 775px) {*/
+/*  #leish-info-container {*/
+/*    width: 90%;*/
+/*  }*/
 
-  #leish-card-container {
-    width: 100%;
-  }
+/*  #leish-card-container {*/
+/*    width: 100%;*/
+/*  }*/
 
-  .leish-card-title {
-    font-size: 1.3rem;
-  }
-}
+/*  .leish-card-title {*/
+/*    font-size: 1.3rem;*/
+/*  }*/
+/*}*/
 
-@media only screen and (max-width: 480px) {
-  .leish-card-img {
-    height: 150px;
-  }
+/*@media only screen and (max-width: 480px) {*/
+/*  .leish-card-img {*/
+/*    height: 150px;*/
+/*  }*/
 
-  .circle-carousel-button {
-    width: 35px;
-    height: 35px;
-    font-size: 1rem;
-  }
-}
+/*  .circle-carousel-button {*/
+/*    width: 35px;*/
+/*    height: 35px;*/
+/*    font-size: 1rem;*/
+/*  }*/
+/*}*/
 
-
-/* ================================================================== */
-/* Map intro carousel */
-/* ================================================================== */
 /* ================================================================== */
 /* WHO Leishmaniasis Map Section */
 /* ================================================================== */
@@ -438,7 +434,7 @@ main {
 }
 
 .who-map-container {
-  width: 80%;
+  width: 95%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -470,7 +466,8 @@ main {
 
 .who-map-iframe {
   width: 100%;
-  border-radius: 15px;
+  height: 650px;
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
@@ -492,68 +489,40 @@ main {
   color: rgb(191, 12, 204);
 }
 
-/* Responsive design for the map */
-@media only screen and (max-width: 1024px) {
-  .who-map-container {
-    width: 90%;
-  }
+/*!* Responsive design for the map *!*/
+/*@media only screen and (max-width: 1024px) {*/
+/*  .who-map-container {*/
+/*    width: 90%;*/
+/*  }*/
 
-  .who-map-iframe iframe {
-    height: 500px;
-  }
-}
+/*  .who-map-iframe iframe {*/
+/*    height: 500px;*/
+/*  }*/
+/*}*/
 
-@media only screen and (max-width: 775px) {
-  .who-map-iframe iframe {
-    height: 400px;
-  }
+/*@media only screen and (max-width: 775px) {*/
+/*  .who-map-iframe iframe {*/
+/*    height: 400px;*/
+/*  }*/
 
-  .who-map-description p {
-    font-size: 1rem;
-  }
-}
+/*  .who-map-description p {*/
+/*    font-size: 1rem;*/
+/*  }*/
+/*}*/
 
-@media only screen and (max-width: 480px) {
-  .who-map-container {
-    width: 95%;
-  }
+/*@media only screen and (max-width: 480px) {*/
+/*  .who-map-container {*/
+/*    width: 95%;*/
+/*  }*/
 
-  .who-map-iframe iframe {
-    height: 350px;
-  }
+/*  .who-map-iframe iframe {*/
+/*    height: 350px;*/
+/*  }*/
 
-  .who-map-title h2 {
-    font-size: 1.3rem;
-  }
-}
-
-
-
-.map-post {
-  flex-direction: column;
-}
-
-.map-post-img {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.map-post-img img {
-  height: 35vw;  /* 40% of the viewport width IMPORTANT*/
-  overflow: hidden;
-  border-radius: 10%;
-}
-
-.map-post-text {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
+/*  .who-map-title h2 {*/
+/*    font-size: 1.3rem;*/
+/*  }*/
+/*}*/
 
 /* ================================================================== */
 /* Twiiter feed */
