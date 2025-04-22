@@ -19,20 +19,31 @@ function showSlide(index) {
   slides.forEach((slide, i) => {
     slide.style.display = i === currentSlideIndex ? 'flex' : 'none';
   });
+
+  // Update the active dot
+  updateDots();
 }
 
-// Navigate forward or backward in the carousel
-function navigateSlide(step) {
-  showSlide(currentSlideIndex + step);
+// Update the active dot based on current slide
+function updateDots() {
+  const dots = document.querySelectorAll('.dot');
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === currentSlideIndex);
+  });
 }
 
-// Create a navigation button
-function createNavButton(direction, symbol) {
-  const button = document.createElement('button');
-  button.classList.add('carousel-button', direction);
-  button.innerHTML = symbol;
-  button.onclick = () => navigateSlide(direction === 'prev' ? -1 : 1);
-  return button;
+// Create dots for navigation
+function createDots(count) {
+  const dotsContainer = document.getElementById('carousel-dots');
+  dotsContainer.innerHTML = '';
+
+  for (let i = 0; i < count; i++) {
+    const dot = document.createElement('div');
+    dot.classList.add('dot');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => showSlide(i));
+    dotsContainer.appendChild(dot);
+  }
 }
 
 // Load team data and build carousel
@@ -41,34 +52,36 @@ function loadCarousel() {
     .then(response => response.json())
     .then(data => {
       const carouselContainer = document.getElementById('carousel-slide');
-      
+
       // Clear existing content
       carouselContainer.innerHTML = '';
-      
+
       // Create slides for each team member
       data.forEach((member, index) => {
         // Create the slide container
         const slide = document.createElement('div');
         slide.classList.add('carousel-slide-img');
         slide.style.display = 'none';
-        
+
         // Add member image
         const img = document.createElement('img');
         img.src = member.img;
         img.alt = member.title;
         slide.appendChild(img);
-        
-        // Add navigation buttons
-        slide.appendChild(createNavButton('prev', '&#10094;'));
-        slide.appendChild(createNavButton('next', '&#10095;'));
-        
+
         // Add slide to carousel
         carouselContainer.appendChild(slide);
       });
-      
+
+      // Create navigation dots
+      createDots(data.length);
+
       // Show the first slide
       currentSlideIndex = 0;
       showSlide(currentSlideIndex);
+
+      // Optional: Auto-play the carousel
+      // setInterval(() => showSlide(currentSlideIndex + 1), 5000);
     })
     .catch(error => console.error('Error loading carousel:', error));
 }

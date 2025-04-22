@@ -88,16 +88,30 @@ main {
   z-index: 1;
 }
 
-.carousel-button.prev {
-  left: 10px;
+.carousel-dots {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 3;
 }
 
-.carousel-button.next {
-  right: 10px;
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: 1px solid grey;
 }
 
-.carousel-button:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+.dot.active {
+  background-color: white;
+  transform: scale(1.2);
 }
 
 /* Now the text in the image */
