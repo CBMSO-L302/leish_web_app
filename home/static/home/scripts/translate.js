@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('lang_software').textContent = data.software;
                 // Main content
                 document.getElementById('team-frontshow-text-header').querySelector('h3').textContent = data.theTeam;
-                document.getElementById('team-frontshow-text').querySelector('p').textContent = data.theTeam_description;
-                document.getElementById('team-frontshow-button').textContent = data.theTeam_learnMore;
+                document.getElementById('team-frontshow-text').querySelector('p').textContent = data.theTeamDescription;
+                document.getElementById('team-frontshow-button').textContent = data.theTeamLearnMore;
 
                 // Load news content
                 loadNews(lang);
