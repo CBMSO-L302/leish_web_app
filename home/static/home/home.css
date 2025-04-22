@@ -525,80 +525,221 @@ main {
 /*}*/
 
 /* ================================================================== */
-/* Twiiter feed */
+/* Social Media Updates Section */
 /* ================================================================== */
-#twitter-zone{
+#social-updates {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 0.5rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  width: 70%;
+  padding: 4rem 0;
+  background: linear-gradient(
+    180deg,
+    rgb(137, 58, 150),
+    rgba(0, 119, 255, 0.7)
+  );
+  position: relative;
 }
 
-
-.tab {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem
+.social-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  width: 80%;
+  max-width: 800px;
 }
 
-/* Style the buttons inside the tab */
-.tab button {
+.social-header h2 {
   color: white;
-  background-color: rgb(137, 58, 150);
-  border-radius: 10%;
-  outline: none;
+  font-size: 2.2rem;
+  margin-bottom: 0.8rem;
+  position: relative;
+  display: inline-block;
+}
+
+.social-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+.social-header p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.social-tabs-container {
+  width: 85%;
+  max-width: 1200px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.social-tabs {
+  display: flex;
+  background-color: rgba(137, 58, 150, 0.1);
+  border-bottom: 1px solid rgba(137, 58, 150, 0.2);
+}
+
+.social-tab-btn {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 1.2rem 1rem;
   cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  border-color: transparent;
+  position: relative;
+  transition: all 0.3s ease;
+  color: rgb(80, 80, 80);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
 }
 
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: rgb(191, 12, 204);
-  padding: 20px;
+.social-tab-btn img {
+  height: 24px;
+  width: auto;
+  opacity: 0.7;
+  transition: all 0.3s;
 }
 
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: rgb(0, 117, 255);
+.social-tab-btn span {
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s;
 }
 
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
-  width: 70%;
-  overflow-y: auto;
+.social-tab-btn:hover {
+  background-color: rgba(137, 58, 150, 0.15);
 }
 
-/* Specific heights for each tab content */
-#WHO.tabcontent .twitter-timeline,
-#CBM.tabcontent .twitter-timeline,
-#CSIC.tabcontent .twitter-timeline,
-#UAM.tabcontent .twitter-timeline {
-  height: 800px !important;
+.social-tab-btn.active {
+  background-color: white;
+  color: rgb(137, 58, 150);
+  font-weight: 600;
 }
 
-#WHO.tabcontent,
-#CBM.tabcontent,
-#CSIC.tabcontent,
-#UAM.tabcontent {
+.social-tab-btn.active img {
+  opacity: 1;
+}
+
+.social-tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
   width: 100%;
-  border: transparent;
-}
-/* Ensure Twitter widgets are responsive */
-.tabcontent .twitter-timeline {
-  width: 100% !important;
+  height: 3px;
+  background-color: rgb(137, 58, 150);
 }
 
+.social-content {
+  position: relative;
+  min-height: 600px;
+}
+
+.social-panel {
+  display: none;
+  padding: 1.5rem;
+  width: 100%;
+  height: 100%;
+}
+
+.social-panel.active {
+  display: block;
+}
+
+.social-panel iframe {
+  width: 100%;
+  height: 600px;
+  border: none;
+}
+
+/* General spinner styling */
+.loading-spinner {
+  border: 4px solid rgba(0, 0, 0, 0.2); /* Light border */
+  border-top: 4px solid rgba(0, 119, 255, 0.7); /* Highlighted border */
+  border-radius: 50%; /* Make it circular */
+  width: 40px; /* Width of the spinner */
+  height: 40px; /* Height of the spinner */
+  animation: spin 1s linear infinite; /* Rotation animation */
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Show the spinner when needed */
+.loading-spinner.active {
+  display: block; /* Make spinner visible */
+}
+
+/* Animations to rotate the spinner */
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg); /* Start angle */
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg); /* Full rotation */
+  }
+}
+
+
+
+/*!* Responsive adjustments *!*/
+/*@media only screen and (max-width: 775px) {*/
+/*  .social-tabs {*/
+/*    flex-wrap: wrap;*/
+/*  }*/
+
+/*  .social-tab-btn {*/
+/*    flex: 1 1 50%;*/
+/*    padding: 1rem 0.5rem;*/
+/*  }*/
+
+/*  .social-tab-btn span {*/
+/*    font-size: 0.8rem;*/
+/*  }*/
+
+/*  .social-tabs-container {*/
+/*    width: 95%;*/
+/*  }*/
+/*}*/
+
+/*@media only screen and (max-width: 480px) {*/
+/*  .social-tab-btn {*/
+/*    flex: 1 1 100%;*/
+/*    padding: 0.8rem 0.4rem;*/
+/*  }*/
+
+/*  .social-tab-btn span {*/
+/*    font-size: 0.8rem;*/
+/*  }*/
+
+/*  .social-header h2 {*/
+/*    font-size: 1.8rem;*/
+/*  }*/
+
+/*  .social-header p {*/
+/*    font-size: 0.9rem;*/
+/*  }*/
+
+/*  .social-panel {*/
+/*    padding: 0.8rem;*/
+/*  }*/
+/*}*/
 
 /* ================================================================== */
 /* Media queries */
