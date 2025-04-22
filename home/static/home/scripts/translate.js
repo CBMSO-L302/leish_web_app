@@ -2,7 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const languageDropdown = document.getElementById('language-dropdown');
     const selectedFlag = document.getElementById('selected-flag');
 
-    // Function to change language
+    /**
+     * Change and persist the selected language, then reload translations.
+     */
     const changeLanguage = (lang) => {
         localStorage.setItem('selectedLanguage', lang);
         loadLanguage(lang);
@@ -11,110 +13,136 @@ document.addEventListener('DOMContentLoaded', () => {
     // Expose changeLanguage globally if needed
     window.changeLanguage = changeLanguage;
 
-// Load Leishmania info cards from translations.json
-function loadLeishInfoCards(lang) {
-    fetch(`/static/home/json/translations.json`)
-        .then(response => response.json())
-        .then(data => {
-            const translations = data[lang];
-            if (!translations || !translations.leishIntro) {
-                console.error(`LeishIntro data for language "${lang}" not found.`);
-                return;
+    /**
+     * Update translations for a list of elements based on their IDs or selectors.
+     * @param {object} elementsToTranslate - Mapping of selector/IDs to translation keys.
+     * @param {object} translations - Translations for the selected language.
+     */
+    const updatePageTranslations = (elementsToTranslate, translations) => {
+        Object.entries(elementsToTranslate).forEach(([selector, translationKey]) => {
+            const element = document.querySelector(selector);
+            if (element && translations[translationKey]) {
+                element.textContent = translations[translationKey];
+            } else if (!translations[translationKey]) {
+                console.error(`Translation key "${translationKey}" not found.`);
+            } else {
+                console.error(`DOM element for selector "${selector}" not found.`);
             }
+        });
+    };
 
-            const leishInfoData = translations.leishIntro;
-            const cardContainer = document.getElementById('leish-card-container');
+    /**
+     * Dynamically load and create the Leishmania info cards from translations JSON.
+     * @param {string} lang - Selected language.
+     */
+    const loadLeishInfoCards = (lang) => {
+        fetch(`/static/home/json/translations.json`)
+            .then(response => response.json())
+            .then(data => {
+                const translations = data[lang];
+                if (!translations || !translations.leishIntro) {
+                    console.error(`LeishIntro data for language "${lang}" not found.`);
+                    return;
+                }
 
-            // Clear existing cards
-            cardContainer.innerHTML = '';
+                const leishInfoData = translations.leishIntro;
+                const cardContainer = document.getElementById('leish-card-container');
 
-            // Create new cards
-            leishInfoData.forEach((info, index) => {
-                const card = document.createElement('div');
-                card.classList.add('leish-card');
+                // Clear existing cards
+                cardContainer.innerHTML = '';
 
-                // Title
-                const title = document.createElement('h3');
-                title.classList.add('leish-card-title');
-                title.textContent = info.title;
-                card.appendChild(title);
+                // Create new cards
+                leishInfoData.forEach((info) => {
+                    const card = document.createElement('div');
+                    card.classList.add('leish-card');
 
-                // Image
-                const imgDiv = document.createElement('div');
-                imgDiv.classList.add('leish-card-img');
-                const img = document.createElement('img');
-                img.src = info.img;
-                img.alt = info.title;
-                imgDiv.appendChild(img);
-                card.appendChild(imgDiv);
+                    // Title
+                    const title = document.createElement('h3');
+                    title.classList.add('leish-card-title');
+                    title.textContent = info.title;
+                    card.appendChild(title);
 
-                // Description
-                const desc = document.createElement('p');
-                desc.classList.add('leish-card-description');
-                desc.textContent = info.description;
-                card.appendChild(desc);
+                    // Image
+                    const imgDiv = document.createElement('div');
+                    imgDiv.classList.add('leish-card-img');
+                    const img = document.createElement('img');
+                    img.src = info.img;
+                    img.alt = info.title;
+                    imgDiv.appendChild(img);
+                    card.appendChild(imgDiv);
 
-                cardContainer.appendChild(card);
-            });
+                    // Description
+                    const desc = document.createElement('p');
+                    desc.classList.add('leish-card-description');
+                    desc.textContent = info.description;
+                    card.appendChild(desc);
 
-            // Update carousel state
-            leishInfoCards = Array.from(document.querySelectorAll('.leish-card'));
-            createLeishInfoDots(leishInfoCards.length);
-            showLeishInfoCard(0);
-        })
-        .catch(error => console.error('Error loading translations.json:', error));
-}
+                    cardContainer.appendChild(card);
+                });
 
-// Update translations on language change
-function loadLanguage(lang) {
-    fetch(`/static/home/json/translations.json`)
-        .then(response => response.json())
-        .then(data => {
-            const translations = data[lang];
-            if (!translations) {
-                console.error(`Translations for language "${lang}" not found.`);
-                return;
-            }
+                // Update carousel functionality (from leish-intro-carousel.js)
+                setupLeishInfoCards();
+            })
+            .catch(error => console.error('Error loading translations.json:', error));
+    };
 
-            // Header translations
-            document.getElementById('lang_genome_decoding').textContent = translations.genomeDecoding;
-            document.getElementById('lang_about_us').textContent = translations.aboutUs;
-            document.getElementById('lang_mission').textContent = translations.mission;
-            document.getElementById('lang_team').textContent = translations.team;
-            document.getElementById('lang_species').textContent = translations.species;
-            document.getElementById('lang_downloads').textContent = translations.downloads;
-            document.getElementById('lang_reports').textContent = translations.reports;
-            document.getElementById('lang_datasets').textContent = translations.datasets;
-            document.getElementById('lang_software').textContent = translations.software;
+    /**
+     * Load and apply the translations for the selected language.
+     * @param {string} lang - Selected language.
+     */
+    const loadLanguage = (lang) => {
+        fetch(`/static/home/json/translations.json`)
+            .then(response => response.json())
+            .then(data => {
+                const translations = data[lang];
+                if (!translations) {
+                    console.error(`Translations for language "${lang}" not found.`);
+                    return;
+                }
 
-            // Main content translations
-            document.getElementById('team-frontshow-text-header').querySelector('h3').textContent = translations.theTeam;
-            document.getElementById('team-frontshow-text').querySelector('p').textContent = translations.theTeamDescription;
-            document.getElementById('team-frontshow-button').textContent = translations.theTeamLearnMore;
+                // Map of selectors/IDs to their corresponding translation keys
+                const elementsToTranslate = {
+                    '#lang_genome_decoding': 'genomeDecoding',
+                    '#lang_about_us': 'aboutUs',
+                    '#lang_mission': 'mission',
+                    '#lang_team': 'team',
+                    '#lang_species': 'species',
+                    '#lang_downloads': 'downloads',
+                    '#lang_reports': 'reports',
+                    '#lang_datasets': 'datasets',
+                    '#lang_software': 'software',
+                    '#team-frontshow-text-header h3': 'theTeam',
+                    '#team-frontshow-text p': 'theTeamDescription',
+                    '#team-frontshow-button': 'theTeamLearnMore',
+                    '.who-map-title h2': 'whoMapTitle',
+                    '.who-map-description p': 'whoMapDescription',
+                    '.social-header h2': 'latestUpdatesTitle',
+                    '.social-header p': 'latestUpdatesDescription'
+                };
 
-            // WHO map content translations
-            document.querySelector('.who-map-title h2').textContent = translations.whoMapTitle;
-            document.querySelector('.who-map-description p').textContent = translations.whoMapDescription;
+                // Apply translations
+                updatePageTranslations(elementsToTranslate, translations);
 
-            // Latest updates section
-            document.querySelector('.social-header h2').textContent = translations.latestUpdatesTitle;
-            document.querySelector('.social-header p').textContent = translations.latestUpdatesDescription;
+                // Load Leishmania cards
+                loadLeishInfoCards(lang);
 
-            // Load Leishmania cards
-            loadLeishInfoCards(lang);
-        })
-        .catch(error => console.error('Error loading translations.json:', error));
+                // Update flag for selected language
+                const flagElement = languageDropdown.querySelector(`option[value="${lang}"]`);
+                if (selectedFlag && flagElement) {
+                    selectedFlag.src = flagElement.dataset.flag;
+                } else {
+                    console.error('Language flag element not found.');
+                }
+            })
+            .catch(error => console.error('Error loading translations.json:', error));
+    };
 
-    // Change flag
-    selectedFlag.src = languageDropdown.querySelector(`option[value="${lang}"]`).dataset.flag;
-}
-
-    // Load language from localStorage if it exists
-    const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+    // Load language from localStorage or default to English
+    const savedLanguage = localStorage.getItem('selectedLanguage') || 'eng';
     languageDropdown.value = savedLanguage;
     loadLanguage(savedLanguage);
 
-    // Event listener for language change
+    // Event listener for language changes
     languageDropdown.addEventListener('change', (event) => {
         changeLanguage(event.target.value);
     });
