@@ -34,7 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Load news content
                 loadNews(lang);
                 // Load leish intro content
-                loadLeishIntro(lang);
+                loadLeishInfoCards(lang);
+
                 // Load map intro content
                 loadMapIntro(lang);
             })
