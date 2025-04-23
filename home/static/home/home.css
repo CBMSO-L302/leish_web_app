@@ -544,25 +544,36 @@ main {
 /* ================================================================== */
 @media only screen and (min-width: 1025px) {
   #team-frontshow {
-    flex-direction: row; /* Default layout for wide screens */
+    flex-direction: row;
     justify-content: space-evenly;
-    /*width: 80%; !* Center and slightly reduce the width *!*/
     gap: 2rem;
+    height: 60vh;
+    overflow: hidden;
   }
 
   #team-frontshow-text {
-    font-size: 1.2rem; /* Slightly larger text for better readability */
+    font-size: 1.2rem;
     max-width: 800px;
+    bottom: 60px;
+    left: 40px;
   }
 
   #carousel-container {
-    /*-webkit-mask-image: -webkit-linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);*/
-    /*mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);*/
+    height: 100%;
+    width: 100%;
+  }
+
+  .carousel-slide-img {
+    height: 100%;
+  }
+
+  .carousel-slide-img img {
+    object-position: center 20%;
   }
 
   #leish-card-container {
-  width: 50%;
-}
+    width: 50%;
+  }
 }
 
 /* Tablet portrait mode */
