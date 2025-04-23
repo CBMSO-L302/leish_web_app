@@ -546,7 +546,7 @@ main {
   #team-frontshow {
     flex-direction: row; /* Default layout for wide screens */
     justify-content: space-evenly;
-    width: 80%; /* Center and slightly reduce the width */
+    /*width: 80%; !* Center and slightly reduce the width *!*/
     gap: 2rem;
   }
 
@@ -556,9 +556,13 @@ main {
   }
 
   #carousel-container {
-    -webkit-mask-image: -webkit-linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    /*-webkit-mask-image: -webkit-linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);*/
+    /*mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);*/
   }
+
+  #leish-card-container {
+  width: 50%;
+}
 }
 
 /* Tablet portrait mode */
@@ -594,14 +598,6 @@ main {
   .leish-card-title {
     font-size: 1.3rem;
   }
-
-  /*.leish-card.prev {*/
-  /*  transform: translateX(calc(-50% + 10rem)) scale(0.9) rotateY(10deg);*/
-  /*}*/
-
-  /*.leish-card.next {*/
-  /*  transform: translateX(calc(50% - 10rem)) scale(0.9) rotateY(-10deg)*/
-  /*}*/
 }
 
 @media only screen and (max-width: 630px) {
@@ -637,14 +633,6 @@ main {
   #leish-info-container{
     width: 100%;
   }
-
-  /*.leish-card.prev {*/
-  /*  transform: translateX(calc(-50% + 11rem)) scale(0.9) rotateY(10deg);*/
-  /*}*/
-
-  /*.leish-card.next {*/
-  /*  transform: translateX(calc(50% - 11rem)) scale(0.9) rotateY(-10deg)*/
-  /*}*/
 
   .who-map-container {
     width: 100%;
