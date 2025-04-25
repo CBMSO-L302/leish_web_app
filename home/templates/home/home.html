@@ -83,22 +83,49 @@
       <div class="social-content">
         <div id="WHO" class="social-panel active">
           <div class="loading-spinner"></div> <!-- Spinner -->
-          <a class="twitter-timeline" href="https://x.com/WHO" data-height="600">WHO Tweets</a>
+          <div class="bsky-container">
+            <!--suppress HtmlUnknownTag -->
+            <bsky-embed
+                username="who.int"
+                mode=""
+                limit="5"
+            >
+            </bsky-embed>
+          </div>
         </div>
         <div id="CBM" class="social-panel">
           <div class="loading-spinner"></div> <!-- Spinner -->
-          <a class="twitter-timeline" href="https://x.com/CBM_CSIC_UAM" data-height="600">CBM Tweets</a>
-        </div>
-        <div id="CSIC" class="social-panel">
-          <div class="loading-spinner"></div> <!-- Spinner -->
-          <a class="twitter-timeline" href="https://x.com/CSIC" data-height="600">CSIC Tweets</a>
-        </div>
-        <div id="UAM" class="social-panel">
-          <div class="loading-spinner"></div> <!-- Spinner -->
-          <a class="twitter-timeline" href="https://x.com/UAM_Madrid" data-height="600">UAM Tweets</a>
+          <!--suppress HtmlUnknownTag -->
+          <bsky-embed
+              username="cbm-csic-uam.bsky.social"
+              mode=""
+              limit="5"
+          >
+          </bsky-embed>
         </div>
       </div>
+      <div id="CSIC" class="social-panel">
+        <div class="loading-spinner"></div> <!-- Spinner -->
+        <!--suppress HtmlUnknownTag -->
+        <bsky-embed
+            username="csic.es"
+            mode=""
+            limit="5"
+        >
+        </bsky-embed>
+      </div>
     </div>
+    <div id="UAM" class="social-panel">
+      <div class="loading-spinner"></div> <!-- Spinner -->
+      <!--suppress HtmlUnknownTag -->
+      <bsky-embed
+          username="who.int"
+          mode=""
+          limit="5"
+      >
+      </bsky-embed>
+    </div>
+
 
   </section>
 
@@ -108,6 +135,7 @@
   <script src="{% static 'home/scripts/translate.js' %}"></script>
   <script src="{% static 'home/scripts/team-img-carousel.js' %}"></script>
   <script src="{% static 'home/scripts/leishmania-info-cards.js' %}"></script>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  <script src="{% static 'home/scripts/twitter-feed.js' %}"></script>
+  <!--suppress JSUnresolvedLibraryURL -->
+  <script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" async></script>
+  <script src="{% static 'home/scripts/bluesky-feed.js' %}"></script>
 {% endblock %}
