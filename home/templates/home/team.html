@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}Team - Leish-ESP{% endblock %}
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static 'home/team.css' %}">
+{% endblock %}
+
+{% block main_content %}
+  <section id="team-header">
+    <div class="container">
+      <h1 id="team-title">Our Team</h1>
+      <div id="team-description" class="team-text"></div>
+    </div>
+  </section>
+
+  <section id="team-tabs">
+    <div class="container">
+      <div class="tab-buttons">
+        <button class="tab-btn active" data-tab="current-members">Current Members</button>
+        <button class="tab-btn" data-tab="former-members">Former Members</button>
+        <button class="tab-btn" data-tab="students">Students</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="team-members">
+    <div class="container">
+      <!-- Current Members Tab -->
+      <div id="current-members" class="tab-content active">
+        <div class="members-grid">
+          <!-- Example member - will be replaced with actual data -->
+          <div class="member-card">
+            <div class="member-image">
+              <div class="image-container">
+                <img src="{% static 'home/images/placeholder-profile.jpg' %}" alt="Team Member">
+              </div>
+              <div class="member-hover">
+                <div class="hover-image">
+                  <img src="{% static 'home/images/placeholder-profile.jpg' %}" alt="Team Member" class="bw-image">
+                </div>
+                <div class="hover-content">
+                  <h3>Dr. Jane Doe</h3>
+                  <p class="member-title">Principal Investigator</p>
+                  <p class="member-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies aliquam, nunc nisl aliquet nunc.</p>
+                </div>
+              </div>
+            </div>
+            <h3 class="member-name">Dr. Jane Doe</h3>
+            <p class="member-role">Principal Investigator</p>
+          </div>
+          
+          <!-- More members will be added here -->
+        </div>
+      </div>
+
+      <!-- Former Members Tab -->
+      <div id="former-members" class="tab-content">
+        <div class="members-grid">
+          <!-- Example former member - will be replaced with actual data -->
+          <div class="member-card">
+            <div class="member-image">
+              <div class="image-container">
+                <img src="{% static 'home/images/placeholder-profile.jpg' %}" alt="Former Team Member">
+              </div>
+              <div class="member-hover">
+                <div class="hover-image">
+                  <img src="{% static 'home/images/placeholder-profile.jpg' %}" alt="Former Team Member" class="bw-image">
+                </div>
+                <div class="hover-content">
+                  <h3>Dr. John Smith</h3>
+                  <p class="member-title">Former Researcher</p>
+                  <p class="member-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies aliquam, nunc nisl aliquet nunc.</p>
+                </div>
+              </div>
+            </div>
+            <h3 class="member-name">Dr. John Smith</h3>
+            <p class="member-role">Former Researcher</p>
+          </div>
+          
+          <!-- More former members will be added here -->
+        </div>
+      </div>
+
+      <!-- Students Tab -->
+      <div id="students" class="tab-content">
+        <div class="members-grid">
+          <!-- Example student - will be replaced with actual data -->
+          <div class="member-card">
+            <div class="member-image">
+              <div class="image-container">
+                <img src="{% static 'home/images/placeholder-profile.jpg' %}" alt="Student">
+              </div>
+              <div class="member-hover">
+                <div class="hover-image">
+                  <img src="{% static 'home/images/placeholder-profile.jpg' %}" alt="Student" class="bw-image">
+                </div>
+                <div class="hover-content">
+                  <h3>Alice Johnson</h3>
+                  <p class="member-title">PhD Student</p>
+                  <p class="member-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies aliquam, nunc nisl aliquet nunc.</p>
+                </div>
+              </div>
+            </div>
+            <h3 class="member-name">Alice Johnson</h3>
+            <p class="member-role">PhD Student</p>
+          </div>
+          
+          <!-- More students will be added here -->
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block js_content %}
+  <script src="{% static 'home/scripts/translate.js' %}"></script>
+  <script src="{% static 'home/scripts/team.js' %}"></script>
+{% endblock %}

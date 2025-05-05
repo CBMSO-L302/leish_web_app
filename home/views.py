@@ -5,3 +5,6 @@ class HomePageView(TemplateView):
 
 class OnDevelopment(TemplateView):
     template_name = "home/on_development.html"
+
+class TeamPageView(TemplateView):
+    template_name = "home/team.html"
