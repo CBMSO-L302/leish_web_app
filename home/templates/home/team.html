@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_title %}Team - Leish-ESP{% endblock %}
+{% block page_title %}Team{% endblock %}
 
 {% block css_files %}
   <link rel="stylesheet" href="{% static 'home/team.css' %}">
@@ -30,28 +30,131 @@
       <!-- Current Members Tab -->
       <div id="current-members" class="tab-content active">
         <div class="members-grid">
-          <!-- Example member - will be replaced with actual data -->
+          <!-- Team Member 1 -->
           <div class="member-card">
             <div class="member-image">
               <div class="image-container">
-                <img src="{% static 'home/images/placeholder-profile.jpg' %}" alt="Team Member">
+                <img src="{% static 'home/images/team_individual/jmrr.jpg' %}" alt="Dr. José M. Requena">
               </div>
               <div class="member-hover">
                 <div class="hover-image">
-                  <img src="{% static 'home/images/placeholder-profile.jpg' %}" alt="Team Member" class="bw-image">
+                  <img src="{% static 'home/images/team_individual/jmrr.jpg' %}" alt="Dr. José M. Requena" class="bw-image">
                 </div>
                 <div class="hover-content">
-                  <h3>Dr. Jane Doe</h3>
+                  <h3>Dr. José M. Requena</h3>
                   <p class="member-title">Principal Investigator</p>
-                  <p class="member-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies aliquam, nunc nisl aliquet nunc.</p>
+                  <p class="member-description">Leading the Leishmania genomics research team with over 20 years of experience in molecular parasitology.</p>
                 </div>
               </div>
             </div>
-            <h3 class="member-name">Dr. Jane Doe</h3>
+            <h3 class="member-name">Dr. José M. Requena</h3>
             <p class="member-role">Principal Investigator</p>
           </div>
-          
-          <!-- More members will be added here -->
+
+          <!-- Team Member 2 -->
+          <div class="member-card">
+            <div class="member-image">
+              <div class="image-container">
+                <img src="{% static 'home/images/team_individual/bao.jpg' %}" alt="Dr. Begoña Aguado">
+              </div>
+              <div class="member-hover">
+                <div class="hover-image">
+                  <img src="{% static 'home/images/team_individual/bao.jpg' %}" alt="Dr. Begoña Aguado" class="bw-image">
+                </div>
+                <div class="hover-content">
+                  <h3>Dr. Begoña Aguado</h3>
+                  <p class="member-title">Senior Researcher</p>
+                  <p class="member-description">Specializing in genomic analysis and bioinformatics approaches to understand Leishmania gene expression.</p>
+                </div>
+              </div>
+            </div>
+            <h3 class="member-name">Dr. Begoña Aguado</h3>
+            <p class="member-role">Senior Researcher</p>
+          </div>
+
+          <!-- Team Member 3 -->
+          <div class="member-card">
+            <div class="member-image">
+              <div class="image-container">
+                <img src="{% static 'home/images/team_individual/ass.jpg' %}" alt="Dr. Alberto Silva">
+              </div>
+              <div class="member-hover">
+                <div class="hover-image">
+                  <img src="{% static 'home/images/team_individual/ass.jpg' %}" alt="Dr. Alberto Silva" class="bw-image">
+                </div>
+                <div class="hover-content">
+                  <h3>Dr. Alberto Silva</h3>
+                  <p class="member-title">Postdoctoral Researcher</p>
+                  <p class="member-description">Working on Leishmania genome assembly and annotation, with expertise in next-generation sequencing technologies.</p>
+                </div>
+              </div>
+            </div>
+            <h3 class="member-name">Dr. Alberto Silva</h3>
+            <p class="member-role">Postdoctoral Researcher</p>
+          </div>
+
+          <!-- Team Member 4 -->
+          <div class="member-card">
+            <div class="member-image">
+              <div class="image-container">
+                <img src="{% static 'home/images/team_individual/sgf.jpg' %}" alt="Dr. Sara García">
+              </div>
+              <div class="member-hover">
+                <div class="hover-image">
+                  <img src="{% static 'home/images/team_individual/sgf.jpg' %}" alt="Dr. Sara García" class="bw-image">
+                </div>
+                <div class="hover-content">
+                  <h3>Dr. Sara García</h3>
+                  <p class="member-title">Research Associate</p>
+                  <p class="member-description">Focusing on comparative genomics of Leishmania species and development of computational tools for parasite research.</p>
+                </div>
+              </div>
+            </div>
+            <h3 class="member-name">Dr. Sara García</h3>
+            <p class="member-role">Research Associate</p>
+          </div>
+
+          <!-- Team Member 5 -->
+          <div class="member-card">
+            <div class="member-image">
+              <div class="image-container">
+                <img src="{% static 'home/images/team_individual/jaj.jpg' %}" alt="Dr. Juan A. Jiménez">
+              </div>
+              <div class="member-hover">
+                <div class="hover-image">
+                  <img src="{% static 'home/images/team_individual/jaj.jpg' %}" alt="Dr. Juan A. Jiménez" class="bw-image">
+                </div>
+                <div class="hover-content">
+                  <h3>Dr. Juan A. Jiménez</h3>
+                  <p class="member-title">Bioinformatician</p>
+                  <p class="member-description">Developing computational pipelines for genome analysis and visualization of Leishmania genomic data.</p>
+                </div>
+              </div>
+            </div>
+            <h3 class="member-name">Dr. Juan A. Jiménez</h3>
+            <p class="member-role">Bioinformatician</p>
+          </div>
+
+          <!-- Team Member 6 -->
+          <div class="member-card">
+            <div class="member-image">
+              <div class="image-container">
+                <img src="{% static 'home/images/team_individual/rfph.jpg' %}" alt="Dr. Ricardo Fernández">
+              </div>
+              <div class="member-hover">
+                <div class="hover-image">
+                  <img src="{% static 'home/images/team_individual/rfph.jpg' %}" alt="Dr. Ricardo Fernández" class="bw-image">
+                </div>
+                <div class="hover-content">
+                  <h3>Dr. Ricardo Fernández</h3>
+                  <p class="member-title">Molecular Biologist</p>
+                  <p class="member-description">Investigating gene expression regulation and molecular mechanisms of drug resistance in Leishmania parasites.</p>
+                </div>
+              </div>
+            </div>
+            <h3 class="member-name">Dr. Ricardo Fernández</h3>
+            <p class="member-role">Molecular Biologist</p>
+          </div>
         </div>
       </div>
 
@@ -78,7 +181,7 @@
             <h3 class="member-name">Dr. John Smith</h3>
             <p class="member-role">Former Researcher</p>
           </div>
-          
+
           <!-- More former members will be added here -->
         </div>
       </div>
@@ -106,7 +209,7 @@
             <h3 class="member-name">Alice Johnson</h3>
             <p class="member-role">PhD Student</p>
           </div>
-          
+
           <!-- More students will be added here -->
         </div>
       </div>
