@@ -1,1 +1,2 @@
-Create a "base.html" for species HTML
+- Files in "species/templates/species/table_browser" have common code.
+- CSS share the same body and html stances.

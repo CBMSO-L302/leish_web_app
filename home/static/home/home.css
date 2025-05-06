@@ -31,18 +31,6 @@ main {
   overflow: hidden;
 }
 
-/* Add these styles to each section to control spacing */
-#team-frontshow,
-#leishmania-info,
-#who-leish-map,
-#team-news-container,
-#twitter-zone {
-  width: 100%;
-  padding: 2rem 0;
-}
-
-
-
 /* ================================================================== */
 /* Team-frontshow */
 /* ================================================================== */
