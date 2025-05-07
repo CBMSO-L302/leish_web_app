@@ -83,6 +83,7 @@ main {
 
 #team-members {
   margin-top: 75px;
+  margin-bottom: 75px;
 }
 
 .tab-content {
@@ -137,19 +138,20 @@ main {
 
 .member-role {
   font-size: 0.9rem;
-  color: #666;
+  color: #333333;
 }
 
+/* ----------------------------------------------------------- */
 /* Hover Effect */
 .member-hover {
   position: absolute;
-  top: 100%;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  width: 300px;
+  transform: translate(-50%, -30%);
+  width: 250px;
   background-color: white;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.8);
   padding: 20px;
   opacity: 0;
   visibility: hidden;
@@ -160,13 +162,13 @@ main {
 .member-image:hover .member-hover {
   opacity: 1;
   visibility: visible;
-  top: calc(100% + 10px);
 }
 
 .hover-image {
   width: 150px;
   height: 150px;
   border-radius: 50%;
+  border: 3px solid #893a96;
   overflow: hidden;
   margin: 0 auto 15px;
 }
@@ -175,7 +177,6 @@ main {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(100%);
 }
 
 .hover-content h3 {
@@ -195,3 +196,4 @@ main {
   line-height: 1.5;
   color: #555;
 }
+
