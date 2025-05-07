@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
      * @param {string} lang - Selected language.
      */
     const loadLeishInfoCards = (lang) => {
-        fetch(`/static/home/json/translations.json`)
+        fetch(`/static/home/json/translation/translations.json`)
             .then(response => response.json())
             .then(data => {
                 const translations = data[lang];
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
      * @param {string} lang - Selected language.
      */
     const loadLanguage = (lang) => {
-        fetch(`/static/home/json/translations.json`)
+        fetch(`/static/home/json/translation/translations.json`)
             .then(response => response.json())
             .then(data => {
                 const translations = data[lang];
