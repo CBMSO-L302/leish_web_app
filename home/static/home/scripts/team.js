@@ -5,11 +5,11 @@ function setupTabs() {
 
   tabButtons.forEach(button => {
     button.addEventListener('click', () => {
-      // Remove active class from all buttons and contents
+      // Remove the active class from all buttons and contents
       tabButtons.forEach(btn => btn.classList.remove('active'));
       tabContents.forEach(content => content.classList.remove('active'));
 
-      // Add active class to clicked button
+      // Add an active class to clicked button
       button.classList.add('active');
 
       // Show corresponding content
@@ -19,12 +19,12 @@ function setupTabs() {
   });
 }
 
-// Function to load team description from translation file
+// Function to load team description from a translation file
 function loadTeamDescription() {
   const teamDescription = document.getElementById('team-description');
   const teamTitle = document.getElementById('team-title');
   
-  // Get current language from localStorage or default to English
+  // Get the current language from localStorage or default to English
   const currentLang = localStorage.getItem('selectedLanguage') || 'eng';
   
   // Load translations
