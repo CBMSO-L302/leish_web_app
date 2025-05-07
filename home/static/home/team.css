@@ -54,7 +54,7 @@ main {
   text-align: center;
 }
 
-#selector-1 {
+.tab-btn.active {
   background-color: rgb(137, 58, 150);
   border-top: 10px solid rgb(137, 58, 150);
   border-left: 10px solid rgb(137, 58, 150);
@@ -62,7 +62,7 @@ main {
   border-bottom: 10px solid rgb(191, 12, 204);
 }
 
-#selector-2 {
+.tab-btn {
   background-color: rgb(88, 41, 95);
   border: 10px solid rgb(88, 41, 95);
 }
