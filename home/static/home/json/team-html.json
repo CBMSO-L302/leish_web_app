@@ -1,0 +1,64 @@
+{
+  "current_members": [
+    {
+      "image": "home/images/team_individual/jmrr.jpg",
+      "name": "Dr. José M. Requena",
+      "role": "Principal Investigator",
+      "title": "Principal Investigator",
+      "description": "Leading the Leishmania genomics research team with over 20 years of experience in molecular parasitology."
+    },
+    {
+      "image": "home/images/team_individual/bao.jpg",
+      "name": "Dr. Begoña Aguado",
+      "role": "Principal Investigator",
+      "title": "Principal Investigator",
+      "description": "Specializing in genomic analysis and bioinformatics approaches to understand Leishmania gene expression."
+    },
+    {
+      "image": "home/images/team_individual/sgf.jpg",
+      "name": "Dr. Sandra González",
+      "role": "Testing",
+      "title": "Testing",
+      "description": "Focusing on comparative genomics of Leishmania species and development of computational tools for parasite research."
+    },
+    {
+      "image": "home/images/team_individual/jaj.jpg",
+      "name": "Dr. Javier Adán",
+      "role": "Testing",
+      "title": "Testing",
+      "description": "Developing computational pipelines for genome analysis and visualization of Leishmania genomic data."
+    },
+    {
+      "image": "home/images/team_individual/ass.jpg",
+      "name": "Dr. Alejandro Salvador",
+      "role": "Testing",
+      "title": "Testing",
+      "description": "Working on Leishmania genome assembly and annotation, with expertise in next-generation sequencing technologies."
+    },
+    {
+      "image": "home/images/team_individual/rfph.jpg",
+      "name": "Dr. Ronny Pacheco",
+      "role": "Testing",
+      "title": "Testing",
+      "description": "Investigating gene expression regulation and molecular mechanisms of drug resistance in Leishmania parasites."
+    }
+  ],
+  "former_members": [
+    {
+      "image": "home/images/placeholder-profile.jpg",
+      "name": "Dr. John Doe",
+      "role": "Former Researcher",
+      "title": "Former Researcher",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies aliquam, nunc nisl aliquet nunc."
+    }
+  ],
+  "former_students": [
+    {
+      "image": "home/images/placeholder-profile.jpg",
+      "name": "Jane Doe",
+      "role": "PhD Student",
+      "title": "PhD Student",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies aliquam, nunc nisl aliquet nunc."
+    }
+  ]
+}
