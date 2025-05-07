@@ -1,61 +1,90 @@
-/* Team Page Styles */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+html {
+  font-size: 16px;
 }
 
-/* Team Header Section */
-#team-header {
-  text-align: center;
-  padding: 50px 0 30px;
-}
-
-#team-title {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.team-text {
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.6;
-  color: #555;
-}
-
-/* Tabs Section */
-#team-tabs {
-  margin-bottom: 30px;
-}
-
-.tab-buttons {
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(
+    -45deg,
+    rgb(137, 58, 150),
+    rgba(0, 119, 255, 0.7),
+    rgb(137, 58, 150)
+  );
+  background-size: 100% 100%;
   display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* ================================================================== */
+/* Main content GRID SYSTEM*/
+/* ================================================================== */
+main {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  flex: 1 0 auto;
+  margin-top: 70px;  /* IMPORTANT for the fixed header */
+  overflow: hidden;
+}
+
+/* ================================================================== */
+/* Selector Tabs*/
+/* ================================================================== */
+#desc-genome-selector {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 30px;
+  align-items: center;
+  gap: 1px;
+  width: 100%;
+  border-bottom: 5px solid rgb(191, 12, 204);
+}
+
+#desc-genome-selector button {
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  padding: 4px 4px;
+  transition: 0.3s;
+  text-decoration: none;
+  width: 50%;
+  text-align: center;
+}
+
+#selector-1 {
+  background-color: rgb(137, 58, 150);
+  border-top: 10px solid rgb(137, 58, 150);
+  border-left: 10px solid rgb(137, 58, 150);
+  border-right: 10px solid rgb(137, 58, 150);
+  border-bottom: 10px solid rgb(191, 12, 204);
+}
+
+#selector-2 {
+  background-color: rgb(88, 41, 95);
+  border: 10px solid rgb(88, 41, 95);
+}
+
+#desc-genome-selector button:hover {
+  background-color: rgb(191, 12, 204);
+  border: 10px solid rgb(191, 12, 204);
 }
 
 .tab-btn {
-  padding: 10px 20px;
-  background-color: #f0f0f0;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: all 0.3s ease;
+  /*placeholder*/
 }
 
-.tab-btn:hover {
-  background-color: #e0e0e0;
+/* ================================================================== */
+/* Team members*/
+/* ================================================================== */
+
+
+#team-members {
+  margin-top: 75px;
 }
 
-.tab-btn.active {
-  background-color: #893a96;
-  color: white;
-}
-
-/* Team Members Section */
 .tab-content {
   display: none;
 }
@@ -64,11 +93,16 @@
   display: block;
 }
 
-.members-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 30px;
+.members-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
   margin-bottom: 50px;
+  width: 90%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .member-card {
@@ -160,55 +194,4 @@
   font-size: 0.9rem;
   line-height: 1.5;
   color: #555;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .members-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  }
-  
-  .image-container {
-    width: 150px;
-    height: 150px;
-  }
-  
-  .member-hover {
-    width: 250px;
-  }
-  
-  .hover-image {
-    width: 120px;
-    height: 120px;
-  }
-}
-
-@media (max-width: 576px) {
-  .tab-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .tab-btn {
-    width: 100%;
-    max-width: 200px;
-  }
-  
-  .members-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  }
-  
-  .image-container {
-    width: 120px;
-    height: 120px;
-  }
-  
-  .member-hover {
-    width: 220px;
-  }
-  
-  .hover-image {
-    width: 100px;
-    height: 100px;
-  }
 }

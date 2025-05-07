@@ -8,210 +8,210 @@
 {% endblock %}
 
 {% block main_content %}
-  <section id="team-header">
-    <div class="container">
-      <h1 id="team-title">Our Team</h1>
-      <div id="team-description" class="team-text"></div>
-    </div>
-  </section>
-
-  <section id="team-tabs">
-    <div class="container">
-      <div class="tab-buttons">
-        <button class="tab-btn active" data-tab="current-members">Current Members</button>
-        <button class="tab-btn" data-tab="former-members">Former Members</button>
-        <button class="tab-btn" data-tab="students">Students</button>
-      </div>
-    </div>
+  <section id="desc-genome-selector">
+    <button class="tab-btn active" data-tab="current-members" id="selector-1"><span id="lang_species_desc">Current Members</span>
+    </button>
+    <button class="tab-btn" data-tab="former-members" id="selector-2"><span id="lang_species_brow">Former Members</span>
+    </button>
+    <button class="tab-btn" data-tab="students" id="selector-2"><span id="lang_species_brow">Students</span></button>
   </section>
 
   <section id="team-members">
-    <div class="container">
-      <!-- Current Members Tab -->
-      <div id="current-members" class="tab-content active">
-        <div class="members-grid">
-          <!-- Team Member 1 -->
-          <div class="member-card">
-            <div class="member-image">
-              <div class="image-container">
-                <img src="{% static 'home/images/team_individual/jmrr.jpg' %}" alt="Dr. José M. Requena">
+    <!-- Current Members Tab -->
+    <div id="current-members" class="tab-content active">
+      <div class="members-flex">
+        <!-- Team Member 1 -->
+        <div class="member-card">
+          <div class="member-image">
+            <div class="image-container">
+              <img src="{% static 'home/images/team_individual/jmrr.jpg' %}" alt="Dr. José M. Requena">
+            </div>
+            <div class="member-hover">
+              <div class="hover-image">
+                <img src="{% static 'home/images/team_individual/jmrr.jpg' %}" alt="Dr. José M. Requena"
+                     class="bw-image">
               </div>
-              <div class="member-hover">
-                <div class="hover-image">
-                  <img src="{% static 'home/images/team_individual/jmrr.jpg' %}" alt="Dr. José M. Requena" class="bw-image">
-                </div>
-                <div class="hover-content">
-                  <h3>Dr. José M. Requena</h3>
-                  <p class="member-title">Principal Investigator</p>
-                  <p class="member-description">Leading the Leishmania genomics research team with over 20 years of experience in molecular parasitology.</p>
-                </div>
+              <div class="hover-content">
+                <h3>Dr. José M. Requena</h3>
+                <p class="member-title">Principal Investigator</p>
+                <p class="member-description">Leading the Leishmania genomics research team with over 20 years of
+                  experience in molecular parasitology.</p>
               </div>
             </div>
-            <h3 class="member-name">Dr. José M. Requena</h3>
-            <p class="member-role">Principal Investigator</p>
           </div>
+          <h3 class="member-name">Dr. José M. Requena</h3>
+          <p class="member-role">Principal Investigator</p>
+        </div>
 
-          <!-- Team Member 2 -->
-          <div class="member-card">
-            <div class="member-image">
-              <div class="image-container">
-                <img src="{% static 'home/images/team_individual/bao.jpg' %}" alt="Dr. Begoña Aguado">
+        <!-- Team Member 2 -->
+        <div class="member-card">
+          <div class="member-image">
+            <div class="image-container">
+              <img src="{% static 'home/images/team_individual/bao.jpg' %}" alt="Dr. Begoña Aguado">
+            </div>
+            <div class="member-hover">
+              <div class="hover-image">
+                <img src="{% static 'home/images/team_individual/bao.jpg' %}" alt="Dr. Begoña Aguado" class="bw-image">
               </div>
-              <div class="member-hover">
-                <div class="hover-image">
-                  <img src="{% static 'home/images/team_individual/bao.jpg' %}" alt="Dr. Begoña Aguado" class="bw-image">
-                </div>
-                <div class="hover-content">
-                  <h3>Dr. Begoña Aguado</h3>
-                  <p class="member-title">Senior Researcher</p>
-                  <p class="member-description">Specializing in genomic analysis and bioinformatics approaches to understand Leishmania gene expression.</p>
-                </div>
+              <div class="hover-content">
+                <h3>Dr. Begoña Aguado</h3>
+                <p class="member-title">Senior Researcher</p>
+                <p class="member-description">Specializing in genomic analysis and bioinformatics approaches to
+                  understand Leishmania gene expression.</p>
               </div>
             </div>
-            <h3 class="member-name">Dr. Begoña Aguado</h3>
-            <p class="member-role">Senior Researcher</p>
           </div>
+          <h3 class="member-name">Dr. Begoña Aguado</h3>
+          <p class="member-role">Senior Researcher</p>
+        </div>
 
-          <!-- Team Member 3 -->
-          <div class="member-card">
-            <div class="member-image">
-              <div class="image-container">
-                <img src="{% static 'home/images/team_individual/ass.jpg' %}" alt="Dr. Alberto Silva">
+        <!-- Team Member 3 -->
+        <div class="member-card">
+          <div class="member-image">
+            <div class="image-container">
+              <img src="{% static 'home/images/team_individual/sgf.jpg' %}" alt="Dr. Sara García">
+            </div>
+            <div class="member-hover">
+              <div class="hover-image">
+                <img src="{% static 'home/images/team_individual/sgf.jpg' %}" alt="Dr. Sara García" class="bw-image">
               </div>
-              <div class="member-hover">
-                <div class="hover-image">
-                  <img src="{% static 'home/images/team_individual/ass.jpg' %}" alt="Dr. Alberto Silva" class="bw-image">
-                </div>
-                <div class="hover-content">
-                  <h3>Dr. Alberto Silva</h3>
-                  <p class="member-title">Postdoctoral Researcher</p>
-                  <p class="member-description">Working on Leishmania genome assembly and annotation, with expertise in next-generation sequencing technologies.</p>
-                </div>
+              <div class="hover-content">
+                <h3>Dr. Sandra González</h3>
+                <p class="member-title">Testing</p>
+                <p class="member-description">Focusing on comparative genomics of Leishmania species and development of
+                  computational tools for parasite research.</p>
               </div>
             </div>
-            <h3 class="member-name">Dr. Alberto Silva</h3>
-            <p class="member-role">Postdoctoral Researcher</p>
           </div>
+          <h3 class="member-name">Dr. Sandra González</h3>
+          <p class="member-role">Testing</p>
+        </div>
 
-          <!-- Team Member 4 -->
-          <div class="member-card">
-            <div class="member-image">
-              <div class="image-container">
-                <img src="{% static 'home/images/team_individual/sgf.jpg' %}" alt="Dr. Sara García">
+        <!-- Team Member 4 -->
+        <div class="member-card">
+          <div class="member-image">
+            <div class="image-container">
+              <img src="{% static 'home/images/team_individual/jaj.jpg' %}" alt="Dr. Juan A. Jiménez">
+            </div>
+            <div class="member-hover">
+              <div class="hover-image">
+                <img src="{% static 'home/images/team_individual/jaj.jpg' %}" alt="Dr. Juan A. Jiménez"
+                     class="bw-image">
               </div>
-              <div class="member-hover">
-                <div class="hover-image">
-                  <img src="{% static 'home/images/team_individual/sgf.jpg' %}" alt="Dr. Sara García" class="bw-image">
-                </div>
-                <div class="hover-content">
-                  <h3>Dr. Sara García</h3>
-                  <p class="member-title">Research Associate</p>
-                  <p class="member-description">Focusing on comparative genomics of Leishmania species and development of computational tools for parasite research.</p>
-                </div>
+              <div class="hover-content">
+                <h3>Dr. Javier Adán</h3>
+                <p class="member-title">Testing</p>
+                <p class="member-description">Developing computational pipelines for genome analysis and visualization
+                  of Leishmania genomic data.</p>
               </div>
             </div>
-            <h3 class="member-name">Dr. Sara García</h3>
-            <p class="member-role">Research Associate</p>
           </div>
+          <h3 class="member-name">Dr. Javier Adán</h3>
+          <p class="member-role">Testing</p>
+        </div>
 
-          <!-- Team Member 5 -->
-          <div class="member-card">
-            <div class="member-image">
-              <div class="image-container">
-                <img src="{% static 'home/images/team_individual/jaj.jpg' %}" alt="Dr. Juan A. Jiménez">
+        <!-- Team Member 5 -->
+        <div class="member-card">
+          <div class="member-image">
+            <div class="image-container">
+              <img src="{% static 'home/images/team_individual/ass.jpg' %}" alt="Dr. Alberto Silva">
+            </div>
+            <div class="member-hover">
+              <div class="hover-image">
+                <img src="{% static 'home/images/team_individual/ass.jpg' %}" alt="Dr. Alberto Silva" class="bw-image">
               </div>
-              <div class="member-hover">
-                <div class="hover-image">
-                  <img src="{% static 'home/images/team_individual/jaj.jpg' %}" alt="Dr. Juan A. Jiménez" class="bw-image">
-                </div>
-                <div class="hover-content">
-                  <h3>Dr. Juan A. Jiménez</h3>
-                  <p class="member-title">Bioinformatician</p>
-                  <p class="member-description">Developing computational pipelines for genome analysis and visualization of Leishmania genomic data.</p>
-                </div>
+              <div class="hover-content">
+                <h3>Dr. Alejandro Salvador</h3>
+                <p class="member-title">Testing</p>
+                <p class="member-description">Working on Leishmania genome assembly and annotation, with expertise in
+                next-generation sequencing technologies.</p>
               </div>
             </div>
-            <h3 class="member-name">Dr. Juan A. Jiménez</h3>
-            <p class="member-role">Bioinformatician</p>
           </div>
+          <h3 class="member-name">Dr. Alejandro Salvador</h3>
+          <p class="member-role">Testing</p>
+        </div>
 
-          <!-- Team Member 6 -->
-          <div class="member-card">
-            <div class="member-image">
-              <div class="image-container">
-                <img src="{% static 'home/images/team_individual/rfph.jpg' %}" alt="Dr. Ricardo Fernández">
+        <!-- Team Member 6 -->
+        <div class="member-card">
+          <div class="member-image">
+            <div class="image-container">
+              <img src="{% static 'home/images/team_individual/rfph.jpg' %}" alt="Dr. Ricardo Fernández">
+            </div>
+            <div class="member-hover">
+              <div class="hover-image">
+                <img src="{% static 'home/images/team_individual/rfph.jpg' %}" alt="Dr. Ricardo Fernández"
+                     class="bw-image">
               </div>
-              <div class="member-hover">
-                <div class="hover-image">
-                  <img src="{% static 'home/images/team_individual/rfph.jpg' %}" alt="Dr. Ricardo Fernández" class="bw-image">
-                </div>
-                <div class="hover-content">
-                  <h3>Dr. Ricardo Fernández</h3>
-                  <p class="member-title">Molecular Biologist</p>
-                  <p class="member-description">Investigating gene expression regulation and molecular mechanisms of drug resistance in Leishmania parasites.</p>
-                </div>
+              <div class="hover-content">
+                <h3>Dr. Ronny Pacheco</h3>
+                <p class="member-title">Testing</p>
+                <p class="member-description">Investigating gene expression regulation and molecular mechanisms of drug
+                  resistance in Leishmania parasites.</p>
               </div>
             </div>
-            <h3 class="member-name">Dr. Ricardo Fernández</h3>
-            <p class="member-role">Molecular Biologist</p>
           </div>
+          <h3 class="member-name">Dr. Ronny Pacheco</h3>
+          <p class="member-role">Testing</p>
         </div>
       </div>
+    </div>
 
-      <!-- Former Members Tab -->
-      <div id="former-members" class="tab-content">
-        <div class="members-grid">
-          <!-- Example former member - will be replaced with actual data -->
-          <div class="member-card">
-            <div class="member-image">
-              <div class="image-container">
-                <img src="{% static 'home/images/placeholder-profile.jpg' %}" alt="Former Team Member">
+    <!-- Former Members Tab -->
+    <div id="former-members" class="tab-content">
+      <div class="members-flex">
+        <!-- Example former member - will be replaced with actual data -->
+        <div class="member-card">
+          <div class="member-image">
+            <div class="image-container">
+              <img src="{% static 'home/images/placeholder-profile.jpg' %}" alt="Former Team Member">
+            </div>
+            <div class="member-hover">
+              <div class="hover-image">
+                <img src="{% static 'home/images/placeholder-profile.jpg' %}" alt="Former Team Member" class="bw-image">
               </div>
-              <div class="member-hover">
-                <div class="hover-image">
-                  <img src="{% static 'home/images/placeholder-profile.jpg' %}" alt="Former Team Member" class="bw-image">
-                </div>
-                <div class="hover-content">
-                  <h3>Dr. John Smith</h3>
-                  <p class="member-title">Former Researcher</p>
-                  <p class="member-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies aliquam, nunc nisl aliquet nunc.</p>
-                </div>
+              <div class="hover-content">
+                <h3>Dr. John Smith</h3>
+                <p class="member-title">Former Researcher</p>
+                <p class="member-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor,
+                  nisl eget ultricies aliquam, nunc nisl aliquet nunc.</p>
               </div>
             </div>
-            <h3 class="member-name">Dr. John Smith</h3>
-            <p class="member-role">Former Researcher</p>
           </div>
-
-          <!-- More former members will be added here -->
+          <h3 class="member-name">Dr. John Smith</h3>
+          <p class="member-role">Former Researcher</p>
         </div>
+
+        <!-- More former members will be added here -->
       </div>
+    </div>
 
-      <!-- Students Tab -->
-      <div id="students" class="tab-content">
-        <div class="members-grid">
-          <!-- Example student - will be replaced with actual data -->
-          <div class="member-card">
-            <div class="member-image">
-              <div class="image-container">
-                <img src="{% static 'home/images/placeholder-profile.jpg' %}" alt="Student">
+    <!-- Students Tab -->
+    <div id="students" class="tab-content">
+      <div class="members-flex">
+        <!-- Example student - will be replaced with actual data -->
+        <div class="member-card">
+          <div class="member-image">
+            <div class="image-container">
+              <img src="{% static 'home/images/placeholder-profile.jpg' %}" alt="Student">
+            </div>
+            <div class="member-hover">
+              <div class="hover-image">
+                <img src="{% static 'home/images/placeholder-profile.jpg' %}" alt="Student" class="bw-image">
               </div>
-              <div class="member-hover">
-                <div class="hover-image">
-                  <img src="{% static 'home/images/placeholder-profile.jpg' %}" alt="Student" class="bw-image">
-                </div>
-                <div class="hover-content">
-                  <h3>Alice Johnson</h3>
-                  <p class="member-title">PhD Student</p>
-                  <p class="member-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies aliquam, nunc nisl aliquet nunc.</p>
-                </div>
+              <div class="hover-content">
+                <h3>Alice Johnson</h3>
+                <p class="member-title">PhD Student</p>
+                <p class="member-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor,
+                  nisl eget ultricies aliquam, nunc nisl aliquet nunc.</p>
               </div>
             </div>
-            <h3 class="member-name">Alice Johnson</h3>
-            <p class="member-role">PhD Student</p>
           </div>
-
-          <!-- More students will be added here -->
+          <h3 class="member-name">Alice Johnson</h3>
+          <p class="member-role">PhD Student</p>
         </div>
+
+        <!-- More students will be added here -->
       </div>
     </div>
   </section>
