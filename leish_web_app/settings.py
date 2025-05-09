@@ -32,9 +32,9 @@ ALLOWED_HOSTS = [
        "150.244.205.86",
    ]
 
-
 CSRF_TRUSTED_ORIGINS = [
-    "https://leishmania.cbm.uam.es"
+    "https://leishmania.cbm.uam.es",
+    "http://150.244.205.86",
 ]
 
 
