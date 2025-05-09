@@ -4,7 +4,7 @@ services:
     image: leish_web_app
     container_name: django_leish_web_app
     ports:
-      - "8080:3000"  # Map host port 8000 to container port 8000
+      - "8080:3000"  # Map host port 8000 to container port 3000
     volumes:
       - /opt/leish-web/databases:/opt/leish-web/databases  # Mount SQLite directory
     environment:
