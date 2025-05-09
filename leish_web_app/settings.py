@@ -23,9 +23,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-^h*d%^z7j_f_@90%3o1j*4*ex_)y-pfa5=)0t$fi!f8!=a0*x4"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["leishmania.cbm.uam.es", "127.0.0.1"]
+ALLOWED_HOSTS = [
+       "leishmania.cbm.uam.es",
+       "www.leishmania.cbm.uam.es",
+       "127.0.0.1",
+       "150.244.205.86",
+   ]
+
 
 CSRF_TRUSTED_ORIGINS = [
     "https://leishmania.cbm.uam.es"
