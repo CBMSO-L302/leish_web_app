@@ -293,14 +293,24 @@ main {
 }
 
 /* ================================================================== */
-/* WHO Leishmaniasis Map Section */
+/* WHO Leishmaniasis Map Section - Tableau Visualization */
 /* ================================================================== */
+/**
+ * This section contains the Tableau Public visualization of Visceral Leishmaniasis data.
+ * The visualization is embedded using the Tableau JavaScript API and is responsive
+ * to different screen sizes.
+ *
+ * The actual visualization content is loaded from:
+ * - HTML: home/templates/home/partials/tableau_viz.html
+ * - JS: home/static/home/scripts/tableau-viz.js
+ */
 #who-leish-map {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 3rem 0;
+  /* Purple gradient background for visual distinction */
   background: linear-gradient(
     180deg,
     rgb(159, 158, 159),
@@ -308,13 +318,16 @@ main {
   );
 }
 
+/* Main container for the visualization section */
 .who-map-container {
-  width: 95%;
+  width: 98%; /* Increased from 95% to provide more space for the visualization */
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto; /* Center the container */
 }
 
+/* Title styling */
 .who-map-title {
   margin-bottom: 1rem;
   text-align: center;
@@ -328,10 +341,11 @@ main {
   display: inline-block;
 }
 
+/* Description text styling */
 .who-map-description {
   text-align: center;
   margin-bottom: 2rem;
-  max-width: 800px;
+  max-width: 800px; /* Limit width for better readability */
 }
 
 .who-map-description p {
@@ -339,14 +353,28 @@ main {
   font-size: 1.1rem;
 }
 
+/**
+ * Container for the Tableau visualization
+ * 
+ * This element contains the tableauPlaceholder div which is
+ * targeted by the tableau-viz.js script to initialize the visualization.
+ * 
+ * The flexbox properties ensure proper centering and alignment of the
+ * Tableau visualization within this container.
+ */
 .who-map-iframe {
   width: 100%;
-  height: 650px;
+  /* Height is dynamically set by the tableau-viz.js script based on screen width */
   border-radius: 10px;
-  overflow: hidden;
+  overflow: visible; /* Allow visualization to extend beyond container if needed */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  /* Flexbox for centering the visualization */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Source attribution styling */
 .who-map-source {
   margin-top: 1rem;
   font-size: 0.9rem;
@@ -632,12 +660,13 @@ bsky-embed {
     width: 100%;
   }
 
+  /* Tableau visualization responsive adjustments for small screens */
   .who-map-container {
-    width: 100%;
+    width: 100%; /* Full width on small screens */
   }
 
   .who-map-iframe {
-    border-radius: 0;
+    border-radius: 0; /* Remove border radius for edge-to-edge display on small screens */
   }
 
   .social-tabs-container {

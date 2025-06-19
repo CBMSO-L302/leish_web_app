@@ -9,7 +9,12 @@
 
 {% block main_content %}
 
-  <!-- Team frontshow -->
+  {% comment %}
+  Team Frontshow Section
+  ----------------------
+  Displays a carousel of team images with text overlay.
+  The content is loaded dynamically by team-img-carousel.js.
+  {% endcomment %}
   <section id="team-frontshow">
     <div id="carousel-container">
       <div id="carousel-slide"></div>
@@ -22,7 +27,12 @@
     </div>
   </section>
 
-  <!-- Leishmania info section -->
+  {% comment %}
+  Leishmania Info Section
+  ----------------------
+  Displays information cards about Leishmania parasites, sandflies, and related topics.
+  The content is loaded dynamically by leishmania-info-cards.js.
+  {% endcomment %}
   <section id="leishmania-info">
     <div id="leish-info-container">
       <div class="leish-card-carousel">
@@ -32,7 +42,12 @@
     </div>
   </section>
 
-  <!-- WHO Leishmaniasis Map Section -->
+  {% comment %}
+  WHO Leishmaniasis Map Section
+  ----------------------------
+  Displays a Tableau visualization showing Visceral Leishmaniasis data worldwide.
+  The visualization is loaded from Tableau Public and controlled by tableau-viz.js.
+  {% endcomment %}
   <section id="who-leish-map">
     <div class="who-map-container">
       <div class="who-map-title">
@@ -42,21 +57,21 @@
         <p></p>
       </div>
       <div class="who-map-iframe">
-        <iframe src="https://apps.who.int/neglected_diseases/ntddata/leishmaniasis/leishmaniasis.html"
-                title="WHO Leishmaniasis Map"
-                width="100%"
-                height="100%"
-                allowfullscreen>
-        </iframe>
+        {% include 'home/partials/tableau_viz.html' %}
       </div>
       <div class="who-map-source">
-        <p>Source: <a href="https://apps.who.int/neglected_diseases/ntddata/leishmaniasis/leishmaniasis.html"
-                      target="_blank">World Health Organization</a></p>
+        <p>Source: <a href="https://public.tableau.com/views/VisceralLeishmaniasisVL-Mapandcasesperyear/VL_Dashboard_map_countries?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
+                      target="_blank">Tableau Public - Visceral Leishmaniasis Dashboard</a></p>
       </div>
     </div>
   </section>
 
-  <!-- Social Media Updates Section -->
+  {% comment %}
+  Social Media Updates Section
+  --------------------------
+  Displays social media feeds from various organizations using BlueSky embeds.
+  The tabs allow switching between different organization feeds.
+  {% endcomment %}
   <section id="social-updates">
     <div class="social-header">
       <h2></h2>
@@ -70,7 +85,6 @@
         </button>
         <button class="social-tab-btn" data-tab="CBM">
           <img src="{% static 'images/logos/CBM_mini_logo.png' %}" alt="CBM Logo">
-
         </button>
         <button class="social-tab-btn" data-tab="CSIC">
           <img src="{% static 'images/logos/CSIC_mini_logo.png' %}" alt="CSIC Logo">
@@ -82,46 +96,56 @@
 
       <div class="social-content">
         <div id="WHO" class="social-panel active">
-          <div class="loading-spinner"></div> <!-- Spinner -->
+          <div class="loading-spinner"></div> <!-- Spinner while content loads -->
           <div class="bsky-container">
-            <!--suppress HtmlUnknownTag -->
             <bsky-embed username="who.int" mode="" limit="5" load-more="true"
                         custom-styles=".rounded-full { display: none }">
             </bsky-embed>
           </div>
         </div>
         <div id="CBM" class="social-panel">
-          <div class="loading-spinner"></div> <!-- Spinner -->
-          <!--suppress HtmlUnknownTag -->
+          <div class="loading-spinner"></div> <!-- Spinner while content loads -->
           <bsky-embed username="cbm-csic-uam.bsky.social" mode="" limit="5" load-more="true" custom-styles=".rounded-full { display: none }">
           </bsky-embed>
         </div>
         <div id="CSIC" class="social-panel">
-          <div class="loading-spinner"></div> <!-- Spinner -->
-          <!--suppress HtmlUnknownTag -->
+          <div class="loading-spinner"></div> <!-- Spinner while content loads -->
           <bsky-embed username="csic.es" mode="" limit="5" load-more="true" custom-styles=".rounded-full { display: none }">
           </bsky-embed>
         </div>
         <div id="UAM" class="social-panel">
-          <div class="loading-spinner"></div> <!-- Spinner -->
-          <!--suppress HtmlUnknownTag -->
+          <div class="loading-spinner"></div> <!-- Spinner while content loads -->
           <bsky-embed username="uam.es" mode="" limit="5" load-more="true" custom-styles=".rounded-full { display: none }">
           </bsky-embed>
         </div>
       </div>
     </div>
-
-
-
   </section>
 
 {% endblock %}
 
 {% block js_content %}
+  {% comment %}
+  JavaScript Resources
+  ------------------
+  The following scripts handle various functionalities of the home page:
+  {% endcomment %}
+
+  {# Handles translation of page content based on selected language #}
   <script src="{% static 'home/scripts/translate.js' %}"></script>
+
+  {# Controls the team image carousel in the frontshow section #}
   <script src="{% static 'home/scripts/team-img-carousel.js' %}"></script>
+
+  {# Manages the Leishmania information cards carousel #}
   <script src="{% static 'home/scripts/leishmania-info-cards.js' %}"></script>
-  <!--suppress JSUnresolvedLibraryURL -->
+
+  {# Initializes and controls the Tableau visualization in the WHO map section #}
+  <script src="{% static 'home/scripts/tableau-viz.js' %}"></script>
+
+  {# BlueSky API for social media embeds #}
   <script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" async></script>
+
+  {# Handles the BlueSky feed tabs and content loading #}
   <script src="{% static 'home/scripts/bluesky-feed.js' %}"></script>
 {% endblock %}

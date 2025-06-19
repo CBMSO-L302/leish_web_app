@@ -1,0 +1,65 @@
+{% comment %}
+/**
+ * Tableau Visualization HTML Template
+ *
+ * This partial template contains the HTML structure required for embedding the
+ * Tableau Public visualization of Visceral Leishmaniasis (VL) data.
+ *
+ * The structure follows Tableau's recommended embedding approach with:
+ * - A container div with the 'tableauPlaceholder' class
+ * - A fallback for users with JavaScript disabled (noscript section)
+ * - The tableauViz object with necessary parameters
+ *
+ * The actual visualization is loaded and controlled by the tableau-viz.js script.
+ *
+ * Source: https://public.tableau.com/views/VisceralLeishmaniasisVL-Mapandcasesperyear/VL_Dashboard_map_countries
+ */
+{% endcomment %}
+
+{# Main container for the Tableau visualization #}
+<!--suppress HtmlDeprecatedTag, XmlDeprecatedElement, HtmlDeprecatedAttribute -->
+<div class='tableauPlaceholder' id='viz1716304800000' style='position: relative; width: 100%; height: 100%;'>
+  {# Fallback content for users with JavaScript disabled #}
+  <noscript>
+    <a href='#'>
+      <img alt='Visceral Leishmaniasis (VL) Dashboard'
+           src='https://public.tableau.com/static/images/Vi/VisceralLeishmaniasisVL-Mapandcasesperyear/VL_Dashboard_map_countries/1_rss.png'
+           style='border: none'/>
+    </a>
+  </noscript>
+
+  {# Tableau visualization object - initially hidden until properly loaded by JS #}
+  <object class='tableauViz' style='display:none;'>
+    {# Tableau server URL (encoded) #}
+    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+
+    {# API version information #}
+    <param name='embed_code_version' value='3' />
+    <param name='site_root' value='' />
+
+    {# Specific visualization to load - includes workbook and view names #}
+    <param name='name' value='VisceralLeishmaniasisVL-Mapandcasesperyear/VL_Dashboard_map_countries' />
+
+    {# UI configuration options #}
+    <param name='tabs' value='no' />             {# Don't show sheet tabs #}
+    <param name='toolbar' value='yes' />         {# Show the toolbar #}
+
+    {# Visualization behavior settings #}
+    <param name='static_image'
+           value='https://public.tableau.com/static/images/Vi/VisceralLeishmaniasisVL-Mapandcasesperyear/VL_Dashboard_map_countries/1.png'/>
+    <param name='animate_transition' value='yes' />
+    <param name='display_static_image' value='no' />
+    <param name='display_spinner' value='yes' />
+    <param name='display_overlay' value='yes' />
+    <param name='display_count' value='yes' />
+
+    {# Localization settings #}
+    <param name='language' value='en-US' />
+
+    {# Data filtering #}
+    <param name='filter' value='publish=yes' />
+
+    {# Responsive design - device parameter is updated by JS based on screen size #}
+    <param name='device' value='desktop' id='device-param' />
+  </object>
+</div>
