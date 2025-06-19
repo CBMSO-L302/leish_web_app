@@ -347,6 +347,34 @@ main {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* Dashboard container styles */
+.dashboard-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.visualization-container {
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Error message styles */
+.error-message {
+  padding: 2rem;
+  text-align: center;
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 10px;
+  margin: 2rem 0;
+}
+
 .who-map-source {
   margin-top: 1rem;
   font-size: 0.9rem;
@@ -640,6 +668,14 @@ bsky-embed {
     border-radius: 0;
   }
 
+  .dashboard-container {
+    gap: 1rem;
+  }
+
+  .visualization-container {
+    padding: 0.5rem;
+  }
+
   .social-tabs-container {
     width: 95%;
   }
@@ -651,6 +687,20 @@ bsky-embed {
 
   main {
     margin-top: 140px;
+  }
+
+  /* Adjustments for dashboard on small screens */
+  .visualization-container {
+    padding: 0.25rem;
+  }
+
+  .who-map-title h2 {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .who-map-description p {
+    font-size: 0.9rem;
   }
 
   #team-frontshow {

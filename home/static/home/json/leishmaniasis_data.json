@@ -1,0 +1,272 @@
+[
+  {
+    "country": "Afghanistan",
+    "year": 2020,
+    "cases": 12345,
+    "region": "Eastern Mediterranean"
+  },
+  {
+    "country": "Afghanistan",
+    "year": 2019,
+    "cases": 11234,
+    "region": "Eastern Mediterranean"
+  },
+  {
+    "country": "Afghanistan",
+    "year": 2018,
+    "cases": 10987,
+    "region": "Eastern Mediterranean"
+  },
+  {
+    "country": "Algeria",
+    "year": 2020,
+    "cases": 8765,
+    "region": "Africa"
+  },
+  {
+    "country": "Algeria",
+    "year": 2019,
+    "cases": 8234,
+    "region": "Africa"
+  },
+  {
+    "country": "Algeria",
+    "year": 2018,
+    "cases": 7890,
+    "region": "Africa"
+  },
+  {
+    "country": "Brazil",
+    "year": 2020,
+    "cases": 19876,
+    "region": "Americas"
+  },
+  {
+    "country": "Brazil",
+    "year": 2019,
+    "cases": 21345,
+    "region": "Americas"
+  },
+  {
+    "country": "Brazil",
+    "year": 2018,
+    "cases": 20123,
+    "region": "Americas"
+  },
+  {
+    "country": "Colombia",
+    "year": 2020,
+    "cases": 5678,
+    "region": "Americas"
+  },
+  {
+    "country": "Colombia",
+    "year": 2019,
+    "cases": 6123,
+    "region": "Americas"
+  },
+  {
+    "country": "Colombia",
+    "year": 2018,
+    "cases": 5890,
+    "region": "Americas"
+  },
+  {
+    "country": "India",
+    "year": 2020,
+    "cases": 4321,
+    "region": "South-East Asia"
+  },
+  {
+    "country": "India",
+    "year": 2019,
+    "cases": 4567,
+    "region": "South-East Asia"
+  },
+  {
+    "country": "India",
+    "year": 2018,
+    "cases": 4789,
+    "region": "South-East Asia"
+  },
+  {
+    "country": "Iran",
+    "year": 2020,
+    "cases": 15678,
+    "region": "Eastern Mediterranean"
+  },
+  {
+    "country": "Iran",
+    "year": 2019,
+    "cases": 14567,
+    "region": "Eastern Mediterranean"
+  },
+  {
+    "country": "Iran",
+    "year": 2018,
+    "cases": 13456,
+    "region": "Eastern Mediterranean"
+  },
+  {
+    "country": "Iraq",
+    "year": 2020,
+    "cases": 7890,
+    "region": "Eastern Mediterranean"
+  },
+  {
+    "country": "Iraq",
+    "year": 2019,
+    "cases": 7123,
+    "region": "Eastern Mediterranean"
+  },
+  {
+    "country": "Iraq",
+    "year": 2018,
+    "cases": 6789,
+    "region": "Eastern Mediterranean"
+  },
+  {
+    "country": "Morocco",
+    "year": 2020,
+    "cases": 3456,
+    "region": "Africa"
+  },
+  {
+    "country": "Morocco",
+    "year": 2019,
+    "cases": 3234,
+    "region": "Africa"
+  },
+  {
+    "country": "Morocco",
+    "year": 2018,
+    "cases": 3012,
+    "region": "Africa"
+  },
+  {
+    "country": "Pakistan",
+    "year": 2020,
+    "cases": 9876,
+    "region": "Eastern Mediterranean"
+  },
+  {
+    "country": "Pakistan",
+    "year": 2019,
+    "cases": 9234,
+    "region": "Eastern Mediterranean"
+  },
+  {
+    "country": "Pakistan",
+    "year": 2018,
+    "cases": 8765,
+    "region": "Eastern Mediterranean"
+  },
+  {
+    "country": "Peru",
+    "year": 2020,
+    "cases": 6789,
+    "region": "Americas"
+  },
+  {
+    "country": "Peru",
+    "year": 2019,
+    "cases": 7123,
+    "region": "Americas"
+  },
+  {
+    "country": "Peru",
+    "year": 2018,
+    "cases": 6543,
+    "region": "Americas"
+  },
+  {
+    "country": "Saudi Arabia",
+    "year": 2020,
+    "cases": 2345,
+    "region": "Eastern Mediterranean"
+  },
+  {
+    "country": "Saudi Arabia",
+    "year": 2019,
+    "cases": 2123,
+    "region": "Eastern Mediterranean"
+  },
+  {
+    "country": "Saudi Arabia",
+    "year": 2018,
+    "cases": 1987,
+    "region": "Eastern Mediterranean"
+  },
+  {
+    "country": "Spain",
+    "year": 2020,
+    "cases": 567,
+    "region": "Europe"
+  },
+  {
+    "country": "Spain",
+    "year": 2019,
+    "cases": 543,
+    "region": "Europe"
+  },
+  {
+    "country": "Spain",
+    "year": 2018,
+    "cases": 521,
+    "region": "Europe"
+  },
+  {
+    "country": "Syria",
+    "year": 2020,
+    "cases": 14567,
+    "region": "Eastern Mediterranean"
+  },
+  {
+    "country": "Syria",
+    "year": 2019,
+    "cases": 13456,
+    "region": "Eastern Mediterranean"
+  },
+  {
+    "country": "Syria",
+    "year": 2018,
+    "cases": 12345,
+    "region": "Eastern Mediterranean"
+  },
+  {
+    "country": "Tunisia",
+    "year": 2020,
+    "cases": 4567,
+    "region": "Africa"
+  },
+  {
+    "country": "Tunisia",
+    "year": 2019,
+    "cases": 4321,
+    "region": "Africa"
+  },
+  {
+    "country": "Tunisia",
+    "year": 2018,
+    "cases": 4123,
+    "region": "Africa"
+  },
+  {
+    "country": "Turkey",
+    "year": 2020,
+    "cases": 1234,
+    "region": "Europe"
+  },
+  {
+    "country": "Turkey",
+    "year": 2019,
+    "cases": 1345,
+    "region": "Europe"
+  },
+  {
+    "country": "Turkey",
+    "year": 2018,
+    "cases": 1456,
+    "region": "Europe"
+  }
+]

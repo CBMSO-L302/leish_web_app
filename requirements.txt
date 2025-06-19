@@ -1,3 +1,8 @@
 asgiref==3.8.1
 Django==5.1.6
 sqlparse==0.5.3
+requests==2.31.0
+beautifulsoup4==4.12.3
+pandas==2.2.1
+plotly==5.19.0
+lxml==5.1.0
