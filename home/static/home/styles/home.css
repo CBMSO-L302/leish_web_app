@@ -378,7 +378,7 @@ main {
 
 .social-header {
   text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
   width: 80%;
   max-width: 800px;
 }
@@ -386,97 +386,102 @@ main {
 .social-header h2 {
   color: white;
   font-size: 2.2rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
   position: relative;
   display: inline-block;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .social-header h2::after {
   content: '';
   position: absolute;
-  bottom: -10px;
+  bottom: -12px;
   left: 50%;
   transform: translateX(-50%);
-  width: 80px;
+  width: 60px;
   height: 4px;
   background-color: white;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 .social-header p {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.95);
   font-size: 1.1rem;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 1rem auto 0;
+  line-height: 1.6;
 }
 
 .social-tabs-container {
-  width: 60%;
+  width: 70%;
   max-width: 1200px;
   background-color: white;
-  border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: all 0.3s ease;
 }
 
 .social-tabs {
   display: flex;
-  background-color: rgba(137, 58, 150, 0.1);
-  border-bottom: 1px solid rgba(137, 58, 150, 0.2);
+  background-color: #f8f8f8;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .social-tab-btn {
   flex: 1;
   background: none;
   border: none;
-  padding: 1.2rem 1rem;
+  padding: 1.2rem 0.8rem;
   cursor: pointer;
   position: relative;
-  transition: all 0.3s ease;
-  color: rgb(80, 80, 80);
+  transition: all 0.25s ease;
+  color: #555;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
+  gap: 0.5rem;
+  outline: none;
+  border-bottom: 3px solid transparent;
 }
 
 .social-tab-btn img {
-  height: 24px;
+  height: 28px;
   width: auto;
-  opacity: 0.7;
-  transition: all 0.3s;
-}
-
-.social-tab-btn span {
-  font-weight: 500;
-  font-size: 0.9rem;
-  transition: all 0.3s;
+  opacity: 0.8;
+  transition: all 0.25s;
+  filter: grayscale(30%);
 }
 
 .social-tab-btn:hover {
-  background-color: rgba(137, 58, 150, 0.15);
+  background-color: rgba(0, 0, 0, 0.03);
+  color: rgb(137, 58, 150);
+}
+
+.social-tab-btn:hover img {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: scale(1.05);
 }
 
 .social-tab-btn.active {
   background-color: white;
   color: rgb(137, 58, 150);
   font-weight: 600;
+  border-bottom: 3px solid rgb(137, 58, 150);
 }
 
 .social-tab-btn.active img {
   opacity: 1;
+  filter: grayscale(0%);
 }
 
-.social-tab-btn.active::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background-color: rgb(137, 58, 150);
+.social-tab-btn:focus-visible {
+  box-shadow: 0 0 0 3px rgba(137, 58, 150, 0.3);
+  z-index: 1;
 }
 
 .social-content {
@@ -486,12 +491,40 @@ main {
 
 .social-panel {
   display: none;
-  padding: 1.5rem;
+  padding: 0;
   width: 100%;
   height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .social-panel.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Loading indicator */
+.loading-spinner {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(137, 58, 150, 0.2);
+  border-radius: 50%;
+  border-top-color: rgb(137, 58, 150);
+  animation: spin 1s linear infinite;
+  z-index: 10;
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.social-panel.loading .loading-spinner {
   display: block;
 }
 
@@ -500,22 +533,32 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 1rem;
+  justify-content: flex-start;
+  padding: 0;
   background-color: #fff;
   width: 100%;
   height: 100%;
-  overflow-y: auto;
+  min-height: 600px;
+  overflow: hidden;
 }
 
 /* Style for the embed element specifically */
 /*noinspection CssInvalidHtmlTagReference*/
 bsky-embed {
-  width: 100%;
-  height: 100%;
+  width: 100% !important;
+  height: 100% !important;
   min-height: 600px;
-  max-height: 800px;
   border: none;
+  box-sizing: border-box;
+  transition: opacity 0.3s ease;
+}
+
+/* Additional override for embedded content */
+/*noinspection CssInvalidHtmlTagReference*/
+.social-panel.active bsky-embed {
+  width: 100% !important;
+  height: auto !important;
+  min-height: 600px;
 }
 
 /* ================================================================== */
@@ -635,15 +678,45 @@ bsky-embed {
     border-radius: 0;
   }
 
+  /* Social media section responsive styles */
   .social-tabs-container {
     width: 95%;
+    border-radius: 12px;
+  }
+
+  .social-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .social-header p {
+    font-size: 1rem;
+  }
+
+  .social-tab-btn {
+    padding: 1rem 0.5rem;
+  }
+
+  .social-tab-btn img {
+    height: 24px;
+  }
+
+  .social-content {
+    min-height: 600px;
+  }
+
+  .bsky-container {
+    min-height: 500px;
+  }
+
+  /*noinspection ALL*/
+  bsky-embed {
+    min-height: 500px;
   }
 }
 
 /* Smartphones */
 /* ================================================================== */
 @media only screen and (max-width: 480px) {
-
   main {
     margin-top: 140px;
   }
@@ -674,4 +747,66 @@ bsky-embed {
     border-radius: 8px;
   }
 
+  /* Social media section responsive styles for smartphones */
+  #social-updates {
+    padding: 2rem 0;
+  }
+
+  .social-header {
+    width: 90%;
+    margin-bottom: 2rem;
+  }
+
+  .social-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .social-header p {
+    font-size: 0.9rem;
+  }
+
+  .social-tabs-container {
+    width: 100%;
+    border-radius: 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .social-tabs {
+    flex-wrap: wrap;
+  }
+
+  .social-tab-btn {
+    flex: 1 0 50%; /* Two buttons per row */
+    padding: 0.8rem 0.4rem;
+  }
+
+  .social-tab-btn img {
+    height: 20px;
+  }
+
+  .social-content {
+    min-height: 500px;
+  }
+
+  .bsky-container {
+    min-height: 400px;
+  }
+
+  /*noinspection ALL*/
+  bsky-embed {
+    min-height: 400px;
+  }
+
+  /* Add a class for screen reader only text */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
 }

@@ -82,72 +82,97 @@
       </div>
     </div>
   </section>
-{##}
-{#  <!-- Social Media Updates Section -->#}
-{#  <section id="social-updates">#}
-{#    <div class="social-header">#}
-{#      <h2></h2>#}
-{#      <p></p>#}
-{#    </div>#}
-{##}
-{#    <div class="social-tabs-container">#}
-{#      <div class="social-tabs">#}
-{#        <button class="social-tab-btn active" data-tab="WHO">#}
-{#          <img src="{% static 'images/logos/WHO_mini_logo.png' %}" alt="WHO Logo">#}
-{#        </button>#}
-{#        <button class="social-tab-btn" data-tab="CBM">#}
-{#          <img src="{% static 'images/logos/CBM_mini_logo.png' %}" alt="CBM Logo">#}
-{##}
-{#        </button>#}
-{#        <button class="social-tab-btn" data-tab="CSIC">#}
-{#          <img src="{% static 'images/logos/CSIC_mini_logo.png' %}" alt="CSIC Logo">#}
-{#        </button>#}
-{#        <button class="social-tab-btn" data-tab="UAM">#}
-{#          <img src="{% static 'images/logos/UAM_mini_logo.jpg' %}" alt="UAM Logo">#}
-{#        </button>#}
-{#      </div>#}
-{##}
-{#      <div class="social-content">#}
-{#        <div id="WHO" class="social-panel active">#}
-{#          <div class="loading-spinner"></div> <!-- Spinner -->#}
-{#          <div class="bsky-container">#}
-{#            <!--suppress HtmlUnknownTag -->#}
-{#            <bsky-embed username="who.int" mode="" limit="5" load-more="true"#}
-{#                        custom-styles=".rounded-full { display: none }">#}
-{#            </bsky-embed>#}
-{#          </div>#}
-{#        </div>#}
-{#        <div id="CBM" class="social-panel">#}
-{#          <div class="loading-spinner"></div> <!-- Spinner -->#}
-{#          <!--suppress HtmlUnknownTag -->#}
-{#          <bsky-embed username="cbm-csic-uam.bsky.social" mode="" limit="5" load-more="true"#}
-{#                      custom-styles=".rounded-full { display: none }">#}
-{#          </bsky-embed>#}
-{#        </div>#}
-{#        <div id="CSIC" class="social-panel">#}
-{#          <div class="loading-spinner"></div> <!-- Spinner -->#}
-{#          <!--suppress HtmlUnknownTag -->#}
-{#          <bsky-embed username="csic.es" mode="" limit="5" load-more="true"#}
-{#                      custom-styles=".rounded-full { display: none }">#}
-{#          </bsky-embed>#}
-{#        </div>#}
-{#        <div id="UAM" class="social-panel">#}
-{#          <div class="loading-spinner"></div> <!-- Spinner -->#}
-{#          <!--suppress HtmlUnknownTag -->#}
-{#          <bsky-embed username="uam.es" mode="" limit="5" load-more="true"#}
-{#                      custom-styles=".rounded-full { display: none }">#}
-{#          </bsky-embed>#}
-{#        </div>#}
-{#      </div>#}
-{#    </div>#}
-{#  </section>#}
+
+  <!-- Social Media Updates Section -->
+  <section id="social-updates">
+    <div class="social-header">
+      <h2>{% trans 'Social Media' %}</h2>
+      <p>{% trans 'Stay updated with news from our partner institutions through BlueSky' %}</p>
+    </div>
+
+    <div class="social-tabs-container">
+      <div class="social-tabs">
+        <button class="social-tab-btn active" data-tab="WHO" aria-label="World Health Organization">
+          <img src="{% static 'images/logos/WHO_mini_logo.png' %}" alt="WHO Logo">
+          <span class="sr-only"></span>
+        </button>
+        <button class="social-tab-btn" data-tab="CBM" aria-label="Centro de Biología Molecular">
+          <img src="{% static 'images/logos/CBM_mini_logo.png' %}" alt="CBM Logo">
+          <span class="sr-only"></span>
+        </button>
+        <button class="social-tab-btn" data-tab="CSIC" aria-label="Consejo Superior de Investigaciones Científicas">
+          <img src="{% static 'images/logos/CSIC_mini_logo.png' %}" alt="CSIC Logo">
+          <span class="sr-only"></span>
+        </button>
+        <button class="social-tab-btn" data-tab="UAM" aria-label="Universidad Autónoma de Madrid">
+          <img src="{% static 'images/logos/UAM_mini_logo.jpg' %}" alt="UAM Logo">
+          <span class="sr-only"></span>
+        </button>
+      </div>
+
+      <div class="social-content">
+        <div id="WHO" class="social-panel active">
+          <div class="loading-spinner"></div>
+          <div class="bsky-container">
+            <!--suppress HtmlUnknownTag -->
+            <bsky-embed 
+              username="who.int" 
+              theme="light" 
+              limit="5" 
+              load-more="true"
+              custom-styles=".rounded-full { display: none }"
+            ></bsky-embed>
+          </div>
+        </div>
+        <div id="CBM" class="social-panel">
+          <div class="loading-spinner"></div>
+          <div class="bsky-container">
+            <!--suppress HtmlUnknownTag -->
+            <bsky-embed 
+              username="cbm-csic-uam.bsky.social" 
+              theme="light" 
+              limit="5" 
+              load-more="true"
+              custom-styles=".rounded-full { display: none }"
+            ></bsky-embed>
+          </div>
+        </div>
+        <div id="CSIC" class="social-panel">
+          <div class="loading-spinner"></div>
+          <div class="bsky-container">
+            <!--suppress HtmlUnknownTag -->
+            <bsky-embed 
+              username="csic.es" 
+              theme="light" 
+              limit="5" 
+              load-more="true"
+              custom-styles=".rounded-full { display: none }"
+            ></bsky-embed>
+          </div>
+        </div>
+        <div id="UAM" class="social-panel">
+          <div class="loading-spinner"></div>
+          <div class="bsky-container">
+            <!--suppress HtmlUnknownTag -->
+            <bsky-embed 
+              username="uam.es" 
+              theme="light" 
+              limit="5" 
+              load-more="true"
+              custom-styles=".rounded-full { display: none }"
+            ></bsky-embed>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 {% endblock %}
 
 {% block js_content %}
 {#  <script src="{% static 'home/scripts/translation/home-translation.js' %}"></script>#}
   <script src="{% static 'home/scripts/pages/home/team-front-images-slider.js' %}"></script>
   <script src="{% static 'home/scripts/pages/home/leishmania-info-cards.js' %}"></script>
-{#  <!--suppress JSUnresolvedLibraryURL -->#}
-{#  <script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" async></script>#}
-{#  <script src="{% static 'home/scripts/bluesky-feed.js' %}"></script>#}
+  <!--suppress JSUnresolvedLibraryURL -->
+  <script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" async></script>
+  <script src="{% static 'home/scripts/pages/home/bluesky-feed.js' %}"></script>
 {% endblock %}

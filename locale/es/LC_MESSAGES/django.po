@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-27 14:08+0000\n"
+"POT-Creation-Date: 2025-06-27 14:35+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,13 +19,13 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
 "1 : 2;\n"
 
-#: home/templates/home/home.html:19
+#: home/templates/home/home.html:30
 #, fuzzy
 #| msgid "Team"
 msgid "The Team"
 msgstr "Equipo"
 
-#: home/templates/home/home.html:21
+#: home/templates/home/home.html:32
 msgid ""
 "Based on CBM (Centro de Biología Molecular Severo Ochoa - CSIC), our team "
 "focuses on the molecular genetics of Leishmania parasites, the causative "
@@ -39,32 +39,52 @@ msgstr ""
 "de vanguardia tanto in vitro como in silico, estudiamos la expresión génica "
 "y la plasticidad genómica en estos parásitos."
 
-#: home/templates/home/home.html:23
+#: home/templates/home/home.html:34
 msgid "Learn more"
 msgstr "Saber más"
 
-#: home/templates/home/home.html:54
+#: home/templates/home/home.html:64
 #, fuzzy
 #| msgid "Leishmania Vector"
 msgid "Global Leishmaniasis Distribution"
 msgstr "Distribución mundial de Leishmaniasis"
 
-#: home/templates/home/home.html:58
+#: home/templates/home/home.html:68
 msgid ""
 "Interactive map showing the global distribution of leishmaniasis cases "
 "reported to the World Health Organization (WHO). This visualization helps "
 "understand the worldwide impact and spread of the disease."
 msgstr ""
-"Mapa interactivo que muestra la distribución global de casos de leishmaniasis "
-"reportados a la Organización Mundial de la Salud (OMS). Esta visualización ayuda "
-"a comprender el impacto mundial y la propagación de la enfermedad."
 
+#: home/templates/home/home.html:89
+msgid "Social Media"
+msgstr "Redes Sociales"
+
+#: home/templates/home/home.html:90
+msgid "Stay updated with news from our partner institutions through BlueSky"
+msgstr "Mantente al día con las noticias de nuestras instituciones asociadas a través de BlueSky"
 
 #: home/views.py:14
+#, fuzzy
+#| msgid "Team"
+msgid "Team 2024"
+msgstr "Equipo"
+
+#: home/views.py:18
+#, fuzzy
+#| msgid "Team"
+msgid "Team old"
+msgstr "Equipo"
+
+#: home/views.py:22
+msgid "Leish Lab pre 2024"
+msgstr ""
+
+#: home/views.py:30
 msgid "What is Leishmaniasis?"
 msgstr "¿Qué es la Leishmaniasis?"
 
-#: home/views.py:16
+#: home/views.py:32
 msgid ""
 "Leishmaniasis is a disease that affects a large population in tropical and "
 "subtropical areas worldwide. According to recent data from the World Health "
@@ -85,11 +105,11 @@ msgstr ""
 "mundial, causando aproximadamente 70,000 muertes cada año (Saini et al., "
 "2022)."
 
-#: home/views.py:26
+#: home/views.py:42
 msgid "Leishmania Parasite"
 msgstr "Parásito Leishmania"
 
-#: home/views.py:28
+#: home/views.py:44
 msgid ""
 "The disease is transmitted by a protozoan parasite from the trypanosomatid "
 "family. This family is also responsible for Chagas disease (Trypanosoma "
@@ -101,13 +121,13 @@ msgstr ""
 "de Chagas (Trypanosoma cruzi), la enfermedad del sueño (T. brucei) y la "
 "leishmaniasis (Leishmania spp.) (Bringaud et al., 2007)."
 
-#: home/views.py:35
+#: home/views.py:51
 #, fuzzy
 #| msgid "Leishmania Vector"
 msgid "Leishmaniasis Vector"
 msgstr "Vector de Leishmaniasis"
 
-#: home/views.py:37
+#: home/views.py:53
 msgid ""
 "Leishmaniasis is specifically transmitted through the bite of a sandfly "
 "(subfamily Phlebotominae), leading to the parasite's invasion of the host's "
