@@ -81,7 +81,9 @@ main {
   align-items: center;
   aspect-ratio: 16/9;  /* fixed aspect ratio */
   overflow: hidden;
+  position: relative; /* Add this - makes this the positioning reference */
 }
+
 
 .carousel-slide-img img {
   width: 100%;
@@ -569,17 +571,12 @@ bsky-embed {
 /* ================================================================== */
 @media only screen and (min-width: 1025px) {
   #team-frontshow {
-    flex-direction: row;
-    justify-content: space-evenly;
-    gap: 2rem;
-    height: 60vh;
-    overflow: hidden;
   }
 
   #team-frontshow-text {
-    font-size: 1.2rem;
-    max-width: 800px;
-    bottom: 60px;
+    font-size: 1.5rem;
+    max-width: min(700px, 40%); /* Responsive max-width */
+    bottom: 40px; /* Keep consistent with mobile */
     left: 40px;
   }
 
@@ -597,7 +594,9 @@ bsky-embed {
   }
 
   #leish-card-container {
-    width: 50%;
+    min-width: 400px;
+    max-width: 600px;
+    min-height: 600px;
   }
 }
 
