@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-27 16:56+0000\n"
+"POT-Creation-Date: 2025-06-27 17:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -143,6 +143,7 @@ msgstr ""
 #: species/templates/species/donovani.html:14
 #: species/templates/species/infantum.html:14
 #: species/templates/species/major.html:13
+#: species/templates/species/table_browser/infantum_table_browser.html:13
 msgid "Description"
 msgstr "Descripción"
 
@@ -150,6 +151,7 @@ msgstr "Descripción"
 #: species/templates/species/donovani.html:15
 #: species/templates/species/infantum.html:15
 #: species/templates/species/major.html:14
+#: species/templates/species/table_browser/infantum_table_browser.html:14
 msgid "Browser"
 msgstr "Buscador"
 
@@ -483,6 +485,38 @@ msgstr ""
 "leishmaniasis cutánea sigue siendo un importante problema de salud pública, "
 "particularmente en regiones endémicas donde el acceso a la atención médica y "
 "las medidas eficaces de control de vectores son limitadas.</p>"
+
+#: species/templates/species/table_browser/infantum_table_browser.html:5
+msgid "table"
+msgstr "tabla"
+
+#: species/templates/species/table_browser/infantum_table_browser.html:21
+msgid "Search for genes, names, or orthologs..."
+msgstr "Buca genes, nombre u ortólogos"
+
+#: species/templates/species/table_browser/infantum_table_browser.html:23
+msgid "Search"
+msgstr "BUscar"
+
+#: species/templates/species/table_browser/infantum_table_browser.html:28
+#: species/templates/species/table_browser/infantum_table_browser.html:82
+msgid "Previous"
+msgstr "Anterior"
+
+#: species/templates/species/table_browser/infantum_table_browser.html:31
+#: species/templates/species/table_browser/infantum_table_browser.html:85
+#, python-format
+msgid ""
+"Page\n"
+"          %(page_num)s of %(total_pages)s"
+msgstr ""
+"Página\n"
+"          %(page_num)s de %(total_pages)s"
+
+#: species/templates/species/table_browser/infantum_table_browser.html:35
+#: species/templates/species/table_browser/infantum_table_browser.html:89
+msgid "Next"
+msgstr "Siguiente"
 
 #: templates/html/base.html:24
 msgid "Genome decoding"

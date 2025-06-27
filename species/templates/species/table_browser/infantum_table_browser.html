@@ -1,7 +1,8 @@
 {% extends "html/base.html" %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}L. infantum table{% endblock %}
+{% block title %}L. infantum {% trans "table" %}{% endblock %}
 
 {% block css_files %}
   <link rel="stylesheet" href="{% static 'species/styles/species_browser.css' %}">
@@ -9,23 +10,29 @@
 
 {% block main_content %}
   <section id="desc-genome-selector">
-    <a href="{% url 'species_infantum' %}" id="selector-1"><span id="lang_species_desc">Description</span></a>
-    <a href="{% url 'species_infantum_browser' %}" id="selector-2"><span id="lang_species_brow">Browser</span></a>
+    <a href="{% url 'species_infantum' %}" id="selector-1"><span>{% trans "Description" %}</span></a>
+    <a href="{% url 'species_infantum_browser' %}" id="selector-2"><span>{% trans "Browser" %}</span></a>
   </section>
 
   <section id="browser-section">
     <form method="GET" action="{% url 'species_infantum_browser' %}">
-      <input type="text" name="q" value="{{ query }}" placeholder="Search for genes, names, or orthologs...">
-      <button type="submit">Search</button>
+      <label>
+        <input type="text" name="q" value="{{ query }}"
+               placeholder="{% trans 'Search for genes, names, or orthologs...' %}">
+      </label>
+      <button type="submit">{% trans "Search" %}</button>
     </form>
 
     <div class="pagination-controls">
       {% if page_results.has_previous %}
-        <a href="?q={{ query }}&page={{ page_results.previous_page_number }}">Previous</a>
+        <a href="?q={{ query }}&page={{ page_results.previous_page_number }}">{% trans "Previous" %}</a>
       {% endif %}
-      <span>Page {{ page_results.number }} of {{ page_results.paginator.num_pages }}</span>
+      <span>
+        {% blocktrans with page_num=page_results.number total_pages=page_results.paginator.num_pages %}Page
+          {{ page_num }} of {{ total_pages }}{% endblocktrans %}
+      </span>
       {% if page_results.has_next %}
-        <a href="?q={{ query }}&page={{ page_results.next_page_number }}">Next</a>
+        <a href="?q={{ query }}&page={{ page_results.next_page_number }}">{% trans "Next" %}</a>
       {% endif %}
     </div>
 
@@ -72,11 +79,14 @@
 
     <div class="pagination-controls">
       {% if page_results.has_previous %}
-        <a href="?q={{ query }}&page={{ page_results.previous_page_number }}">Previous</a>
+        <a href="?q={{ query }}&page={{ page_results.previous_page_number }}">{% trans "Previous" %}</a>
       {% endif %}
-      <span>Page {{ page_results.number }} of {{ page_results.paginator.num_pages }}</span>
+      <span>
+        {% blocktrans with page_num=page_results.number total_pages=page_results.paginator.num_pages %}Page
+          {{ page_num }} of {{ total_pages }}{% endblocktrans %}
+      </span>
       {% if page_results.has_next %}
-        <a href="?q={{ query }}&page={{ page_results.next_page_number }}">Next</a>
+        <a href="?q={{ query }}&page={{ page_results.next_page_number }}">{% trans "Next" %}</a>
       {% endif %}
     </div>
 
