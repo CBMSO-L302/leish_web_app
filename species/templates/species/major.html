@@ -1,5 +1,6 @@
 {% extends "html/base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}L. major{% endblock %}
 
@@ -9,19 +10,21 @@
 
 {% block main_content %}
   <section id="desc-genome-selector">
-    <a href="#" id="selector-1"><span id="lang_species_desc">Description</span></a>
-    <a href="http://leish-esp.cbm.uam.es/browser2.php" id="selector-2"><span id="lang_species_brow">Browser</span></a>
+    <a href="#" id="selector-1"><span>{% trans "Description" %}</span></a>
+    <a href="http://leish-esp.cbm.uam.es/browser2.php" id="selector-2"><span>{% trans "Browser" %}</span></a>
   </section>
 
   <section class="img-title">
     <img src="{% static 'species/images/major.png' %}" alt="L. major image">
     <article>
       <div class="text-header"><h1><i>Leishmania major</i></h1></div>
-      <span id="lang_species_desc_text">
-        <p>Protozoan parasite that causes cutaneous leishmaniasis, primarily affecting humans and some animals. The parasite is transmitted to hosts through the bites of infected female phlebotomine sandflies. Cutaneous leishmaniasis, the most common form of the disease, typically results in skin lesions that can lead to significant scarring and disability. Symptoms in humans include the development of one or more sores at the site of the sandfly bite, which may progress to ulcers with a raised edge. These sores often heal spontaneously over months to years, but they can leave disfiguring scars and may be prone to secondary infections.</p>
-        <p>The life cycle of <i>L. major</i> involves two main stages: the promastigote form, which is found in the sandfly vector, and the amastigote form, which multiplies within the host's macrophages. In the sandfly, the parasite exists as motile promastigotes. Once transmitted to the human host, the promastigotes are phagocytosed by macrophages and transform into non-motile amastigotes. These amastigotes then multiply within the macrophages, leading to cell rupture and further spread of the infection to new macrophages.</p>
-        <p>Control and prevention of leishmaniasis caused by <i>L. major</i> involve integrated approaches, including sandfly vector control through insecticide use and environmental management, early diagnosis, and treatment of infected individuals. Current treatments for cutaneous leishmaniasis include topical and systemic therapies such as antimonial compounds, miltefosine, and amphotericin B. However, the effectiveness of treatments can vary, and issues such as drug resistance and adverse effects continue to pose significant challenges. Advances in molecular biology and genomics have enhanced the understanding of <i>L. major</i>'s biology and pathogenic mechanisms, offering hope for new therapeutic approaches and potential vaccines. Despite these advances, cutaneous leishmaniasis remains a significant public health issue, particularly in endemic regions where access to healthcare and effective vector control measures are limited.</p>
-        </span>
+      <div>
+        {% blocktrans %}
+          <p>Protozoan parasite that causes cutaneous leishmaniasis, primarily affecting humans and some animals. The parasite is transmitted to hosts through the bites of infected female phlebotomine sandflies. Cutaneous leishmaniasis, the most common form of the disease, typically results in skin lesions that can lead to significant scarring and disability. Symptoms in humans include the development of one or more sores at the site of the sandfly bite, which may progress to ulcers with a raised edge. These sores often heal spontaneously over months to years, but they can leave disfiguring scars and may be prone to secondary infections.</p>
+          <p>The life cycle of <i>L. major</i> involves two main stages: the promastigote form, which is found in the sandfly vector, and the amastigote form, which multiplies within the host's macrophages. In the sandfly, the parasite exists as motile promastigotes. Once transmitted to the human host, the promastigotes are phagocytosed by macrophages and transform into non-motile amastigotes. These amastigotes then multiply within the macrophages, leading to cell rupture and further spread of the infection to new macrophages.</p>
+          <p>Control and prevention of leishmaniasis caused by <i>L. major</i> involve integrated approaches, including sandfly vector control through insecticide use and environmental management, early diagnosis, and treatment of infected individuals. Current treatments for cutaneous leishmaniasis include topical and systemic therapies such as antimonial compounds, miltefosine, and amphotericin B. However, the effectiveness of treatments can vary, and issues such as drug resistance and adverse effects continue to pose significant challenges. Advances in molecular biology and genomics have enhanced the understanding of <i>L. major</i>'s biology and pathogenic mechanisms, offering hope for new therapeutic approaches and potential vaccines. Despite these advances, cutaneous leishmaniasis remains a significant public health issue, particularly in endemic regions where access to healthcare and effective vector control measures are limited.</p>
+        {% endblocktrans %}
+      </div>
     </article>
   </section>
 
@@ -29,21 +32,21 @@
     <table>
       <thead>
         <tr>
-          <th>File</th>
-          <th>Reference Genome</th>
-          <th>Version/Year</th>
-          <th>Downloads</th>
-          <th>Raw Data</th>
-          <th>Notes</th>
+          <th>{% trans "File" %}</th>
+          <th>{% trans "Reference Genome" %}</th>
+          <th>{% trans "Version/Year" %}</th>
+          <th>{% trans "Downloads" %}</th>
+          <th>{% trans "Raw Data" %}</th>
+          <th>{% trans "Notes" %}</th>
         </tr>
       </thead>
       <tbody>
         {% for item in downloads_data %}
         <tr>
-          <td><strong>{{ item.type|upper }} ({{ item.format|upper }} file)</strong></td>
+          <td><strong>{{ item.type|upper }} ({{ item.format|upper }})</strong></td>
           <td>{{ item.url|safe }}</td>
           <td>{{ item.version }}/{{ item.year }}</td>
-          <td><a href="{{ item.path_file }}" class="download-button">DOWNLOAD</a></td>
+          <td><a href="{{ item.path_file }}" class="download-button">{% trans "DOWNLOAD" %}</a></td>
           <td>{{ item.raw_data|safe }}</td>
           <td>{{ item.description|safe }}</td>
         </tr>
@@ -54,5 +57,4 @@
 {% endblock %}
 
 {% block js_content %}
-  <script src="{% static 'species/scripts/translate-major.js' %}"></script>
 {% endblock %}

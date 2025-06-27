@@ -1,6 +1,7 @@
 
 {% extends "html/base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}L. infantum{% endblock %}
 
@@ -10,15 +11,16 @@
 
 {% block main_content %}
   <section id="desc-genome-selector">
-    <a href="{% url 'species_infantum' %}" id="selector-1"><span id="lang_species_desc">Description</span></a>
-    <a href="{% url 'species_infantum_browser' %}" id="selector-2"><span id="lang_species_brow">Browser</span></a>
+    <a href="{% url 'species_infantum' %}" id="selector-1"><span>{% trans "Description" %}</span></a>
+    <a href="{% url 'species_infantum_browser' %}" id="selector-2"><span>{% trans "Browser" %}</span></a>
   </section>
 
   <section class="img-title">
     <img src="{% static 'species/images/infantum.png' %}" alt="L. infantum image">
     <article>
       <div class="text-header"><h1><i>Leishmania infantum</i></h1></div>
-      <span id="lang_species_desc_text">
+      <div>
+        {% blocktrans %}
           <p>Protozoan parasite responsible for the disease leishmaniasis, primarily affecting both humans and
             animals. This parasite is transmitted through the bites of infected female phlebotomine sandflies.
             The disease manifests in various forms, with the most severe being visceral leishmaniasis, also
@@ -38,7 +40,8 @@
             understanding of the parasite's biology and pathogenic mechanisms, paving the way for potential new
             therapies and vaccines. However, leishmaniasis remains a major public health concern, particularly
             in regions where vector control and access to healthcare are limited.</p>
-        </span>
+        {% endblocktrans %}
+      </div>
     </article>
   </section>
 
@@ -46,21 +49,21 @@
     <table>
       <thead>
         <tr>
-          <th>File</th>
-          <th>Reference Genome</th>
-          <th>Version/Year</th>
-          <th>Downloads</th>
-          <th>Raw Data</th>
-          <th>Notes</th>
+          <th>{% trans "File" %}</th>
+          <th>{% trans "Reference Genome" %}</th>
+          <th>{% trans "Version/Year" %}</th>
+          <th>{% trans "Downloads" %}</th>
+          <th>{% trans "Raw Data" %}</th>
+          <th>{% trans "Notes" %}</th>
         </tr>
       </thead>
       <tbody>
         {% for item in downloads_data %}
         <tr>
-          <td><strong>{{ item.type|upper }} ({{ item.format|upper }} file)</strong></td>
+          <td><strong>{{ item.type|upper }} ({{ item.format|upper }})</strong></td>
           <td>{{ item.url|safe }}</td>
           <td>{{ item.version }}/{{ item.year }}</td>
-          <td><a href="{{ item.path_file }}" class="download-button">DOWNLOAD</a></td>
+          <td><a href="{{ item.path_file }}" class="download-button">{% trans "DOWNLOAD" %}</a></td>
           <td>{{ item.raw_data|safe }}</td>
           <td>{{ item.description|safe }}</td>
         </tr>
@@ -71,5 +74,4 @@
 {% endblock %}
 
 {% block js_content %}
-  <script src="{% static 'species/scripts/translate-infantum.js' %}"></script>
 {% endblock %}
