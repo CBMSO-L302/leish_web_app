@@ -1,10 +1,10 @@
-{% extends "base.html" %}
+{% extends "html/base.html" %}
 {% load static %}
 
 {% block title %}Leish-ESP{% endblock %}
 
 {% block css_files %}
-  <link rel="stylesheet" href="{% static 'home/home.css' %}">
+  <link rel="stylesheet" href="{% static 'home/styles/home.css' %}">
 {% endblock %}
 
 {% block main_content %}
@@ -118,7 +118,7 @@
 {% endblock %}
 
 {% block js_content %}
-  <script src="{% static 'home/scripts/translate.js' %}"></script>
+  <script src="{% static 'home/scripts/translation/home-translation.js' %}"></script>
   <script src="{% static 'home/scripts/team-img-carousel.js' %}"></script>
   <script src="{% static 'home/scripts/leishmania-info-cards.js' %}"></script>
   <!--suppress JSUnresolvedLibraryURL -->

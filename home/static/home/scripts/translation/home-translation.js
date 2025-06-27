@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
      * @param {string} lang - Selected language.
      */
     const loadLeishInfoCards = (lang) => {
-        fetch(`/static/home/json/translations.json`)
+        fetch(`/static/home/json/translation/home-translation.json`)
             .then(response => response.json())
             .then(data => {
                 const translations = data[lang];
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Update carousel functionality (from leish-intro-carousel.js)
                 setupLeishInfoCards();
             })
-            .catch(error => console.error('Error loading translations.json:', error));
+            .catch(error => console.error('Error loading home-translation.json:', error));
     };
 
     /**
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
      * @param {string} lang - Selected language.
      */
     const loadLanguage = (lang) => {
-        fetch(`/static/home/json/translations.json`)
+        fetch(`/static/home/json/translation/home-translation.json`)
             .then(response => response.json())
             .then(data => {
                 const translations = data[lang];
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     console.error('Language flag element not found.');
                 }
             })
-            .catch(error => console.error('Error loading translations.json:', error));
+            .catch(error => console.error('Error loading home-translation.json:', error));
     };
 
     // Load language from localStorage or default to English
