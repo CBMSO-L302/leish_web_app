@@ -99,12 +99,17 @@ function setupSwipeNavigation() {
   });
 }
 
-// Combine all setup functions
+// Setup function for Leishmania info cards
 function setupLeishInfoCards() {
   const cardContainer = document.getElementById("leish-card-container");
 
-  // Store references to all cards
+  // Store references to all cards (these are now pre-rendered by Django)
   leishInfoCards = Array.from(cardContainer.querySelectorAll(".leish-card"));
+
+  // Only proceed if cards exist
+  if (leishInfoCards.length === 0) {
+    return;
+  }
 
   // Create navigation dots
   createLeishInfoDots(leishInfoCards.length);
@@ -120,8 +125,10 @@ function setupLeishInfoCards() {
 
 // Initialize when the page loads
 document.addEventListener("DOMContentLoaded", () => {
-  window.changeLeishInfoCard = changeLeishInfoCard; // Attach carousel control
+  // Make functions globally available if needed
+  window.changeLeishInfoCard = changeLeishInfoCard;
   window.setupLeishInfoCards = setupLeishInfoCards;
 
-  // Dynamically set up the carousel
+  // Setup the carousel automatically
+  setupLeishInfoCards();
 });

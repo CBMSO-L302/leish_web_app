@@ -27,16 +27,26 @@
   </section>
 
 {##}
-{#  <!-- Leishmania info section -->#}
-{#  <section id="leishmania-info">#}
-{#    <div id="leish-info-container">#}
-{#      <div class="leish-card-carousel">#}
-{#        <div id="leish-card-container"></div>#}
-{#      </div>#}
-{#      <div id="leish-card-dots" class="card-dots"></div>#}
-{#    </div>#}
-{#  </section>#}
-{##}
+  <!-- Leishmania info section -->
+  <section id='leishmania-info'>
+    <div id='leish-info-container'>
+      <div class='leish-card-carousel'>
+        <div id='leish-card-container'>
+          {% for card in leishmania_info_cards %}
+            <div class='leish-card{% if forloop.first %} active{% endif %}'>
+              <h3 class='leish-card-title'>{{ card.title }}</h3>
+              <div class='leish-card-img'>
+                <img src='{% static card.image_path %}' alt='{{ card.title }}'>
+              </div>
+              <p class='leish-card-description'>{{ card.description }}</p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div id='leish-card-dots' class='card-dots'></div>
+    </div>
+  </section>
+
 {#  <!-- WHO Leishmaniasis Map Section -->#}
 {#  <section id="who-leish-map">#}
 {#    <div class="who-map-container">#}
@@ -124,7 +134,7 @@
 {% block js_content %}
 {#  <script src="{% static 'home/scripts/translation/home-translation.js' %}"></script>#}
   <script src="{% static 'home/scripts/pages/home/team-front-images-slider.js' %}"></script>
-{#  <script src="{% static 'home/scripts/leishmania-info-cards.js' %}"></script>#}
+  <script src="{% static 'home/scripts/pages/home/leishmania-info-cards.js' %}"></script>
 {#  <!--suppress JSUnresolvedLibraryURL -->#}
 {#  <script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" async></script>#}
 {#  <script src="{% static 'home/scripts/bluesky-feed.js' %}"></script>#}
