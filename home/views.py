@@ -8,6 +8,22 @@ class HomePageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
+        # Define the team images data
+        team_images = [
+            {
+                'title': _('Team 2024'),
+                'img': '/static/home/images/lab_team_carousel/team_lab_2024.jpg'
+            },
+            {
+                'title': _('Team old'),
+                'img': '/static/home/images/lab_team_carousel/team_lab_old.jpg'
+            },
+            {
+                'title': _('Leish Lab pre 2024'),
+                'img': '/static/home/images/lab_team_carousel/leish_lab_pre2024.png'
+            }
+        ]
+
         # Define the Leishmania info cards data
         leishmania_info_cards = [
             {
@@ -41,7 +57,9 @@ class HomePageView(TemplateView):
             }
         ]
 
+        context['team_images'] = team_images
         context['leishmania_info_cards'] = leishmania_info_cards
+
         return context
 
 

@@ -12,8 +12,19 @@
   <!-- Team frontshow -->
   <section id="team-frontshow">
     <div id="carousel-container">
-      <div id="carousel-slide"></div>
-      <div id="carousel-dots" class="carousel-dots"></div>
+      <div id="carousel-slide">
+        {% for image in team_images %}
+          <div class="carousel-slide-img"
+               style="{% if not forloop.first %}display: none;{% else %}display: flex;{% endif %}">
+            <img src="{{ image.img }}" alt="{{ image.title }}">
+          </div>
+        {% endfor %}
+      </div>
+      <div id="carousel-dots" class="carousel-dots">
+        {% for image in team_images %}
+          <div class="dot{% if forloop.first %} active{% endif %}" onclick="showSlide({{ forloop.counter0 }})"></div>
+        {% endfor %}
+      </div>
       <div id="team-frontshow-text">
         <div id="team-frontshow-text-header">
           <h3>{% trans "The Team" %}</h3>
@@ -26,7 +37,6 @@
     </div>
   </section>
 
-{##}
   <!-- Leishmania info section -->
   <section id='leishmania-info'>
     <div id='leish-info-container'>

@@ -32,59 +32,22 @@ function updateDots() {
   });
 }
 
-// Create dots for navigation
-function createDots(count) {
-  const dotsContainer = document.getElementById('carousel-dots');
-  dotsContainer.innerHTML = '';
+// Initialize the carousel functionality
+function initializeCarousel() {
+  const slides = document.querySelectorAll('#carousel-slide .carousel-slide-img');
 
-  for (let i = 0; i < count; i++) {
-    const dot = document.createElement('div');
-    dot.classList.add('dot');
-    if (i === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => showSlide(i));
-    dotsContainer.appendChild(dot);
+  if (slides.length === 0) {
+    console.warn('No carousel slides found');
+    return;
   }
-}
 
-// Load team data and build carousel
-function loadCarousel() {
-  fetch('/static/home/json/pages/home/team-front-images-paths.json')
-    .then(response => response.json())
-    .then(data => {
-      const carouselContainer = document.getElementById('carousel-slide');
+  // Set the initial slide
+  currentSlideIndex = 0;
+  showSlide(currentSlideIndex);
 
-      // Clear existing content
-      carouselContainer.innerHTML = '';
-
-      // Create slides for each team member
-      data.forEach((member) => {
-        // Create the slide container
-        const slide = document.createElement('div');
-        slide.classList.add('carousel-slide-img');
-        slide.style.display = 'none';
-
-        // Add member image
-        const img = document.createElement('img');
-        img.src = member.img;
-        img.alt = member.title;
-        slide.appendChild(img);
-
-        // Add slide to carousel
-        carouselContainer.appendChild(slide);
-      });
-
-      // Create navigation dots
-      createDots(data.length);
-
-      // Show the first slide
-      currentSlideIndex = 0;
-      showSlide(currentSlideIndex);
-
-      // Optional: Auto-play the carousel
-      // setInterval(() => showSlide(currentSlideIndex + 1), 5000);
-    })
-    .catch(error => console.error('Error loading carousel:', error));
+  // Optional: Auto-play the carousel
+  // setInterval(() => showSlide(currentSlideIndex + 1), 5000);
 }
 
 // Initialize the carousel when the page loads
-document.addEventListener('DOMContentLoaded', loadCarousel);
+document.addEventListener('DOMContentLoaded', initializeCarousel);
