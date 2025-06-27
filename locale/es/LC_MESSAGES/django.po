@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-27 10:42+0000\n"
+"POT-Creation-Date: 2025-06-27 12:11+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,38 +18,53 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
 "1 : 2;\n"
+
+#: home/templates/home/home.html:19
+#, fuzzy
+#| msgid "Team"
+msgid "The Team"
+msgstr "Equipo"
+
+#: home/templates/home/home.html:21
+msgid "Based on CBM (Centro de Biología Molecular Severo Ochoa - CSIC), our team focuses on the molecular genetics of Leishmania parasites, the causative agents of leishmaniasis. Using state-of-the-art technology both in vitro and in silico, we study the gene expression and genomic plasticity in these parasites."
+msgstr "Ubicado en el CBM (Centro de Biología Molecular Severo Ochoa - CSIC), nuestro equipo se centra en la genética molecular de los parásitos Leishmania, los agentes causantes de la leishmaniasis. Utilizando tecnología de vanguardia tanto in vitro como in silico, estudiamos la expresión génica y la plasticidad genómica en estos parásitos."
+
+#: home/templates/home/home.html:23
+msgid "Learn more"
+msgstr "Saber más"
+
 #: templates/html/base.html:24
 msgid "Genome decoding"
 msgstr "Decodificación genómica"
 
-#: templates/html/base.html:31
+#: templates/html/base.html:38 templates/html/base.html:66
 msgid "About Us"
 msgstr "Nosotros"
 
-#: templates/html/base.html:33
+#: templates/html/base.html:40 templates/html/base.html:68
 msgid "Mission"
 msgstr "Misión"
 
-#: templates/html/base.html:34
+#: templates/html/base.html:41 templates/html/base.html:69
 msgid "Team"
 msgstr "Equipo"
 
-#: templates/html/base.html:38
+#: templates/html/base.html:45 templates/html/base.html:73
 msgid "Species"
 msgstr "Especies"
 
-#: templates/html/base.html:47
+#: templates/html/base.html:54 templates/html/base.html:82
 msgid "Downloads"
 msgstr "Descargas"
 
-#: templates/html/base.html:49
+#: templates/html/base.html:56 templates/html/base.html:84
 msgid "Reports"
 msgstr "Informes"
 
-#: templates/html/base.html:50
+#: templates/html/base.html:57 templates/html/base.html:85
 msgid "Datasets"
 msgstr "Datos"
 
-#: templates/html/base.html:51
+#: templates/html/base.html:58 templates/html/base.html:86
 msgid "Software"
 msgstr "Programas"

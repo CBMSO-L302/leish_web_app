@@ -24,7 +24,7 @@ function showSlide(index) {
   updateDots();
 }
 
-// Update the active dot based on current slide
+// Update the active dot based on the current slide
 function updateDots() {
   const dots = document.querySelectorAll('.dot');
   dots.forEach((dot, i) => {
@@ -48,7 +48,7 @@ function createDots(count) {
 
 // Load team data and build carousel
 function loadCarousel() {
-  fetch('/static/home/json/team-img-carousel.json')
+  fetch('/static/home/json/pages/home/team-front-images-paths.json')
     .then(response => response.json())
     .then(data => {
       const carouselContainer = document.getElementById('carousel-slide');
@@ -57,7 +57,7 @@ function loadCarousel() {
       carouselContainer.innerHTML = '';
 
       // Create slides for each team member
-      data.forEach((member, index) => {
+      data.forEach((member) => {
         // Create the slide container
         const slide = document.createElement('div');
         slide.classList.add('carousel-slide-img');

@@ -1,25 +1,31 @@
 {% extends "html/base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}Leish-ESP{% endblock %}
 
 {% block css_files %}
-{#  <link rel="stylesheet" href="{% static 'home/styles/home.css' %}">#}
+  <link rel="stylesheet" href="{% static 'home/styles/home.css' %}">
 {% endblock %}
 
 {% block main_content %}
-{#  <!-- Team frontshow -->#}
-{#  <section id="team-frontshow">#}
-{#    <div id="carousel-container">#}
-{#      <div id="carousel-slide"></div>#}
-{#      <div id="carousel-dots" class="carousel-dots"></div>#}
-{#      <div id="team-frontshow-text">#}
-{#        <div id="team-frontshow-text-header"><h3>The Team</h3></div>#}
-{#        <p></p>#}
-{#        <button id="team-frontshow-button" onclick="location.href='{% url 'on-development' %}'"></button>#}
-{#      </div>#}
-{#    </div>#}
-{#  </section>#}
+  <!-- Team frontshow -->
+  <section id="team-frontshow">
+    <div id="carousel-container">
+      <div id="carousel-slide"></div>
+      <div id="carousel-dots" class="carousel-dots"></div>
+      <div id="team-frontshow-text">
+        <div id="team-frontshow-text-header">
+          <h3>{% trans "The Team" %}</h3>
+        </div>
+        <p>{% trans "Based on CBM (Centro de Biología Molecular Severo Ochoa - CSIC), our team focuses on the molecular genetics of Leishmania parasites, the causative agents of leishmaniasis. Using state-of-the-art technology both in vitro and in silico, we study the gene expression and genomic plasticity in these parasites." %}</p>
+        <button id="team-frontshow-button" onclick="location.href='{% url 'on-development' %}'">
+          {% trans "Learn more" %}
+        </button>
+      </div>
+    </div>
+  </section>
+
 {##}
 {#  <!-- Leishmania info section -->#}
 {#  <section id="leishmania-info">#}
@@ -117,7 +123,7 @@
 
 {% block js_content %}
 {#  <script src="{% static 'home/scripts/translation/home-translation.js' %}"></script>#}
-{#  <script src="{% static 'home/scripts/team-img-carousel.js' %}"></script>#}
+  <script src="{% static 'home/scripts/pages/home/team-front-images-slider.js' %}"></script>
 {#  <script src="{% static 'home/scripts/leishmania-info-cards.js' %}"></script>#}
 {#  <!--suppress JSUnresolvedLibraryURL -->#}
 {#  <script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" async></script>#}
