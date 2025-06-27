@@ -18,9 +18,18 @@ Including another URLconf
 from django.contrib import admin
 from django.shortcuts import redirect
 from django.urls import path, include
+from django.conf.urls.i18n import i18n_patterns
+
+# URLs that don't need translation (admin, API endpoints, etc.)
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", lambda request: redirect("home/")),
-    path("home/", include("home.urls")),  # Route the root ("/") to the index view in home app
-    path("species/", include("species.urls"))
+    path('i18n/', include('django.conf.urls.i18n')),  # This must be in the main urlpatterns
 ]
+
+# URLs that support internationalization
+urlpatterns += i18n_patterns(
+    path("home/", include("home.urls")),
+    path("species/", include("species.urls")),
+    prefix_default_language=True,  # Don't add /en/ prefix for English (change back to False)
+)

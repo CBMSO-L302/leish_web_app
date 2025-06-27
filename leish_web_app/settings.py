@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
@@ -26,18 +25,16 @@ SECRET_KEY = "***REMOVED***"
 DEBUG = True
 
 ALLOWED_HOSTS = [
-       "leishmania.cbm.uam.es",
-       "www.leishmania.cbm.uam.es",
-       "127.0.0.1",
-       "150.244.205.86",
-   ]
+    "leishmania.cbm.uam.es",
+    "www.leishmania.cbm.uam.es",
+    "127.0.0.1",
+    "150.244.205.86",
+]
 
 CSRF_TRUSTED_ORIGINS = [
     "https://leishmania.cbm.uam.es",
     "http://150.244.205.86",
 ]
-
-
 
 # Application definition
 
@@ -55,6 +52,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.locale.LocaleMiddleware",  # i18n django internationalization
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -77,13 +75,13 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "django.template.context_processors.i18n",  # i18n django internationalization
             ],
         },
     },
 ]
 
 WSGI_APPLICATION = "leish_web_app.wsgi.application"
-
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
@@ -100,8 +98,6 @@ DATABASES = {
 }
 
 DATABASE_ROUTERS = ["data.database_router.LeishmaniaRouter"]
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -121,16 +117,27 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+# Default language (English)
+LANGUAGE_CODE = "en"
+
+# Supported languages
+LANGUAGES = [
+    ('en', 'English'),
+    ('es', 'Español'),
+]
+
+# Directory where translation files will be stored
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',
+]
 
 TIME_ZONE = "UTC"
 
 USE_I18N = True
-
+USE_L10N = True
 USE_TZ = True
 
 

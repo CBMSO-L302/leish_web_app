@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,20 +21,21 @@
       <a href="{% url 'home' %}"><img src="{% static 'images/logos/leish_lab_logo.png' %}" alt="Leish-Lab Logo"></a>
       <div>
         <h1>Leish-ESP</h1>
-        <h4><i id="lang_genome_decoding">Genome decoding</i></h4>
+        <h4><i>{% trans 'Genome decoding' %}</i></h4>
       </div>
     </div>
+
     <!--Dropdown menu-->
     <nav>
       <div class="dropdown">
-        <a href="#" id="lang_about_us">About Us</a>
+        <a href="#">{% trans "About Us" %}</a>
         <div class="dropdown-content">
-          <a href="{% url 'on-development' %}" id="lang_mission">Mission</a>
-          <a href="{% url 'on-development' %}" id="lang_team">Team</a>
+          <a href="{% url 'on-development' %}">{% trans "Mission" %}</a>
+          <a href="{% url 'on-development' %}">{% trans "Team" %}</a>
         </div>
       </div>
       <div class="dropdown">
-        <a href="#" id="lang_species">Species</a>
+        <a href="#">{% trans "Species" %}</a>
         <div class="dropdown-content">
           <a href="{% url 'species_infantum' %}"><i>L. infantum</i></a>
           <a href="{% url 'species_major' %}"><i>L. major</i></a>
@@ -42,23 +44,36 @@
         </div>
       </div>
       <div class="dropdown">
-        <a href="#" id="lang_downloads">Downloads</a>
+        <a href="#">{% trans "Downloads" %}</a>
         <div class="dropdown-content">
-          <a href="#" id="lang_reports">Reports</a>
-          <a href="#" id="lang_datasets">Datasets</a>
-          <a href="#" id="lang_software">Software</a>
+          <a href="#">{% trans "Reports" %}</a>
+          <a href="#">{% trans "Datasets" %}</a>
+          <a href="#">{% trans "Software" %}</a>
         </div>
       </div>
     </nav>
+
     <!--Language selector-->
     <div id="language-selector" class="language-selector">
-      <label for="language-dropdown"></label><select id="language-dropdown" onchange="changeLanguage(this.value)">
-      <option value="eng" data-flag="{% static 'images/flags/english.png' %}">ENG</option>
-      <option value="esp" data-flag="{% static 'images/flags/spanish.png' %}">ESP</option>
-    </select>
-      <img id="selected-flag" src="{% static 'images/flags/english.png' %}" alt="Selected Language">
+      <form action="{% url 'set_language' %}" method="post" id="language-form">
+        {% csrf_token %}
+        <select name="language" id="language-dropdown" onchange="document.getElementById('language-form').submit();">
+          {% get_current_language as CURRENT_LANGUAGE %}
+          {% get_available_languages as AVAILABLE_LANGUAGES %}
+          {% for lang_code, lang_name in AVAILABLE_LANGUAGES %}
+            <option value="{{ lang_code }}" {% if lang_code == CURRENT_LANGUAGE %}selected{% endif %}
+                    data-flag="{% if lang_code == 'en' %}{% static 'images/flags/english.png' %}{% elif lang_code == 'es' %}{% static 'images/flags/spanish.png' %}{% endif %}">
+              {% if lang_code == 'en' %}ENG{% elif lang_code == 'es' %}ESP{% endif %}
+            </option>
+          {% endfor %}
+        </select>
+        <img id="selected-flag"
+             src="{% if CURRENT_LANGUAGE == 'es' %}{% static 'images/flags/spanish.png' %}{% else %}{% static 'images/flags/english.png' %}{% endif %}"
+             alt="Selected Language">
+      </form>
     </div>
   </header>
+
   <!-- ================================================================================================ -->
   <!-- Main section -->
   <!-- ================================================================================================ -->
@@ -96,7 +111,7 @@
   <!-- ================================================================================================ -->
   <!-- Script section -->
   <!-- ================================================================================================ -->
-  <script src="{% static '/scripts/translation/header-footer-translation.js' %}"></script>
+  <script src="{% static '/scripts/language-selector.js' %}"></script>
 {% block js_content %}{% endblock %}
 
 </body>
