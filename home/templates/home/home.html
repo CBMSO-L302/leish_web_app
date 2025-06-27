@@ -4,122 +4,122 @@
 {% block title %}Leish-ESP{% endblock %}
 
 {% block css_files %}
-  <link rel="stylesheet" href="{% static 'home/styles/home.css' %}">
+{#  <link rel="stylesheet" href="{% static 'home/styles/home.css' %}">#}
 {% endblock %}
 
 {% block main_content %}
-  <!-- Team frontshow -->
-  <section id="team-frontshow">
-    <div id="carousel-container">
-      <div id="carousel-slide"></div>
-      <div id="carousel-dots" class="carousel-dots"></div>
-      <div id="team-frontshow-text">
-        <div id="team-frontshow-text-header"><h3>The Team</h3></div>
-        <p></p>
-        <button id="team-frontshow-button" onclick="location.href='{% url 'on-development' %}'"></button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Leishmania info section -->
-  <section id="leishmania-info">
-    <div id="leish-info-container">
-      <div class="leish-card-carousel">
-        <div id="leish-card-container"></div>
-      </div>
-      <div id="leish-card-dots" class="card-dots"></div>
-    </div>
-  </section>
-
-  <!-- WHO Leishmaniasis Map Section -->
-  <section id="who-leish-map">
-    <div class="who-map-container">
-      <div class="who-map-title">
-        <h2></h2>
-      </div>
-      <div class="who-map-description">
-        <p></p>
-      </div>
-      <div class="who-map-iframe">
-        <iframe src="https://apps.who.int/neglected_diseases/ntddata/leishmaniasis/leishmaniasis.html"
-                title="WHO Leishmaniasis Map"
-                width="100%"
-                height="100%"
-                allowfullscreen>
-        </iframe>
-      </div>
-      <div class="who-map-source">
-        <p>Source: <a href="https://apps.who.int/neglected_diseases/ntddata/leishmaniasis/leishmaniasis.html"
-                      target="_blank">World Health Organization</a></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Social Media Updates Section -->
-  <section id="social-updates">
-    <div class="social-header">
-      <h2></h2>
-      <p></p>
-    </div>
-
-    <div class="social-tabs-container">
-      <div class="social-tabs">
-        <button class="social-tab-btn active" data-tab="WHO">
-          <img src="{% static 'images/logos/WHO_mini_logo.png' %}" alt="WHO Logo">
-        </button>
-        <button class="social-tab-btn" data-tab="CBM">
-          <img src="{% static 'images/logos/CBM_mini_logo.png' %}" alt="CBM Logo">
-
-        </button>
-        <button class="social-tab-btn" data-tab="CSIC">
-          <img src="{% static 'images/logos/CSIC_mini_logo.png' %}" alt="CSIC Logo">
-        </button>
-        <button class="social-tab-btn" data-tab="UAM">
-          <img src="{% static 'images/logos/UAM_mini_logo.jpg' %}" alt="UAM Logo">
-        </button>
-      </div>
-
-      <div class="social-content">
-        <div id="WHO" class="social-panel active">
-          <div class="loading-spinner"></div> <!-- Spinner -->
-          <div class="bsky-container">
-            <!--suppress HtmlUnknownTag -->
-            <bsky-embed username="who.int" mode="" limit="5" load-more="true"
-                        custom-styles=".rounded-full { display: none }">
-            </bsky-embed>
-          </div>
-        </div>
-        <div id="CBM" class="social-panel">
-          <div class="loading-spinner"></div> <!-- Spinner -->
-          <!--suppress HtmlUnknownTag -->
-          <bsky-embed username="cbm-csic-uam.bsky.social" mode="" limit="5" load-more="true"
-                      custom-styles=".rounded-full { display: none }">
-          </bsky-embed>
-        </div>
-        <div id="CSIC" class="social-panel">
-          <div class="loading-spinner"></div> <!-- Spinner -->
-          <!--suppress HtmlUnknownTag -->
-          <bsky-embed username="csic.es" mode="" limit="5" load-more="true"
-                      custom-styles=".rounded-full { display: none }">
-          </bsky-embed>
-        </div>
-        <div id="UAM" class="social-panel">
-          <div class="loading-spinner"></div> <!-- Spinner -->
-          <!--suppress HtmlUnknownTag -->
-          <bsky-embed username="uam.es" mode="" limit="5" load-more="true"
-                      custom-styles=".rounded-full { display: none }">
-          </bsky-embed>
-        </div>
-      </div>
-    </div>
-  </section>
+{#  <!-- Team frontshow -->#}
+{#  <section id="team-frontshow">#}
+{#    <div id="carousel-container">#}
+{#      <div id="carousel-slide"></div>#}
+{#      <div id="carousel-dots" class="carousel-dots"></div>#}
+{#      <div id="team-frontshow-text">#}
+{#        <div id="team-frontshow-text-header"><h3>The Team</h3></div>#}
+{#        <p></p>#}
+{#        <button id="team-frontshow-button" onclick="location.href='{% url 'on-development' %}'"></button>#}
+{#      </div>#}
+{#    </div>#}
+{#  </section>#}
+{##}
+{#  <!-- Leishmania info section -->#}
+{#  <section id="leishmania-info">#}
+{#    <div id="leish-info-container">#}
+{#      <div class="leish-card-carousel">#}
+{#        <div id="leish-card-container"></div>#}
+{#      </div>#}
+{#      <div id="leish-card-dots" class="card-dots"></div>#}
+{#    </div>#}
+{#  </section>#}
+{##}
+{#  <!-- WHO Leishmaniasis Map Section -->#}
+{#  <section id="who-leish-map">#}
+{#    <div class="who-map-container">#}
+{#      <div class="who-map-title">#}
+{#        <h2></h2>#}
+{#      </div>#}
+{#      <div class="who-map-description">#}
+{#        <p></p>#}
+{#      </div>#}
+{#      <div class="who-map-iframe">#}
+{#        <iframe src="https://apps.who.int/neglected_diseases/ntddata/leishmaniasis/leishmaniasis.html"#}
+{#                title="WHO Leishmaniasis Map"#}
+{#                width="100%"#}
+{#                height="100%"#}
+{#                allowfullscreen>#}
+{#        </iframe>#}
+{#      </div>#}
+{#      <div class="who-map-source">#}
+{#        <p>Source: <a href="https://apps.who.int/neglected_diseases/ntddata/leishmaniasis/leishmaniasis.html"#}
+{#                      target="_blank">World Health Organization</a></p>#}
+{#      </div>#}
+{#    </div>#}
+{#  </section>#}
+{##}
+{#  <!-- Social Media Updates Section -->#}
+{#  <section id="social-updates">#}
+{#    <div class="social-header">#}
+{#      <h2></h2>#}
+{#      <p></p>#}
+{#    </div>#}
+{##}
+{#    <div class="social-tabs-container">#}
+{#      <div class="social-tabs">#}
+{#        <button class="social-tab-btn active" data-tab="WHO">#}
+{#          <img src="{% static 'images/logos/WHO_mini_logo.png' %}" alt="WHO Logo">#}
+{#        </button>#}
+{#        <button class="social-tab-btn" data-tab="CBM">#}
+{#          <img src="{% static 'images/logos/CBM_mini_logo.png' %}" alt="CBM Logo">#}
+{##}
+{#        </button>#}
+{#        <button class="social-tab-btn" data-tab="CSIC">#}
+{#          <img src="{% static 'images/logos/CSIC_mini_logo.png' %}" alt="CSIC Logo">#}
+{#        </button>#}
+{#        <button class="social-tab-btn" data-tab="UAM">#}
+{#          <img src="{% static 'images/logos/UAM_mini_logo.jpg' %}" alt="UAM Logo">#}
+{#        </button>#}
+{#      </div>#}
+{##}
+{#      <div class="social-content">#}
+{#        <div id="WHO" class="social-panel active">#}
+{#          <div class="loading-spinner"></div> <!-- Spinner -->#}
+{#          <div class="bsky-container">#}
+{#            <!--suppress HtmlUnknownTag -->#}
+{#            <bsky-embed username="who.int" mode="" limit="5" load-more="true"#}
+{#                        custom-styles=".rounded-full { display: none }">#}
+{#            </bsky-embed>#}
+{#          </div>#}
+{#        </div>#}
+{#        <div id="CBM" class="social-panel">#}
+{#          <div class="loading-spinner"></div> <!-- Spinner -->#}
+{#          <!--suppress HtmlUnknownTag -->#}
+{#          <bsky-embed username="cbm-csic-uam.bsky.social" mode="" limit="5" load-more="true"#}
+{#                      custom-styles=".rounded-full { display: none }">#}
+{#          </bsky-embed>#}
+{#        </div>#}
+{#        <div id="CSIC" class="social-panel">#}
+{#          <div class="loading-spinner"></div> <!-- Spinner -->#}
+{#          <!--suppress HtmlUnknownTag -->#}
+{#          <bsky-embed username="csic.es" mode="" limit="5" load-more="true"#}
+{#                      custom-styles=".rounded-full { display: none }">#}
+{#          </bsky-embed>#}
+{#        </div>#}
+{#        <div id="UAM" class="social-panel">#}
+{#          <div class="loading-spinner"></div> <!-- Spinner -->#}
+{#          <!--suppress HtmlUnknownTag -->#}
+{#          <bsky-embed username="uam.es" mode="" limit="5" load-more="true"#}
+{#                      custom-styles=".rounded-full { display: none }">#}
+{#          </bsky-embed>#}
+{#        </div>#}
+{#      </div>#}
+{#    </div>#}
+{#  </section>#}
 {% endblock %}
 
 {% block js_content %}
-  <script src="{% static 'home/scripts/translation/home-translation.js' %}"></script>
-  <script src="{% static 'home/scripts/team-img-carousel.js' %}"></script>
-  <script src="{% static 'home/scripts/leishmania-info-cards.js' %}"></script>
-  <!--suppress JSUnresolvedLibraryURL -->
-  <script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" async></script>
-  <script src="{% static 'home/scripts/bluesky-feed.js' %}"></script>
+{#  <script src="{% static 'home/scripts/translation/home-translation.js' %}"></script>#}
+{#  <script src="{% static 'home/scripts/team-img-carousel.js' %}"></script>#}
+{#  <script src="{% static 'home/scripts/leishmania-info-cards.js' %}"></script>#}
+{#  <!--suppress JSUnresolvedLibraryURL -->#}
+{#  <script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" async></script>#}
+{#  <script src="{% static 'home/scripts/bluesky-feed.js' %}"></script>#}
 {% endblock %}

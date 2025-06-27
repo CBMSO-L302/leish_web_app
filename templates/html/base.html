@@ -25,6 +25,13 @@
       </div>
     </div>
 
+    <!-- Mobile menu toggle button -->
+    <button class="mobile-menu-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
     <!--Dropdown menu-->
     <nav>
       <div class="dropdown">
@@ -53,22 +60,55 @@
       </div>
     </nav>
 
+    <!-- Mobile navigation menu -->
+    <div class="nav-menu">
+      <div class="mobile-dropdown">
+        <a href="#">{% trans "About Us" %}</a>
+        <div class="mobile-dropdown-content">
+          <a href="{% url 'on-development' %}">{% trans "Mission" %}</a>
+          <a href="{% url 'on-development' %}">{% trans "Team" %}</a>
+        </div>
+      </div>
+      <div class="mobile-dropdown">
+        <a href="#">{% trans "Species" %}</a>
+        <div class="mobile-dropdown-content">
+          <a href="{% url 'species_infantum' %}"><i>L. infantum</i></a>
+          <a href="{% url 'species_major' %}"><i>L. major</i></a>
+          <a href="{% url 'species_donovani' %}"><i>L. donovani</i></a>
+          <a href="{% url 'species_braziliensis' %}"><i>L. braziliensis</i></a>
+        </div>
+      </div>
+      <div class="mobile-dropdown">
+        <a href="#">{% trans "Downloads" %}</a>
+        <div class="mobile-dropdown-content">
+          <a href="#">{% trans "Reports" %}</a>
+          <a href="#">{% trans "Datasets" %}</a>
+          <a href="#">{% trans "Software" %}</a>
+        </div>
+      </div>
+    </div>
+
     <!--Language selector-->
     <div id="language-selector" class="language-selector">
       <form action="{% url 'set_language' %}" method="post" id="language-form">
         {% csrf_token %}
+        <label for="language-dropdown"></label>
         <select name="language" id="language-dropdown" onchange="document.getElementById('language-form').submit();">
           {% get_current_language as CURRENT_LANGUAGE %}
           {% get_available_languages as AVAILABLE_LANGUAGES %}
           {% for lang_code, lang_name in AVAILABLE_LANGUAGES %}
             <option value="{{ lang_code }}" {% if lang_code == CURRENT_LANGUAGE %}selected{% endif %}
-                    data-flag="{% if lang_code == 'en' %}{% static 'images/flags/english.png' %}{% elif lang_code == 'es' %}{% static 'images/flags/spanish.png' %}{% endif %}">
+                    data-flag="
+
+                            {% if lang_code == 'en' %}{% static 'images/flags/english.png' %}{% elif lang_code == 'es' %}{% static 'images/flags/spanish.png' %}{% endif %}">
               {% if lang_code == 'en' %}ENG{% elif lang_code == 'es' %}ESP{% endif %}
             </option>
           {% endfor %}
         </select>
         <img id="selected-flag"
-             src="{% if CURRENT_LANGUAGE == 'es' %}{% static 'images/flags/spanish.png' %}{% else %}{% static 'images/flags/english.png' %}{% endif %}"
+             src="
+
+                     {% if CURRENT_LANGUAGE == 'es' %}{% static 'images/flags/spanish.png' %}{% else %}{% static 'images/flags/english.png' %}{% endif %}"
              alt="Selected Language">
       </form>
     </div>
@@ -111,7 +151,8 @@
   <!-- ================================================================================================ -->
   <!-- Script section -->
   <!-- ================================================================================================ -->
-  <script src="{% static '/scripts/language-selector.js' %}"></script>
+  <script src="{% static 'scripts/language-selector.js' %}"></script>
+  <script src="{% static 'scripts/mobile-menu.js' %}"></script>
 {% block js_content %}{% endblock %}
 
 </body>
