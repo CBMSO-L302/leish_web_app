@@ -1,3 +1,4 @@
+
 {% extends "html/base.html" %}
 {% load static %}
 
@@ -27,11 +28,33 @@
   </section>
 
   <section id="downloads-table">
-    <!-- table like structure for downloading files-->
+    <table>
+      <thead>
+        <tr>
+          <th>File</th>
+          <th>Reference Genome</th>
+          <th>Version/Year</th>
+          <th>Downloads</th>
+          <th>Raw Data</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in downloads_data %}
+        <tr>
+          <td><strong>{{ item.type|upper }} ({{ item.format|upper }} file)</strong></td>
+          <td>{{ item.url|safe }}</td>
+          <td>{{ item.version }}/{{ item.year }}</td>
+          <td><a href="{{ item.path_file }}" class="download-button">DOWNLOAD</a></td>
+          <td>{{ item.raw_data|safe }}</td>
+          <td>{{ item.description|safe }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </section>
 {% endblock %}
 
 {% block js_content %}
-  <script src="{% static 'species/scripts/populate-downloads-table.js' %}"></script>
-    <script src="{% static 'species/scripts/translate-donovani.js' %}"></script>
+  <script src="{% static 'species/scripts/translate-donovani.js' %}"></script>
 {% endblock %}
