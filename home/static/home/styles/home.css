@@ -716,10 +716,6 @@ bsky-embed {
 /* Smartphones */
 /* ================================================================== */
 @media only screen and (max-width: 480px) {
-  main {
-    margin-top: 140px;
-  }
-
   #team-frontshow {
     flex-direction: column;
     align-items: center;
