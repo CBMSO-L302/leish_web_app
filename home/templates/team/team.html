@@ -1,0 +1,153 @@
+
+{% extends 'html/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block page_title %}{% trans "Team" %}{% endblock %}
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static 'home/styles/team.css' %}">
+{% endblock %}
+
+{% block main_content %}
+  <section id="desc-genome-selector">
+    <button class="tab-btn active" data-tab="current-members">
+      <span>{{ current_members_title }}</span>
+    </button>
+    <button class="tab-btn" data-tab="former-members">
+      <span>{{ former_members_title }}</span>
+    </button>
+    <button class="tab-btn" data-tab="former-students">
+      <span>{{ former_students_title }}</span>
+    </button>
+  </section>
+
+  <section id="team-members">
+    <!-- Current Members Tab -->
+    <div id="current-members" class="tab-content active">
+      <div class="members-flex">
+        {% for member in current_members %}
+          <div class="member-card">
+            <div class="member-image">
+              <div class="image-container">
+                <img src="{% static member.image %}" alt="{{ member.name }}">
+              </div>
+              <div class="member-hover">
+                <div class="hover-image">
+                  <img src="{% static member.image %}" alt="{{ member.name }}" class="bw-image">
+                </div>
+                <div class="hover-content">
+                  <h3>{{ member.name }}</h3>
+                  <p class="member-title">{{ member.title }}</p>
+                  {% if member.linkedin or member.orcid %}
+                    <div class="social-links">
+                      {% if member.linkedin %}
+                        <a href="{{ member.linkedin }}" target="_blank" rel="noopener noreferrer">
+                          <img src="{% static 'images/icons/linkedin.png' %}" alt="LinkedIn" class="social-icon">
+                        </a>
+                      {% endif %}
+                      {% if member.orcid %}
+                        <a href="{{ member.orcid }}" target="_blank" rel="noopener noreferrer">
+                          <img src="{% static 'images/icons/ORCID-iD_icon_vector.svg' %}" alt="ORCID" class="social-icon">
+                        </a>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                  <p class="member-description">{{ member.description }}</p>
+                </div>
+              </div>
+            </div>
+            <h3 class="member-name">{{ member.name }}</h3>
+            <p class="member-role">{{ member.role }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Former Members Tab -->
+    <div id="former-members" class="tab-content">
+      <div class="members-flex">
+        {% for member in former_members %}
+          <div class="member-card">
+            <div class="member-image">
+              <div class="image-container">
+                <img src="{% static member.image %}" alt="{{ member.name }}">
+              </div>
+              <div class="member-hover">
+                <div class="hover-image">
+                  <img src="{% static member.image %}" alt="{{ member.name }}" class="bw-image">
+                </div>
+                <div class="hover-content">
+                  <h3>{{ member.name }}</h3>
+                  <p class="member-title">{{ member.title }}</p>
+                  <p class="member-description">{{ member.description }}</p>
+                  {% if member.linkedin or member.orcid %}
+                  <div class="social-links">
+                    {% if member.linkedin %}
+                    <a href="{{ member.linkedin }}" target="_blank" rel="noopener noreferrer">
+                      <img src="{% static 'images/icons/linkedin.png' %}" alt="LinkedIn" class="social-icon">
+                    </a>
+                    {% endif %}
+                    {% if member.orcid %}
+                    <a href="{{ member.orcid }}" target="_blank" rel="noopener noreferrer">
+                      <img src="{% static 'images/icons/ORCID-iD_icon_vector.svg' %}" alt="ORCID" class="social-icon">
+                    </a>
+                    {% endif %}
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+            <h3 class="member-name">{{ member.name }}</h3>
+            <p class="member-role">{{ member.role }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Former-Students Tab -->
+    <div id="former-students" class="tab-content">
+      <div class="members-flex">
+        {% for member in former_students %}
+          <div class="member-card">
+            <div class="member-image">
+              <div class="image-container">
+                <img src="{% static member.image %}" alt="{{ member.name }}">
+              </div>
+              <div class="member-hover">
+                <div class="hover-image">
+                  <img src="{% static member.image %}" alt="{{ member.name }}" class="bw-image">
+                </div>
+                <div class="hover-content">
+                  <h3>{{ member.name }}</h3>
+                  <p class="member-title">{{ member.title }}</p>
+                  <p class="member-description">{{ member.description }}</p>
+                  {% if member.linkedin or member.orcid %}
+                  <div class="social-links">
+                    {% if member.linkedin %}
+                    <a href="{{ member.linkedin }}" target="_blank" rel="noopener noreferrer">
+                      <img src="{% static 'images/icons/linkedin.png' %}" alt="LinkedIn" class="social-icon">
+                    </a>
+                    {% endif %}
+                    {% if member.orcid %}
+                    <a href="{{ member.orcid }}" target="_blank" rel="noopener noreferrer">
+                      <img src="{% static 'images/icons/ORCID-iD_icon_vector.svg' %}" alt="ORCID" class="social-icon">
+                    </a>
+                    {% endif %}
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+            <h3 class="member-name">{{ member.name }}</h3>
+            <p class="member-role">{{ member.role }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block js_content %}
+  <script src="{% static 'home/scripts/pages/team/team-switch-tabs.js' %}"></script>
+{% endblock %}

@@ -1,6 +1,11 @@
 from django.views.generic import TemplateView
 from django.utils.translation import gettext_lazy as _
 
+
+#============================================================================
+# home.html
+#============================================================================
+
 class HomePageView(TemplateView):
     template_name = "home/home.html"
 
@@ -11,15 +16,15 @@ class HomePageView(TemplateView):
         team_images = [
             {
                 'title': _('Team 2024'),
-                'img': '/static/home/images/lab_team_carousel/team_lab_2024.jpg'
+                'img': '/static/home/images/pages/team/lab_team_carousel/team_lab_2024.jpg'
             },
             {
                 'title': _('Team old'),
-                'img': '/static/home/images/lab_team_carousel/team_lab_old.jpg'
+                'img': '/static/home/images/pages/team/lab_team_carousel/team_lab_old.jpg'
             },
             {
                 'title': _('Leish Lab pre 2024'),
-                'img': '/static/home/images/lab_team_carousel/leish_lab_pre2024.png'
+                'img': '/static/home/images/pages/team/lab_team_carousel/leish_lab_pre2024.png'
             }
         ]
 
@@ -35,7 +40,7 @@ class HomePageView(TemplateView):
                     'already affected, making it one of the most infectious diseases globally, causing approximately '
                     '70,000 deaths each year (Saini et al., 2022).'
                 ),
-                'image_path': 'home/images/leish_intro/leish_img_intro.jpg'
+                'image_path': 'home/images/pages/team/leish_intro/leish_img_intro.jpg'
             },
             {
                 'title': _('Leishmania Parasite'),
@@ -44,7 +49,7 @@ class HomePageView(TemplateView):
                     'also responsible for Chagas disease (Trypanosoma cruzi), sleeping sickness (T. brucei), and '
                     'leishmaniasis (Leishmania spp.) (Bringaud et al., 2007).'
                 ),
-                'image_path': 'home/images/leish_intro/trypanosomatids_img_intro.jpeg'
+                'image_path': 'home/images/pages/team/leish_intro/trypanosomatids_img_intro.jpeg'
             },
             {
                 'title': _('Leishmaniasis Vector'),
@@ -52,7 +57,7 @@ class HomePageView(TemplateView):
                     'Leishmaniasis is specifically transmitted through the bite of a sandfly (subfamily Phlebotominae), '
                     'leading to the parasite\'s invasion of the host\'s internal organs (Herwaldt, 1999).'
                 ),
-                'image_path': 'home/images/leish_intro/sandfly_img_intro.png'
+                'image_path': 'home/images/pages/team/leish_intro/sandfly_img_intro.png'
             }
         ]
 
@@ -62,5 +67,124 @@ class HomePageView(TemplateView):
         return context
 
 
+#============================================================================
+# home.html
+#============================================================================
+class TeamPageView(TemplateView):
+    template_name = 'team/team.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        # Team section titles
+        context['current_members_title'] = _('Current Members')
+        context['former_members_title'] = _('Former Members')
+        context['former_students_title'] = _('Former Students')
+
+        # Current team members data
+        context['current_members'] = [
+            {
+                'image': 'home/images/pages/team/team_individual/jmrr.jpg',
+                'name': 'José M. Requena Rolania',
+                'role': _('-'),
+                'title': _('-'),
+                'description': _('-'),
+                'linkedin': '',
+                'orcid': 'https://orcid.org/0000-0001-7550-0198'
+            },
+            {
+                'image': 'home/images/pages/team/team_individual/bao.jpg',
+                'name': 'Begoña Aguado Orea',
+                'role': _('CSIC Titular Scientist'),
+                'title': _('Without science and technology there is no future, and the future is you'),
+                'description': _(
+                    'Expert in omics technologies. She belongs to the executive committee of the PTI_Digital Science '
+                    'and the Computational Biology and Bioinformatics connection (BCB_Hub), and is a member of the '
+                    'PTI-Global Health and the PolarCSIC Connection, all of them from CSIC. Active in scientific '
+                    'dissemination. Interested in science and technology.'
+                ),
+                'linkedin': 'https://www.linkedin.com/in/bego%C3%B1a-aguado-orea-816762366/',
+                'orcid': 'https://orcid.org/0000-0003-4043-6944'
+            },
+            {
+                'image': 'home/images/pages/team/team_individual/sgf.jpg',
+                'name': 'Sandra González de la Fuente',
+                'role': _('-'),
+                'title': _('-'),
+                'description': _('-'),
+                'linkedin': 'https://www.linkedin.com/in/sandra-gonz%C3%A1lez-de-la-fuente-8a7902a7',
+                'orcid': 'https://orcid.org/0000-0002-7470-2983'
+            },
+            {
+                'image': 'home/images/pages/team/team_individual/jaj.jpg',
+                'name': 'Javier Adán Jiménez',
+                'role': _('-'),
+                'title': _('-'),
+                'description': _('-'),
+                'linkedin': '',
+                'orcid': ''
+            },
+            {
+                'image': 'home/images/pages/team/team_individual/ass.jpg',
+                'name': 'Alejandro Sánchez-Salvador',
+                'role': _('Bioinformatic Scientist - Research Assistant'),
+                'title': _('Understanding life, one dataset at a time'),
+                'description': _(
+                    'Bioinformatician and microbiologist, with a passion for science. Currently involved in research ' 
+                    'projects that combine lab work and omics data analysis to unravel the molecular complexity of '
+                    'living organisms.'
+                ),
+                'linkedin': 'https://www.linkedin.com/in/alejandro-sanchez-salvador',
+                'orcid': 'https://orcid.org/0000-0001-9002-3932'
+            },
+            {
+                'image': 'home/images/pages/team/team_individual/rfph.jpg',
+                'name': 'Ronny F. Pacheco Hinojosa',
+                'role': _('Bioinformatic Engineer - Research Assistant'),
+                'title': _('Linking life and informatics through unwavering passion'),
+                'description': _(
+                    'Bioinformatician and Informatic Engineer student. He is passionate about building and coding '
+                    'computer systems designed to unravel the complexity of living organisms. As a member of the '
+                    'Computational Biology and Bioinformatics Connection (BCB_Hub), PTI_Digital Science, and the '
+                    'Spanish Association of Bioinformatics and Computational Biology (SEBiBC), his interests strongly '
+                    'focus on the engineering side of bioinformatics.'
+                ),
+                'linkedin': 'www.linkedin.com/in/rfpacheco-v01',
+                'orcid': 'https://orcid.org/0009-0003-6319-8691'
+            }
+        ]
+
+        # Former team members data
+        context['former_members'] = [
+            {
+                'image': 'home/images/pages/team/team_individual/placeholder-profile.jpg',
+                'name': 'Dr. John Doe',
+                'role': _('Former Researcher'),
+                'title': _('Former Research Scientist'),
+                'description': _('-'),
+                'linkedin': '',
+                'orcid': ''
+            }
+        ]
+
+        # Former students data
+        context['former_students'] = [
+            {
+                'image': 'home/images/pages/team/team_individual/placeholder-profile.jpg',
+                'name': 'Jane Doe',
+                'role': _('Former PhD Student'),
+                'title': _('PhD in Molecular Biology'),
+                'description': _('-'),
+                'linkedin': '',
+                'orcid': ''
+            }
+        ]
+
+        return context
+
+
+#============================================================================
+# one_development.html
+#============================================================================
 class OnDevelopment(TemplateView):
     template_name = "home/on_development.html"
