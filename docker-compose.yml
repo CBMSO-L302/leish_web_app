@@ -9,5 +9,7 @@ services:
       - /opt/leish-web/databases:/opt/leish-web/databases  # Mount SQLite directory
       - /opt/leish-web/staticfiles:/app/staticfiles  # Mount staticfiles directory
     environment:
-      - DEBUG=1
-    command: python manage.py runserver 0.0.0.0:3000
+      - DEBUG=0  # Set to 0 for production
+    command: |
+      sh -c "python manage.py collectstatic --noinput &&
+             python manage.py runserver 0.0.0.0:3000"
