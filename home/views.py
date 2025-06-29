@@ -16,15 +16,15 @@ class HomePageView(TemplateView):
         team_images = [
             {
                 'title': _('Team 2024'),
-                'img': '/static/home/images/pages/team/lab_team_carousel/team_lab_2024.jpg'
+                'img': '/static/home/images/pages/home/lab_team_carousel/team_lab_2024.jpg'
             },
             {
                 'title': _('Team old'),
-                'img': '/static/home/images/pages/team/lab_team_carousel/team_lab_old.jpg'
+                'img': '/static/home/images/pages/home/lab_team_carousel/team_lab_old.jpg'
             },
             {
                 'title': _('Leish Lab pre 2024'),
-                'img': '/static/home/images/pages/team/lab_team_carousel/leish_lab_pre2024.png'
+                'img': '/static/home/images/pages/home/lab_team_carousel/leish_lab_pre2024.png'
             }
         ]
 
@@ -40,7 +40,7 @@ class HomePageView(TemplateView):
                     'already affected, making it one of the most infectious diseases globally, causing approximately '
                     '70,000 deaths each year (Saini et al., 2022).'
                 ),
-                'image_path': 'home/images/pages/team/leish_intro/leish_img_intro.jpg'
+                'image_path': 'home/images/pages/home/leish_intro/leish_img_intro.jpg'
             },
             {
                 'title': _('Leishmania Parasite'),
@@ -49,7 +49,7 @@ class HomePageView(TemplateView):
                     'also responsible for Chagas disease (Trypanosoma cruzi), sleeping sickness (T. brucei), and '
                     'leishmaniasis (Leishmania spp.) (Bringaud et al., 2007).'
                 ),
-                'image_path': 'home/images/pages/team/leish_intro/trypanosomatids_img_intro.jpeg'
+                'image_path': 'home/images/pages/home/leish_intro/trypanosomatids_img_intro.jpeg'
             },
             {
                 'title': _('Leishmaniasis Vector'),
@@ -57,7 +57,7 @@ class HomePageView(TemplateView):
                     'Leishmaniasis is specifically transmitted through the bite of a sandfly (subfamily Phlebotominae), '
                     'leading to the parasite\'s invasion of the host\'s internal organs (Herwaldt, 1999).'
                 ),
-                'image_path': 'home/images/pages/team/leish_intro/sandfly_img_intro.png'
+                'image_path': 'home/images/pages/home/leish_intro/sandfly_img_intro.png'
             }
         ]
 
