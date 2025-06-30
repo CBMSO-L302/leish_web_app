@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-30 11:56+0000\n"
+"POT-Creation-Date: 2025-06-30 12:28+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,7 +42,8 @@ msgid "Learn more"
 msgstr "Saber más"
 
 #: home/templates/home/home.html:64
-msgid "Global leishmaniasis cases"
+
+msgid "Global Leishmaniasis Cases"
 msgstr "Distribución mundial de leishmaniasis"
 
 #: home/templates/home/home.html:65
@@ -50,7 +51,7 @@ msgid "Reported leishmaniasis cases around the world"
 msgstr "Casos reportados de leishmaniasis en el mundo"
 
 #: home/templates/home/home.html:71
-msgid "Case Type:"
+msgid "Type:"
 msgstr "Tipo"
 
 #: home/templates/home/home.html:73
@@ -62,8 +63,8 @@ msgid "Visceral"
 msgstr "Visceral"
 
 #: home/templates/home/home.html:78
-msgid "Select Year:"
-msgstr "Selecciona Año"
+msgid "Year:"
+msgstr "Año"
 
 #: home/templates/home/home.html:97
 msgid "Social Media"
@@ -147,34 +148,34 @@ msgstr ""
 "flebótomo (subfamilia Phlebotominae), lo que lleva a la invasión del "
 "parásito en los órganos internos del huésped (Herwaldt, 1999)."
 
-#: home/views.py:127
+#: home/views.py:131
 msgid "Current Members"
 msgstr "Miembros Actuales"
 
-#: home/views.py:128
+#: home/views.py:132
 msgid "Former Members"
 msgstr "Antiguos Miembros"
 
-#: home/views.py:129
+#: home/views.py:133
 msgid "Former Students"
 msgstr "Antiguos Estudiantes"
 
-#: home/views.py:136 home/views.py:137 home/views.py:138 home/views.py:159
-#: home/views.py:160 home/views.py:161 home/views.py:168 home/views.py:169
-#: home/views.py:170 home/views.py:211 home/views.py:224
+#: home/views.py:140 home/views.py:141 home/views.py:142 home/views.py:163
+#: home/views.py:164 home/views.py:165 home/views.py:172 home/views.py:173
+#: home/views.py:174 home/views.py:215 home/views.py:228
 msgid "-"
 msgstr ""
 
-#: home/views.py:145
+#: home/views.py:149
 msgid "CSIC Titular Scientist"
 msgstr "CSIC Científica Titular"
 
-#: home/views.py:146
+#: home/views.py:150
 msgid ""
 "Without science and technology there is no future, and the future is you"
 msgstr "Sin ciencia y tecnologia no hay futuro, y el futuro eres tu"
 
-#: home/views.py:148
+#: home/views.py:152
 msgid ""
 "Expert in omics technologies. She belongs to the executive committee of the "
 "PTI_Digital Science and the Computational Biology and Bioinformatics "
@@ -188,15 +189,15 @@ msgstr ""
 "ellos del CSIC. Activa en divulgación científica. Interesada en ciencia y "
 "tecnología."
 
-#: home/views.py:177
+#: home/views.py:181
 msgid "Bioinformatic Scientist - Research Assistant"
 msgstr "Científico Bioinformático - Asistente de Investigación"
 
-#: home/views.py:178
+#: home/views.py:182
 msgid "Understanding life, one dataset at a time"
 msgstr "Entendiendo la vida, un conjunto de datos a la vez"
 
-#: home/views.py:180
+#: home/views.py:184
 msgid ""
 "Bioinformatician and microbiologist, with a passion for science. Currently "
 "involved in research projects that combine lab work and omics data analysis "
@@ -207,16 +208,16 @@ msgstr ""
 "laboratorio y análisis de datos ómicos para desentrañar la complejidad "
 "molecular de los organismos vivos."
 
-#: home/views.py:190
+#: home/views.py:194
 msgid "Bioinformatic Engineer - Research Assistant"
 msgstr "Ingeniero Bioinformático - Asistente de Investigación"
 
-#: home/views.py:191
+#: home/views.py:195
 msgid "Linking life and informatics through unwavering passion"
 msgstr ""
 "Vinculando la vida y la informática a través de una pasión inquebrantable"
 
-#: home/views.py:193
+#: home/views.py:197
 msgid ""
 "Bioinformatician and Informatic Engineer student. He is passionate about "
 "building and coding computer systems designed to unravel the complexity of "
@@ -233,19 +234,19 @@ msgstr ""
 "(SEBiBC), sus intereses se centran fuertemente en el lado de la ingeniería "
 "de la bioinformática."
 
-#: home/views.py:209
+#: home/views.py:213
 msgid "Former Researcher"
 msgstr "Antiguo Investigador"
 
-#: home/views.py:210
+#: home/views.py:214
 msgid "Former Research Scientist"
 msgstr "Antiguo Científico Investigador"
 
-#: home/views.py:222
+#: home/views.py:226
 msgid "Former PhD Student"
 msgstr "Antiguo Estudiante de Doctorado"
 
-#: home/views.py:223
+#: home/views.py:227
 msgid "PhD in Molecular Biology"
 msgstr "Doctorado en Biología Molecular"
 
@@ -745,3 +746,6 @@ msgstr "Datos"
 #: templates/html/base.html:60 templates/html/base.html:88
 msgid "Software"
 msgstr "Programas"
+
+#~ msgid "Select Year:"
+#~ msgstr "Selecciona Año"
