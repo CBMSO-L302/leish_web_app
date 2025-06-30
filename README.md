@@ -1,0 +1,185 @@
+# Leishmania Database and Web Application
+
+## Overview
+
+This project is a Django-based web application for the Leishmania Database hosted at the Centro de Biología Molecular Severo Ochoa (CBM). The application provides researchers and the public with access to information about Leishmania species, research data, and resources related to leishmaniasis research.
+
+## Technology Stack
+
+- **Framework**: Django 5.1.x
+- **Programming Language**: Python 3.12
+- **Database**: SQLite
+- **Web Server**: Nginx
+- **Application Server**: Django development server (in Docker)
+- **Containerization**: Docker & Docker Compose
+- **SSL/TLS**: Yes, managed through Nginx
+
+## Server Architecture
+
+### Host Server
+
+- **Location**: Centro de Biología Molecular Severo Ochoa (CBM)
+- **Operating System**: Ubuntu 24.04.2 LTS (noble)
+- **Access Method**: SSH
+
+### Component Structure
+
+```
+┌─────────────────────────────────────┐
+│ Client                              │
+└─────────────┬───────────────────────┘
+              │ HTTPS
+┌─────────────▼───────────────────────┐
+│ Nginx (Port 443)                    │
+│  - SSL Termination                  │
+│  - Reverse Proxy                    │
+│  - Static Files Serving             │
+└─────────────┬───────────────────────┘
+              │ HTTP
+┌─────────────▼───────────────────────┐
+│ Docker Container (Port 8080→3000)   │
+│  - Django Application               │
+│  - Database Access                  │
+└─────────────┬───────────────────────┘
+              │
+┌─────────────▼───────────────────────┐
+│ Volume Mounts:                      │
+│  - Database                         │
+│  - Static Files                     │
+└─────────────────────────────────────┘
+```
+
+## Critical Paths
+
+### File System Structure
+
+- **Nginx Configuration**:
+  - `/etc/nginx/sites-available/leishmania.cbm.uam.es`
+  - Linked to `/etc/nginx/sites-enabled/leishmania.cbm.uam.es`
+
+- **Application Code**:
+  - `/var/www/leish_web_app`
+
+- **Persistent Data**:
+  - Database: `/opt/leish-web/databases`
+  - Static Files: `/opt/leish-web/staticfiles`
+
+- **SSL Certificates**:
+  - Certificate Bundle: `/opt/certs/leishmania_certs/Cert_bundle.pem`
+  - Private Key: `/opt/certs/leishmania_certs/privateKey.pem`
+
+- **Log Files**:
+  - Nginx Access: `/var/log/nginx/leishmania-cbm-access.log`
+  - Nginx Error: `/var/log/nginx/leishmania-cbm-error.log`
+  - Application: View with `docker-compose logs web`
+
+## Deployment Process
+
+### Initial Setup
+
+1. Clone the repository:
+   ```bash
+   git clone [repository-url] /var/www/leish_web_app
+   cd /var/www/leish_web_app
+   ```
+
+2. Create necessary directories:
+   ```bash
+   sudo mkdir -p /opt/leish-web/databases
+   sudo mkdir -p /opt/leish-web/staticfiles
+   ```
+
+3. Set appropriate permissions:
+   ```bash
+   sudo chown -R $(whoami):$(whoami) /opt/leish-web
+   ```
+
+4. Configure Nginx:
+   ```bash
+   sudo ln -s /etc/nginx/sites-available/leishmania.cbm.uam.es /etc/nginx/sites-enabled/
+   sudo nginx -t
+   sudo systemctl reload nginx
+   ```
+
+### Deployment and Updates
+
+1. Pull the latest code:
+   ```bash
+   cd /var/www/leish_web_app
+   git fetch --all
+   git reset --hard origin/main  # Or your target branch
+   ```
+
+2. Stop current containers:
+   ```bash
+   docker compose down
+   ```
+
+3. Rebuild the application:
+   ```bash
+   docker compose build --no-cache
+   ```
+
+4. Start the service:
+   ```bash
+   docker compose up -d
+   ```
+
+5. Verify deployment:
+   ```bash
+   docker ps
+   docker compose logs -f web
+   ```
+
+### Maintenance Tasks
+
+#### Clear Docker Cache
+
+If disk space is running low:
+
+```bash
+docker system prune -a --volumes  # Removes all unused containers, images, and volumes
+```
+
+#### Backup Database
+
+```bash
+cp -r /opt/leish-web/databases /path/to/backup/$(date +%Y%m%d)
+```
+
+#### SSL Certificate Renewal
+
+Follow certificate provider's instructions and update paths in the Nginx configuration.
+
+## Troubleshooting
+
+### Common Issues
+
+1. **Web Application Not Accessible**:
+   - Check Nginx status: `sudo systemctl status nginx`
+   - Verify Docker container running: `docker ps`
+   - Check Nginx logs: `sudo tail -f /var/log/nginx/leishmania-cbm-error.log`
+
+2. **SSL Certificate Problems**:
+   - Verify certificate paths in Nginx config
+   - Check certificate expiration: `openssl x509 -in /opt/certs/leishmania_certs/Cert_bundle.pem -noout -dates`
+
+3. **Database Issues**:
+   - Check volume mounts: `docker compose config`
+   - Examine database permissions: `ls -la /opt/leish-web/databases`
+
+4. **Static Files Not Loading**:
+   - Check if collectstatic ran successfully in container logs
+   - Verify Nginx static file configuration
+
+## Security Considerations
+
+- Keep DEBUG=0 in production
+- Ensure all secrets (like SECRET_KEY) are properly secured
+- Regularly update dependencies and apply security patches
+- Consider implementing regular database backups
+- Monitor logs for suspicious activity
+
+## Contact
+
+For issues or questions regarding deployment and maintenance, contact the CBM IT Department or the project maintainers.
