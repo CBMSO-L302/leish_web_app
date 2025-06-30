@@ -1,5 +1,9 @@
 from django.views.generic import TemplateView
 from django.utils.translation import gettext_lazy as _
+import pandas as pd
+import os
+from django.conf import settings
+import json
 
 
 #============================================================================
@@ -60,6 +64,53 @@ class HomePageView(TemplateView):
                 'image_path': 'home/images/pages/home/leish_intro/sandfly_img_intro.png'
             }
         ]
+
+        # Helper function to read and process leishmaniasis CSV data
+        def read_leishmaniasis_data(file_path):
+            try:
+                # Read the CSV file
+                df = pd.read_csv(file_path, skiprows=[1])  # Skip tooltip row, important the squeare brackets
+
+                # Get years from columns (excluding the first column which is country/period)
+                year_list = df.columns[1:].tolist()
+
+                # Get the countries' list
+                countries_list = df.iloc[:, 0].tolist()
+
+                # Convert data to dictionary format
+                data = {}
+                for idx, row in df.iterrows():
+                    country = row.iloc[0]
+                    # Convert non-numeric values to 0, keep numeric values
+                    country_data = pd.to_numeric(row.iloc[1:], errors='coerce').fillna(0).astype(int).tolist()
+                    data[country] = country_data
+
+                return data, year_list, countries_list
+
+            except Exception as e:
+                print(f"Error reading CSV file {file_path}: {e}")
+                return {}, [], []
+
+        # Read cutaneous leishmaniasis cases data
+        cutaneous_file_path = os.path.join(
+            settings.BASE_DIR, 'static', 'data','reported_leishmaniasis_cutaneous_cases.csv'
+        )
+        cutaneous_data, years, countries = read_leishmaniasis_data(cutaneous_file_path)
+
+        # Read visceral leishmaniasis cases data
+        visceral_file_path = os.path.join(
+            settings.BASE_DIR, 'static', 'data','reported_leishmanisis_visceral_cases.csv'
+        )
+        visceral_data, visceral_years, visceral_countries = read_leishmaniasis_data(visceral_file_path)
+
+        # Combine countries from both datasets to ensure all are included
+        all_countries = list(set(countries + visceral_countries))
+
+        # Prepare data for Plotly.js
+        context['leishmaniasis_years'] = json.dumps(years)
+        context['leishmaniasis_countries'] = json.dumps(all_countries)
+        context['leishmaniasis_cutaneous_data'] = json.dumps(cutaneous_data)
+        context['leishmaniasis_visceral_data'] = json.dumps(visceral_data)
 
         context['team_images'] = team_images
         context['leishmania_info_cards'] = leishmania_info_cards

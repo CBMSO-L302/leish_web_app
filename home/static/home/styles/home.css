@@ -1,3 +1,4 @@
+
 html {
   font-size: 16px;
 }
@@ -34,14 +35,11 @@ main {
 /* Add these styles to each section to control spacing */
 #team-frontshow,
 #leishmania-info,
-#who-leish-map,
 #team-news-container,
 #twitter-zone {
   width: 100%;
   padding: 2rem 0;
 }
-
-
 
 /* ================================================================== */
 /* Team-frontshow */
@@ -83,7 +81,6 @@ main {
   overflow: hidden;
   position: relative; /* Add this - makes this the positioning reference */
 }
-
 
 .carousel-slide-img img {
   width: 100%;
@@ -169,7 +166,6 @@ main {
 }
 
 #team-frontshow-button:hover {
-
   background-color: rgb(191, 12, 204);
   cursor: pointer;
 }
@@ -295,70 +291,180 @@ main {
 }
 
 /* ================================================================== */
-/* WHO Leishmaniasis Map Section */
+/* World Map Section */
 /* ================================================================== */
-#who-leish-map {
+#world-map-section {
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  padding: 3rem 0;
+  padding: 4rem 0;
   background: linear-gradient(
-    180deg,
-    rgb(159, 158, 159),
-    rgb(137, 58, 150)
+    0deg,
+    rgb(137, 58, 150),
+    rgba(0, 119, 255, 0.7)
   );
+  position: relative;
 }
 
-.who-map-container {
-  width: 95%;
+.world-map-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  width: 80%;
+  max-width: 800px;
+}
+
+.world-map-header h2 {
+  color: white;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.world-map-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.world-map-header p {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 1rem auto 0;
+  line-height: 1.6;
+}
+
+.world-map-container {
+  width: 80%;
+  max-width: 1200px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.who-map-title {
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.who-map-title h2 {
-  color: white;
-  background-color: rgb(137, 58, 150);
-  padding: 0.75rem 1.5rem;
-  border-radius: 10px;
-  display: inline-block;
-}
-
-.who-map-description {
-  text-align: center;
-  margin-bottom: 2rem;
-  max-width: 800px;
-}
-
-.who-map-iframe {
+.selectors-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 1.25rem;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 100%;
-  height: 650px;
-  border-radius: 10px;
+}
+
+.selector-group {
+  display: flex;
+  align-items: center;
+}
+
+.selector-group label {
+  margin-right: 1rem;
+  font-weight: 600;
+  color: #333;
+  white-space: nowrap;
+}
+
+.year-selector, .case-type-selector {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+  min-width: 120px;
+}
+
+.year-selector:hover, .year-selector:focus,
+.case-type-selector:hover, .case-type-selector:focus {
+  border-color: rgb(137, 58, 150);
+  box-shadow: 0 0 0 2px rgba(137, 58, 150, 0.2);
+}
+
+.world-map-plot {
+  width: 100%;
+  height: 500px;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.who-map-source {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  color: white;
-  text-align: right;
-  width: 100%;
+/* Media queries for world map section */
+@media only screen and (max-width: 768px) {
+  .world-map-container {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .world-map-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .world-map-header p {
+    font-size: 1rem;
+  }
+
+  .world-map-plot {
+    height: 400px;
+  }
 }
 
-.who-map-source a {
-  color: #fff;
-  text-decoration: underline;
-}
+@media only screen and (max-width: 480px) {
+  .world-map-container {
+    width: 100%;
+    border-radius: 0;
+  }
 
-.who-map-source a:hover {
-  color: rgb(191, 12, 204);
+  .world-map-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .world-map-header p {
+    font-size: 0.9rem;
+  }
+
+  .selectors-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .selector-group {
+    width: 100%;
+    margin-bottom: 0.75rem;
+  }
+
+  .selector-group:last-child {
+    margin-bottom: 0;
+  }
+
+  .selector-group label {
+    margin-bottom: 0.5rem;
+  }
+
+  .world-map-plot {
+    height: 300px;
+  }
 }
 
 /* ================================================================== */
@@ -631,7 +737,6 @@ bsky-embed {
     width: 90%;
   }
 
-
   .leish-card-title {
     font-size: 1.3rem;
   }
@@ -669,14 +774,6 @@ bsky-embed {
 
   #leish-info-container{
     width: 100%;
-  }
-
-  .who-map-container {
-    width: 100%;
-  }
-
-  .who-map-iframe {
-    border-radius: 0;
   }
 
   /* Social media section responsive styles */

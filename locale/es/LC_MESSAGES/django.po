@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-29 14:50+0000\n"
+"POT-Creation-Date: 2025-06-30 11:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,11 +19,11 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
 "1 : 2;\n"
 
-#: home/templates/home/home.html:30
+#: home/templates/home/home.html:31
 msgid "The Team"
 msgstr "Equipo"
 
-#: home/templates/home/home.html:32
+#: home/templates/home/home.html:33
 msgid ""
 "Based on CBM (Centro de Biología Molecular Severo Ochoa - CSIC), our team "
 "focuses on the molecular genetics of Leishmania parasites, the causative "
@@ -37,57 +37,66 @@ msgstr ""
 "de vanguardia tanto in vitro como in silico, estudiamos la expresión génica "
 "y la plasticidad genómica en estos parásitos."
 
-#: home/templates/home/home.html:34
+#: home/templates/home/home.html:35
 msgid "Learn more"
 msgstr "Saber más"
 
 #: home/templates/home/home.html:64
-msgid "Global Leishmaniasis Distribution"
-msgstr "Distribución mundial de Leishmaniasis"
+msgid "Global leishmaniasis cases"
+msgstr "Distribución mundial de leishmaniasis"
 
-#: home/templates/home/home.html:68
-msgid ""
-"Interactive map showing the global distribution of leishmaniasis cases "
-"reported to the World Health Organization (WHO). This visualization helps "
-"understand the worldwide impact and spread of the disease."
-msgstr ""
-"Mapa interactivo que muestra la distribución global de casos de "
-"leishmaniasis reportados a la Organización Mundial de la Salud (OMS). Esta "
-"visualización ayuda a comprender el impacto mundial y la propagación de la "
-"enfermedad."
+#: home/templates/home/home.html:65
+msgid "Reported leishmaniasis cases around the world"
+msgstr "Casos reportados de leishmaniasis en el mundo"
 
-#: home/templates/home/home.html:89
+#: home/templates/home/home.html:71
+msgid "Case Type:"
+msgstr "Tipo"
+
+#: home/templates/home/home.html:73
+msgid "Cutaneous"
+msgstr "Cutánea"
+
+#: home/templates/home/home.html:74
+msgid "Visceral"
+msgstr "Visceral"
+
+#: home/templates/home/home.html:78
+msgid "Select Year:"
+msgstr "Selecciona Año"
+
+#: home/templates/home/home.html:97
 msgid "Social Media"
 msgstr "Redes Sociales"
 
-#: home/templates/home/home.html:90
+#: home/templates/home/home.html:98
 msgid "Stay updated with news from our partner institutions through BlueSky"
 msgstr ""
 "Mantente al día con las noticias de nuestras instituciones asociadas a "
 "través de BlueSky"
 
-#: home/templates/team/team.html:6 templates/html/base.html:41
-#: templates/html/base.html:69
+#: home/templates/team/team.html:6 templates/html/base.html:43
+#: templates/html/base.html:71
 msgid "Team"
 msgstr "Equipo"
 
-#: home/views.py:18
+#: home/views.py:22
 msgid "Team 2024"
 msgstr "Equipo 2024"
 
-#: home/views.py:22
+#: home/views.py:26
 msgid "Team old"
 msgstr "Equipo antiguo"
 
-#: home/views.py:26
+#: home/views.py:30
 msgid "Leish Lab pre 2024"
 msgstr "Leish Lab antes de 2024"
 
-#: home/views.py:34
+#: home/views.py:38
 msgid "What is Leishmaniasis?"
 msgstr "¿Qué es la Leishmaniasis?"
 
-#: home/views.py:36
+#: home/views.py:40
 msgid ""
 "Leishmaniasis is a disease that affects a large population in tropical and "
 "subtropical areas worldwide. According to recent data from the World Health "
@@ -108,11 +117,11 @@ msgstr ""
 "mundial, causando aproximadamente 70,000 muertes cada año (Saini et al., "
 "2022)."
 
-#: home/views.py:46
+#: home/views.py:50
 msgid "Leishmania Parasite"
 msgstr "Parásito Leishmania"
 
-#: home/views.py:48
+#: home/views.py:52
 msgid ""
 "The disease is transmitted by a protozoan parasite from the trypanosomatid "
 "family. This family is also responsible for Chagas disease (Trypanosoma "
@@ -124,11 +133,11 @@ msgstr ""
 "de Chagas (Trypanosoma cruzi), la enfermedad del sueño (T. brucei) y la "
 "leishmaniasis (Leishmania spp.) (Bringaud et al., 2007)."
 
-#: home/views.py:55
+#: home/views.py:59
 msgid "Leishmaniasis Vector"
 msgstr "Vector de Leishmaniasis"
 
-#: home/views.py:57
+#: home/views.py:61
 msgid ""
 "Leishmaniasis is specifically transmitted through the bite of a sandfly "
 "(subfamily Phlebotominae), leading to the parasite's invasion of the host's "
@@ -138,34 +147,34 @@ msgstr ""
 "flebótomo (subfamilia Phlebotominae), lo que lleva a la invasión del "
 "parásito en los órganos internos del huésped (Herwaldt, 1999)."
 
-#: home/views.py:80
+#: home/views.py:127
 msgid "Current Members"
 msgstr "Miembros Actuales"
 
-#: home/views.py:81
+#: home/views.py:128
 msgid "Former Members"
 msgstr "Antiguos Miembros"
 
-#: home/views.py:82
+#: home/views.py:129
 msgid "Former Students"
 msgstr "Antiguos Estudiantes"
 
-#: home/views.py:89 home/views.py:90 home/views.py:91 home/views.py:112
-#: home/views.py:113 home/views.py:114 home/views.py:121 home/views.py:122
-#: home/views.py:123 home/views.py:164 home/views.py:177
+#: home/views.py:136 home/views.py:137 home/views.py:138 home/views.py:159
+#: home/views.py:160 home/views.py:161 home/views.py:168 home/views.py:169
+#: home/views.py:170 home/views.py:211 home/views.py:224
 msgid "-"
 msgstr ""
 
-#: home/views.py:98
+#: home/views.py:145
 msgid "CSIC Titular Scientist"
 msgstr "CSIC Científica Titular"
 
-#: home/views.py:99
+#: home/views.py:146
 msgid ""
 "Without science and technology there is no future, and the future is you"
 msgstr "Sin ciencia y tecnologia no hay futuro, y el futuro eres tu"
 
-#: home/views.py:101
+#: home/views.py:148
 msgid ""
 "Expert in omics technologies. She belongs to the executive committee of the "
 "PTI_Digital Science and the Computational Biology and Bioinformatics "
@@ -179,15 +188,15 @@ msgstr ""
 "ellos del CSIC. Activa en divulgación científica. Interesada en ciencia y "
 "tecnología."
 
-#: home/views.py:130
+#: home/views.py:177
 msgid "Bioinformatic Scientist - Research Assistant"
 msgstr "Científico Bioinformático - Asistente de Investigación"
 
-#: home/views.py:131
+#: home/views.py:178
 msgid "Understanding life, one dataset at a time"
 msgstr "Entendiendo la vida, un conjunto de datos a la vez"
 
-#: home/views.py:133
+#: home/views.py:180
 msgid ""
 "Bioinformatician and microbiologist, with a passion for science. Currently "
 "involved in research projects that combine lab work and omics data analysis "
@@ -198,16 +207,16 @@ msgstr ""
 "laboratorio y análisis de datos ómicos para desentrañar la complejidad "
 "molecular de los organismos vivos."
 
-#: home/views.py:143
+#: home/views.py:190
 msgid "Bioinformatic Engineer - Research Assistant"
 msgstr "Ingeniero Bioinformático - Asistente de Investigación"
 
-#: home/views.py:144
+#: home/views.py:191
 msgid "Linking life and informatics through unwavering passion"
 msgstr ""
 "Vinculando la vida y la informática a través de una pasión inquebrantable"
 
-#: home/views.py:146
+#: home/views.py:193
 msgid ""
 "Bioinformatician and Informatic Engineer student. He is passionate about "
 "building and coding computer systems designed to unravel the complexity of "
@@ -224,19 +233,19 @@ msgstr ""
 "(SEBiBC), sus intereses se centran fuertemente en el lado de la ingeniería "
 "de la bioinformática."
 
-#: home/views.py:162
+#: home/views.py:209
 msgid "Former Researcher"
 msgstr "Antiguo Investigador"
 
-#: home/views.py:163
+#: home/views.py:210
 msgid "Former Research Scientist"
 msgstr "Antiguo Científico Investigador"
 
-#: home/views.py:175
+#: home/views.py:222
 msgid "Former PhD Student"
 msgstr "Antiguo Estudiante de Doctorado"
 
-#: home/views.py:176
+#: home/views.py:223
 msgid "PhD in Molecular Biology"
 msgstr "Doctorado en Biología Molecular"
 
@@ -372,8 +381,8 @@ msgstr "Versión/Año"
 #: species/templates/species/braziliensis.html:57
 #: species/templates/species/donovani.html:58
 #: species/templates/species/infantum.html:54
-#: species/templates/species/major.html:58 templates/html/base.html:54
-#: templates/html/base.html:82
+#: species/templates/species/major.html:58 templates/html/base.html:56
+#: templates/html/base.html:84
 msgid "Downloads"
 msgstr "Descargas"
 
@@ -713,26 +722,26 @@ msgstr "Siguiente"
 msgid "Genome decoding"
 msgstr "Decodificación genómica"
 
-#: templates/html/base.html:38 templates/html/base.html:66
+#: templates/html/base.html:40 templates/html/base.html:68
 msgid "About Us"
 msgstr "Nosotros"
 
-#: templates/html/base.html:40 templates/html/base.html:68
+#: templates/html/base.html:42 templates/html/base.html:70
 msgid "Mission"
 msgstr "Misión"
 
-#: templates/html/base.html:45 templates/html/base.html:73
+#: templates/html/base.html:47 templates/html/base.html:75
 msgid "Species"
 msgstr "Especies"
 
-#: templates/html/base.html:56 templates/html/base.html:84
+#: templates/html/base.html:58 templates/html/base.html:86
 msgid "Reports"
 msgstr "Informes"
 
-#: templates/html/base.html:57 templates/html/base.html:85
+#: templates/html/base.html:59 templates/html/base.html:87
 msgid "Datasets"
 msgstr "Datos"
 
-#: templates/html/base.html:58 templates/html/base.html:86
+#: templates/html/base.html:60 templates/html/base.html:88
 msgid "Software"
 msgstr "Programas"

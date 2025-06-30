@@ -1,3 +1,4 @@
+
 {% extends "html/base.html" %}
 {% load static %}
 {% load i18n %}
@@ -57,30 +58,37 @@
     </div>
   </section>
 
-  <!-- WHO Leishmaniasis Map Section -->
-  <section id="who-leish-map">
-    <div class="who-map-container">
-      <div class="who-map-title">
-        <h2>{% trans "Global Leishmaniasis Distribution" %}</h2>
-      </div>
-      <div class="who-map-description">
-        <p>
-          {% trans "Interactive map showing the global distribution of leishmaniasis cases reported to the World Health Organization (WHO). This visualization helps understand the worldwide impact and spread of the disease." %}
-        </p>
-      </div>
-      <div class="who-map-iframe">
-        <iframe src="https://apps.who.int/neglected_diseases/ntddata/leishmaniasis/leishmaniasis.html"
-                title="WHO Leishmaniasis Map"
-                width="100%"
-                height="100%"
-                allowfullscreen>
-        </iframe>
-      </div>
-      <div class="who-map-source">
-        <p><a href="https://apps.who.int/neglected_diseases/ntddata/leishmaniasis/leishmaniasis.html"
-                      target="_blank">World Health Organization</a></p>
-      </div>
+  <!-- World Map of Reported Cases Section -->
+  <section id="world-map-section">
+    <div class="world-map-header">
+      <h2>{% trans 'Global Leishmaniasis Cases' %}</h2>
+      <p>{% trans 'Reported leishmaniasis cases around the world' %}</p>
     </div>
+
+    <div class="world-map-container">
+      <div class="selectors-container">
+        <div class="selector-group">
+          <label for="case-type-selector">{% trans 'Case Type:' %}</label>
+          <select id="case-type-selector" class="case-type-selector">
+            <option value="cutaneous">{% trans 'Cutaneous' %}</option>
+            <option value="visceral">{% trans 'Visceral' %}</option>
+          </select>
+        </div>
+        <div class="selector-group">
+          <label for="year-selector">{% trans 'Select Year:' %}</label>
+          <select id="year-selector" class="year-selector"></select>
+        </div>
+      </div>
+      <div id="world-map-plot" class="world-map-plot"></div>
+    </div>
+
+    <!-- Hidden data for JavaScript -->
+    <div id="map-data" 
+         data-years="{{ leishmaniasis_years }}" 
+         data-countries="{{ leishmaniasis_countries }}" 
+         data-cutaneous="{{ leishmaniasis_cutaneous_data }}"
+         data-visceral="{{ leishmaniasis_visceral_data }}"
+         style="display: none;"></div>
   </section>
 
   <!-- Social Media Updates Section -->
@@ -169,10 +177,12 @@
 {% endblock %}
 
 {% block js_content %}
-{#  <script src="{% static 'home/scripts/translation/home-translation.js' %}"></script>#}
   <script src="{% static 'home/scripts/pages/home/team-front-images-slider.js' %}"></script>
   <script src="{% static 'home/scripts/pages/home/leishmania-info-cards.js' %}"></script>
   <!--suppress JSUnresolvedLibraryURL -->
   <script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js" async></script>
   <script src="{% static 'home/scripts/pages/home/bluesky-feed.js' %}"></script>
+  <!-- Plotly.js for world map visualization -->
+  <script src="https://cdn.plot.ly/plotly-3.0.1.min.js" charset="utf-8"></script>
+  <script src="{% static 'home/scripts/pages/home/world-map-visualization.js' %}"></script>
 {% endblock %}
