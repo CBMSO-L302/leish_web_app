@@ -22,6 +22,76 @@ This project is a Django-based web application for the Leishmania Database hoste
 - **Operating System**: Ubuntu 24.04.2 LTS (noble)
 - **Access Method**: SSH
 
+#### NGINX configuration:
+
+The next server NGINX configuration is implement in `/etc/nginx/sites-available/leishmania.cbm.uam.es`
+
+```
+server { 
+    listen 80; server_name leishmania.cbm.uam.es www.leishmania.cbm.uam.es;
+    
+    # HTTP traffict --> HTTPS
+    return 301 https://$host$request_uri;
+}
+
+server { 
+    listen 443 ssl; # Listen for HTTPS connections 
+    server_name leishmania.cbm.uam.es www.leishmania.cbm.uam.es;
+
+    # SSL certificate and private key paths
+    ssl_certificate /opt/certs/leishmania_certs/Cert_bundle.pem; 
+    ssl_certificate_key /opt/certs/leishmania_certs/privateKey.pem;
+    
+    # SSL/TLS settings
+    ssl_protocols TLSv1.2 TLSv1.3; # Use up-do-date TLS protocols only 
+    ssl_ciphers HIGH:!aNULL:!MD5; # Use strong SSL/TLS ciphers  # TODO: Check !aNULL
+    ssl_prefer_server_ciphers on; # Prioritize secure server ciphers
+
+    # Server static files
+    location /static/ {
+        alias /opt/leish-web/staticfiles/;  # Directory on the host
+        autoindex on;  # Optional: allows directory listing for debugging
+    }
+    
+    # Proxy requests to the Docker container
+    location / { 
+        proxy_pass http://127.0.0.1:8080; 
+        proxy_http_version 1.1; 
+        proxy_set_header Upgrade $http_upgrade; 
+        proxy_set_header Connection 'upgrade'; 
+        proxy_set_header Host $host; 
+        proxy_cache_bypass $http_upgrade;
+    }
+
+    # Log and error files
+    access_log /var/log/nginx/leishmania-cbm-access.log; 
+    error_log /var/log/nginx/leishmania-cbm-error.log;
+}
+```
+
+#### Important note:
+
+The server ports are normally open when the access is made for the public. However, after some inactivity the server 
+closes the connection externally (only accesible in the CBM intranet) probably for security reasons. Do solve this
+problem the next script needs to be active and executed constantly to ping the web internally in
+`/opt/leish-web/scripts/ping_web_leishmania.sh`.
+
+```bash
+#!/bin/bash
+while true; do
+    echo "[$(date)] Sending request..."
+    curl -s https://leishmania.cbm.uam.es
+    sleep 1800
+done
+```
+
+The script file is executed with:
+```bash
+nohup ./ping_web_leishmania.sh > ./ping.log 2>&1 &
+```
+
+And the log file will be displayed in `/opt/leish-web/script/ping.log`
+
 ### Component Structure
 
 ```
@@ -62,6 +132,7 @@ This project is a Django-based web application for the Leishmania Database hoste
 
 - **Persistent Data**:
   - Database: `/opt/leish-web/databases`
+  - Secret Key: `/opt/leish-web/secrets/django_secret_key.txt`
   - Static Files: `/opt/leish-web/staticfiles`
 
 - **SSL Certificates**:
@@ -83,7 +154,7 @@ This project is a Django-based web application for the Leishmania Database hoste
    cd /var/www/leish_web_app
    ```
 
-2. Create necessary directories:
+2. Create the necessary directories:
    ```bash
    sudo mkdir -p /opt/leish-web/databases
    sudo mkdir -p /opt/leish-web/staticfiles
@@ -149,7 +220,7 @@ cp -r /opt/leish-web/databases /path/to/backup/$(date +%Y%m%d)
 
 #### SSL Certificate Renewal
 
-Follow certificate provider's instructions and update paths in the Nginx configuration.
+Follow the certificate provider's instructions and update paths in the Nginx configuration.
 
 ## Troubleshooting
 
