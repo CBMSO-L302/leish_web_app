@@ -19,6 +19,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
+# SECURITY WARNING: don't run with debug turned on in production!
+# Debug setting from environment
+DEBUG = os.environ.get('DEBUG', '0') == '1'
+
 # SECURITY WARNING: keep the secret key used in production secret!
 def get_secret_key():
     """Get secret key from Docker secret file or environment variable"""
@@ -40,9 +44,6 @@ def get_secret_key():
 
 SECRET_KEY = get_secret_key()
 
-# SECURITY WARNING: don't run with debug turned on in production!
-# Debug setting from environment
-DEBUG = os.environ.get('DEBUG', '0') == '1'
 
 ALLOWED_HOSTS = [
     "leishmania.cbm.uam.es",
