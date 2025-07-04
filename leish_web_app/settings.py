@@ -49,6 +49,7 @@ ALLOWED_HOSTS = [
     "leishmania.cbm.uam.es",
     "www.leishmania.cbm.uam.es",
     "127.0.0.1",
+    "localhost",
     "150.244.205.86",
     "159.223.23.52"  # Testing server
 ]
@@ -56,7 +57,9 @@ ALLOWED_HOSTS = [
 CSRF_TRUSTED_ORIGINS = [
     "https://leishmania.cbm.uam.es",
     "http://150.244.205.86",
-    "http://159.223.23.52"  # Testing server
+    "http://159.223.23.52",  # Testing server
+    "http://localhost",
+    "http://127.0.0.1"
 ]
 
 # Application definition
