@@ -22,9 +22,9 @@ This project is a Django-based web application for the Leishmania Database hoste
 - **Operating System**: Ubuntu 24.04.2 LTS (noble)
 - **Access Method**: SSH
 
-#### NGINX configuration:
+#### NGINX Configuration
 
-The next server NGINX configuration is implement in `/etc/nginx/sites-available/leishmania.cbm.uam.es`
+The NGINX server configuration is implemented in `/etc/nginx/sites-available/leishmania.cbm.uam.es` with the following settings:
 
 ```
 server { 
@@ -69,12 +69,9 @@ server {
 }
 ```
 
-#### Important note:
+#### External Access Maintenance
 
-The server ports are normally open when the access is made for the public. However, after some inactivity the server 
-closes the connection externally (only accesible in the CBM intranet) probably for security reasons. Do solve this
-problem the next script needs to be active and executed constantly to ping the web internally in
-`/opt/leish-web/scripts/ping_web_leishmania.sh`.
+For security reasons, the server automatically restricts external access after periods of inactivity, limiting access to the CBM intranet only. To maintain continuous public accessibility, a monitoring script is implemented at `/opt/leish-web/scripts/ping_web_leishmania.sh`:
 
 ```bash
 #!/bin/bash
@@ -85,12 +82,13 @@ while true; do
 done
 ```
 
-The script file is executed with:
+This script sends a request to the website every 30 minutes (1800 seconds), keeping the external connection active. The script is executed using:
+
 ```bash
 nohup ./ping_web_leishmania.sh > ./ping.log 2>&1 &
 ```
 
-And the log file will be displayed in `/opt/leish-web/script/ping.log`
+Activity logs are stored at `/opt/leish-web/scripts/ping.log` for monitoring and troubleshooting purposes.
 
 ### Component Structure
 
