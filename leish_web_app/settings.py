@@ -20,7 +20,25 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "***REMOVED***"
+def get_secret_key():
+    """Get secret key from Docker secret file or environment variable"""
+    secret_key_file = os.environ.get('DJANGO_SECRET_KEY_FILE')
+    if secret_key_file and os.path.exists(secret_key_file):
+        with open(secret_key_file, 'r') as f:
+            return f.read().strip()
+
+    # Fallback to environment variable
+    secret_key = os.environ.get('DJANGO_SECRET_KEY')
+    if secret_key:
+        return secret_key
+
+    # Development fallback (should not be used in production)
+    if not DEBUG:  # This means if DEBUG=False (production mode)
+        raise ValueError("SECRET_KEY must be provided in production environment!")
+
+    return 'your-fallback-key-for-development-only'
+
+SECRET_KEY = get_secret_key()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # Debug setting from environment
